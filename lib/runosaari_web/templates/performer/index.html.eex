@@ -1,0 +1,38 @@
+<h1>Listing Performers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Performerid</th>
+      <th>Fname</th>
+      <th>Lname</th>
+      <th>Email</th>
+      <th>Tel</th>
+      <th>Confirmed</th>
+      <th>Notes</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for performer <- @performers do %>
+    <tr>
+      <td><%= performer.performerId %></td>
+      <td><%= performer.fname %></td>
+      <td><%= performer.lname %></td>
+      <td><%= performer.email %></td>
+      <td><%= performer.tel %></td>
+      <td><%= performer.confirmed %></td>
+      <td><%= performer.notes %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.performer_path(@conn, :show, performer) %></span>
+        <span><%= link "Edit", to: Routes.performer_path(@conn, :edit, performer) %></span>
+        <span><%= link "Delete", to: Routes.performer_path(@conn, :delete, performer), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Performer", to: Routes.performer_path(@conn, :new) %></span>

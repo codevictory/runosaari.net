@@ -1,0 +1,43 @@
+<h1>Show Performer</h1>
+
+<ul>
+
+  <li>
+    <strong>Performerid:</strong>
+    <%= @performer.performerId %>
+  </li>
+
+  <li>
+    <strong>Fname:</strong>
+    <%= @performer.fname %>
+  </li>
+
+  <li>
+    <strong>Lname:</strong>
+    <%= @performer.lname %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @performer.email %>
+  </li>
+
+  <li>
+    <strong>Tel:</strong>
+    <%= @performer.tel %>
+  </li>
+
+  <li>
+    <strong>Confirmed:</strong>
+    <%= @performer.confirmed %>
+  </li>
+
+  <li>
+    <strong>Notes:</strong>
+    <%= @performer.notes %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.performer_path(@conn, :edit, @performer) %></span>
+<span><%= link "Back", to: Routes.performer_path(@conn, :index) %></span>

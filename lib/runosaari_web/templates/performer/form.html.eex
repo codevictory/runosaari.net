@@ -1,0 +1,39 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :performerId %>
+  <%= number_input f, :performerId %>
+  <%= error_tag f, :performerId %>
+
+  <%= label f, :fname %>
+  <%= text_input f, :fname %>
+  <%= error_tag f, :fname %>
+
+  <%= label f, :lname %>
+  <%= text_input f, :lname %>
+  <%= error_tag f, :lname %>
+
+  <%= label f, :email %>
+  <%= text_input f, :email %>
+  <%= error_tag f, :email %>
+
+  <%= label f, :tel %>
+  <%= text_input f, :tel %>
+  <%= error_tag f, :tel %>
+
+  <%= label f, :confirmed %>
+  <%= checkbox f, :confirmed %>
+  <%= error_tag f, :confirmed %>
+
+  <%= label f, :notes %>
+  <%= text_input f, :notes %>
+  <%= error_tag f, :notes %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>
