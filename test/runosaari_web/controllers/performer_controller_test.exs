@@ -3,9 +3,23 @@ defmodule RunosaariWeb.PerformerControllerTest do
 
   alias Runosaari.Registration
 
-  @create_attrs %{confirmed: true, email: "some email", fname: "some fname", lname: "some lname", notes: "some notes", performerId: 42, tel: "some tel"}
-  @update_attrs %{confirmed: false, email: "some updated email", fname: "some updated fname", lname: "some updated lname", notes: "some updated notes", performerId: 43, tel: "some updated tel"}
-  @invalid_attrs %{confirmed: nil, email: nil, fname: nil, lname: nil, notes: nil, performerId: nil, tel: nil}
+  @create_attrs %{
+    confirmed: true,
+    email: "some email",
+    fname: "some fname",
+    lname: "some lname",
+    notes: "some notes",
+    tel: "some tel"
+  }
+  @update_attrs %{
+    confirmed: false,
+    email: "some updated email",
+    fname: "some updated fname",
+    lname: "some updated lname",
+    notes: "some updated notes",
+    tel: "some updated tel"
+  }
+  @invalid_attrs %{confirmed: nil, email: nil, fname: nil, lname: nil, notes: nil, tel: nil}
 
   def fixture(:performer) do
     {:ok, performer} = Registration.create_performer(@create_attrs)
@@ -75,6 +89,7 @@ defmodule RunosaariWeb.PerformerControllerTest do
     test "deletes chosen performer", %{conn: conn, performer: performer} do
       conn = delete(conn, Routes.performer_path(conn, :delete, performer))
       assert redirected_to(conn) == Routes.performer_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.performer_path(conn, :show, performer))
       end

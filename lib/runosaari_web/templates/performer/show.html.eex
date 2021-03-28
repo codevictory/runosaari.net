@@ -3,11 +3,6 @@
 <ul>
 
   <li>
-    <strong>Performerid:</strong>
-    <%= @performer.performerId %>
-  </li>
-
-  <li>
     <strong>Fname:</strong>
     <%= @performer.fname %>
   </li>

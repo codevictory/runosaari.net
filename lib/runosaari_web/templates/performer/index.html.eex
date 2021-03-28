@@ -3,7 +3,6 @@
 <table>
   <thead>
     <tr>
-      <th>Performerid</th>
       <th>Fname</th>
       <th>Lname</th>
       <th>Email</th>
@@ -17,7 +16,6 @@
   <tbody>
 <%= for performer <- @performers do %>
     <tr>
-      <td><%= performer.performerId %></td>
       <td><%= performer.fname %></td>
       <td><%= performer.lname %></td>
       <td><%= performer.email %></td>

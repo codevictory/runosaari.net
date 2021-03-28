@@ -3,10 +3,9 @@ defmodule Runosaari.Repo.Migrations.CreatePerformers do
 
   def change do
     create table(:performers) do
-      add :performerId, :integer
+      add :email, :string
       add :fname, :string
       add :lname, :string
-      add :email, :string
       add :tel, :string
       add :confirmed, :boolean, default: false, null: false
       add :notes, :string
@@ -14,7 +13,6 @@ defmodule Runosaari.Repo.Migrations.CreatePerformers do
       timestamps()
     end
 
-    create unique_index(:performers, [:performerId])
     create unique_index(:performers, [:email])
   end
 end

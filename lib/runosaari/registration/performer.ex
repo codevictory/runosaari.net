@@ -8,7 +8,6 @@ defmodule Runosaari.Registration.Performer do
     field :fname, :string
     field :lname, :string
     field :notes, :string
-    field :performerId, :integer
     field :tel, :string
 
     timestamps()
@@ -17,9 +16,8 @@ defmodule Runosaari.Registration.Performer do
   @doc false
   def changeset(performer, attrs) do
     performer
-    |> cast(attrs, [:performerId, :fname, :lname, :email, :tel, :confirmed, :notes])
-    |> validate_required([:performerId, :fname, :lname, :email, :tel, :confirmed, :notes])
-    |> unique_constraint(:performerId)
+    |> cast(attrs, [:fname, :lname, :email, :tel, :confirmed, :notes])
+    |> validate_required([:fname, :lname, :email, :tel, :confirmed, :notes])
     |> unique_constraint(:email)
   end
 end
