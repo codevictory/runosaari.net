@@ -1,38 +1,42 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>Peace of mind from prototype to production</p>
+
+<section class="logo">
+    <img src="<%= Routes.static_path(@conn, "/images/runosaari-logo.jpg") %>" alt="Runosaari logo" />
 </section>
 
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.5/CHANGELOG.md">v1.5 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-      <li>
-        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
-      </li>
-    </ul>
-  </article>
+<section class="text">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+    scelerisque malesuada felis, sed dictum eros sollicitudin a. In sem
+    lectus, consectetur id nulla sit amet, ullamcorper laoreet urna.
+    Mauris varius a nulla ut condimentum. Nam elementum, arcu eget semper
+    facilisis, nulla dui euismod justo, ac auctor magna tortor id enim. Ut
+    vestibulum volutpat nibh, quis cursus justo blandit eu. Donec tempus
+    aliquet risus, quis gravida elit tempus vel. Praesent porttitor
+    faucibus nisl ac euismod. Integer sed dui odio. Nullam varius ipsum
+    rhoncus nunc vulputate tempus. Mauris tincidunt mi et mauris auctor,
+    non dapibus magna efficitur. Praesent eu sem cursus magna venenatis
+    tempus. Nullam pharetra odio quam, id viverra risus accumsan eget.
+    Curabitur aliquet, purus ut scelerisque volutpat, nibh risus
+    scelerisque erat, sed laoreet risus ligula non enim.
+  </p>
+  <p>
+    Vivamus viverra, purus nec tempus lacinia, urna erat volutpat felis,
+    porttitor luctus nisl augue nec lectus. Sed in blandit nisi. Maecenas
+    laoreet, lectus sit amet vulputate porttitor, felis libero mollis
+    ante, nec pellentesque magna est id ante. Aliquam venenatis turpis
+    cursus felis rutrum suscipit. Class aptent taciti sociosqu ad litora
+    torquent per conubia nostra, per inceptos himenaeos. Duis et turpis
+    nisi. Maecenas suscipit sit amet ante vitae vehicula. Ut auctor felis
+    ut lectus vestibulum, et tempus ligula tempor. Integer at ultrices
+    turpis. Cras id purus turpis.
+  </p>
+  <p>
+    Pellentesque a odio nec velit auctor ullamcorper id et felis. Donec
+    tristique vulputate congue. Aliquam euismod quam quis metus dictum,
+    nec pellentesque augue malesuada. Cras sit amet dui at neque ornare
+    eleifend nec sit amet arcu. Curabitur mauris mi, consequat ut lectus
+    et, fringilla scelerisque nisl. Aliquam ultrices, mauris vitae
+    tincidunt commodo, dui diam fermentum massa, eget sodales massa ipsum
+    vitae felis. Nullam id massa id nibh consectetur fermentum.
+  </p>
 </section>

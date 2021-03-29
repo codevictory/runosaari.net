@@ -1,5 +1,6 @@
 /* This file is for your main application css. */
-@import "./phoenix.css";
+@import './layout.scss';
+@import './pages/index.scss';
 
 /* Alerts and form errors */
 .alert {

@@ -1,0 +1,51 @@
+body {
+  background-color: white;
+  font-family: 'Crimson Text', sans-serif;
+  text-shadow: 3px 3px 3px #ababab;
+  color: #2f273e;
+}
+
+header {
+  .nav {
+    display: flex;
+    justify-content: center;
+
+    a {
+      padding: 15px;
+      color: #2f273e;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #d5caf2);
+      text-decoration: underline;
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    align-items: center;
+
+    .middle img {
+      max-width: 55px;
+    }
+
+    .right {
+      text-align: right;
+    }
+  }
+}
