@@ -1,35 +1,35 @@
-<%= form_for @changeset, @action, fn f -> %>
+<%= form_for @changeset, @action, fn form -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
   <% end %>
 
-  <%= label f, :fname %>
-  <%= text_input f, :fname %>
-  <%= error_tag f, :fname %>
+  <%= label form, :fname, "Etunimi" %>
+  <%= text_input form, :fname %>
+  <%= error_tag form, :fname %>
 
-  <%= label f, :lname %>
-  <%= text_input f, :lname %>
-  <%= error_tag f, :lname %>
+  <%= label form, :lname, "Sukunimi" %>
+  <%= text_input form, :lname %>
+  <%= error_tag form, :lname %>
 
-  <%= label f, :email %>
-  <%= text_input f, :email %>
-  <%= error_tag f, :email %>
+  <%= label form, :email, "Sähköposti" %>
+  <%= email_input form, :email %>
+  <%= error_tag form, :email %>
 
-  <%= label f, :tel %>
-  <%= text_input f, :tel %>
-  <%= error_tag f, :tel %>
+  <%= label form, :tel, "Puhelinumero" %>
+  <%= text_input form, :tel %>
+  <%= error_tag form, :tel %>
 
-  <%= label f, :confirmed %>
-  <%= checkbox f, :confirmed %>
-  <%= error_tag f, :confirmed %>
+  <%= label form, :notes, "Huomiot" %>
+  <%= textarea form, :notes %>
+  <%= error_tag form, :notes %>
 
-  <%= label f, :notes %>
-  <%= text_input f, :notes %>
-  <%= error_tag f, :notes %>
+  <%= label form, :confirmed, "Vahvitettu" %>
+  <%= checkbox form, :confirmed %>
+  <%= error_tag form, :confirmed %>
 
   <div>
-    <%= submit "Save" %>
+    <%= submit "Lähetä" %>
   </div>
 <% end %>
