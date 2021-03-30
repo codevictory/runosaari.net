@@ -32,5 +32,3 @@
 <% end %>
   </tbody>
 </table>
-
-<span><%= link "New Performer", to: Routes.performer_path(@conn, :new) %></span>
