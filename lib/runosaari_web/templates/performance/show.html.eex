@@ -1,0 +1,23 @@
+<h1>Show Performance</h1>
+
+<ul>
+
+  <li>
+    <strong>Time:</strong>
+    <%= @performance.time %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @performance.description %>
+  </li>
+
+  <li>
+    <strong>Notes:</strong>
+    <%= @performance.notes %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.performance_path(@conn, :edit, @performance) %></span>
+<span><%= link "Back", to: Routes.performance_path(@conn, :index) %></span>

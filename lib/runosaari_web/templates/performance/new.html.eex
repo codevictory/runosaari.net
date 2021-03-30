@@ -1,0 +1,5 @@
+<h1>New Performance</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.performance_path(@conn, :create)) %>
+
+<span><%= link "Back", to: Routes.performance_path(@conn, :index) %></span>
