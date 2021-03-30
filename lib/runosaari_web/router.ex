@@ -18,6 +18,8 @@ defmodule RunosaariWeb.Router do
 
     get "/", PageController, :index
     resources "/performers", PerformerController
+    resources "/performances", PerformanceController
+    resources "/locations", LocationController
   end
 
   # Other scopes may use custom stacks.
