@@ -13,12 +13,11 @@
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
   <body>
-    <header>
+    <header >
         <nav class="nav" role="navigation">
-            <a href="/">Etusivu</a>
-            <a href="calendar.html">Kalenteri</a>
-            <a href="performers.html">Esiintyjät</a>
-            <a href="contact.html">Yhteystiedot</a>
+          <%= link "Etusivu", to: Routes.page_path(@conn, :index) %>
+          <%= link "Esiintyjät", to: Routes.performer_path(@conn, :index) %>
+          <%= link "Ilmoittautuminen", to: Routes.performer_path(@conn, :new) %>
         </nav>
     </header>
     <main role="main">
