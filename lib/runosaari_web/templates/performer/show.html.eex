@@ -34,5 +34,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.performer_path(@conn, :edit, @performer) %></span>
+<span><%= link "Edit", to: Routes.admin_performer_path(@conn, :edit, @performer) %></span>
 <span><%= link "Back", to: Routes.performer_path(@conn, :index) %></span>

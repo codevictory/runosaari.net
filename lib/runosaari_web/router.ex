@@ -17,9 +17,17 @@ defmodule RunosaariWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    resources "/performers", PerformerController
-    resources "/performances", PerformanceController
-    resources "/locations", LocationController
+    resources "/performers", PerformerController, only: [:index, :show]
+    resources "/performances", PerformanceController, only: [:index, :show]
+    resources "/locations", LocationController, only: [:index, :show]
+  end
+
+  scope "/admin", RunosaariWeb, as: :admin do
+    pipe_through :browser
+
+    resources "/performers", PerformerController, except: [:index, :show]
+    resources "/performances", PerformanceController, except: [:index, :show]
+    resources "/locations", LocationController, except: [:index, :show]
   end
 
   # Other scopes may use custom stacks.

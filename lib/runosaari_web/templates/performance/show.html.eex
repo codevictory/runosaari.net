@@ -19,5 +19,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.performance_path(@conn, :edit, @performance) %></span>
+<span><%= link "Edit", to: Routes.admin_performance_path(@conn, :edit, @performance) %></span>
 <span><%= link "Back", to: Routes.performance_path(@conn, :index) %></span>

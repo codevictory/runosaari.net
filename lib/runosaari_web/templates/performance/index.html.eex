@@ -19,12 +19,12 @@
 
       <td>
         <span><%= link "Show", to: Routes.performance_path(@conn, :show, performance) %></span>
-        <span><%= link "Edit", to: Routes.performance_path(@conn, :edit, performance) %></span>
-        <span><%= link "Delete", to: Routes.performance_path(@conn, :delete, performance), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        <span><%= link "Edit", to: Routes.admin_performance_path(@conn, :edit, performance) %></span>
+        <span><%= link "Delete", to: Routes.admin_performance_path(@conn, :delete, performance), method: :delete, data: [confirm: "Are you sure?"] %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Performance", to: Routes.performance_path(@conn, :new) %></span>
+<span><%= link "New Performance", to: Routes.admin_performance_path(@conn, :new) %></span>
