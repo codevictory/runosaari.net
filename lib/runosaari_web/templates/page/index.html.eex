@@ -4,39 +4,38 @@
 </section>
 
 <section class="text">
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-    scelerisque malesuada felis, sed dictum eros sollicitudin a. In sem
-    lectus, consectetur id nulla sit amet, ullamcorper laoreet urna.
-    Mauris varius a nulla ut condimentum. Nam elementum, arcu eget semper
-    facilisis, nulla dui euismod justo, ac auctor magna tortor id enim. Ut
-    vestibulum volutpat nibh, quis cursus justo blandit eu. Donec tempus
-    aliquet risus, quis gravida elit tempus vel. Praesent porttitor
-    faucibus nisl ac euismod. Integer sed dui odio. Nullam varius ipsum
-    rhoncus nunc vulputate tempus. Mauris tincidunt mi et mauris auctor,
-    non dapibus magna efficitur. Praesent eu sem cursus magna venenatis
-    tempus. Nullam pharetra odio quam, id viverra risus accumsan eget.
-    Curabitur aliquet, purus ut scelerisque volutpat, nibh risus
-    scelerisque erat, sed laoreet risus ligula non enim.
-  </p>
-  <p>
-    Vivamus viverra, purus nec tempus lacinia, urna erat volutpat felis,
-    porttitor luctus nisl augue nec lectus. Sed in blandit nisi. Maecenas
-    laoreet, lectus sit amet vulputate porttitor, felis libero mollis
-    ante, nec pellentesque magna est id ante. Aliquam venenatis turpis
-    cursus felis rutrum suscipit. Class aptent taciti sociosqu ad litora
-    torquent per conubia nostra, per inceptos himenaeos. Duis et turpis
-    nisi. Maecenas suscipit sit amet ante vitae vehicula. Ut auctor felis
-    ut lectus vestibulum, et tempus ligula tempor. Integer at ultrices
-    turpis. Cras id purus turpis.
-  </p>
-  <p>
-    Pellentesque a odio nec velit auctor ullamcorper id et felis. Donec
-    tristique vulputate congue. Aliquam euismod quam quis metus dictum,
-    nec pellentesque augue malesuada. Cras sit amet dui at neque ornare
-    eleifend nec sit amet arcu. Curabitur mauris mi, consequat ut lectus
-    et, fringilla scelerisque nisl. Aliquam ultrices, mauris vitae
-    tincidunt commodo, dui diam fermentum massa, eget sodales massa ipsum
-    vitae felis. Nullam id massa id nibh consectetur fermentum.
-  </p>
+  <h1 id="main-title">Runosaari 2021</h1>
+    <h2>
+      <span class="time-and-place"
+        >~ 22.-24.7. Livonsaari & Velkuanmaa ~</span
+      ><br />
+      Eksymisretki omaan luontoosi, metsänpeiton suojaan!
+    </h2>
+    <p>
+      Lumi ja jää vähenee, vedenpinta nousee ja pandemian aallot viistävät
+      meidänkin rantojamme. Peurojen kurittaman monimuotoisuuden keskelle
+      nousee RUNOSAARI täynnä ihmetystä ja kysymyksiä: onko tulevaisuudella
+      tulevaisuutta? Kuinka luontoon lomittuminen voi olla mahdollista? Jos
+      eksymme metsänpeittoon, voimmeko löytää jonnekin?
+    </p>
+    <p>
+      Järjestämme Livonsaaressa ja Velkuanmaassa uuden poikkitaiteellisen
+      runofestivaalin 22.-24.7.2021. Ohjelmassa runous yhdistyy elävään
+      musiikkiin ja erilaisiin taiteellisiin työpajoihin. Tapahtuma
+      järjestetään joustavasti vallitsevien koronarajoitusten mukaan,
+      ulkotiloja sekä erillisiä sisätiloja hyödyntäen. Livonsaaren
+      perinteinen Seurantalo piknik-nurmikkoineen ja lähimetsineen tarjoaa
+      puitteet lavaesiintyjille, työpajoille ja elävälle musiikille.
+      Velkuanmaan saaren pastoraali-idylli kahden lossin takana viettelee
+      saaristoluonnon syvyyksiin runolaulu-työpajan, kukkaseppelkruunujen ja
+      karjalaisen löylyriitin myötä.
+    </p>
+    <p>
+      Runosaari-festivaaliin osallistuu toistakymmentä maamme eturivin
+      runoilijaa, muusikoita, työpajan vetäjiä ja muita esiintyjiä to 22.7.–
+      la 24.7.2021.
+    </p>
+    <p>
+      <i>[Ohjelmaa päivitetään muuttuvan tilanteen mukaan]</i>
+    </p>
 </section>
