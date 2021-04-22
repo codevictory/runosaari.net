@@ -4,4 +4,12 @@ defmodule RunosaariWeb.PageController do
   def index(conn, _params) do
     render(conn, "index.html")
   end
+
+  def info(conn, _params) do
+    render(conn, "info.html")
+  end
+
+  def covid19(conn, _params) do
+    render(conn, "covid19.html")
+  end
 end

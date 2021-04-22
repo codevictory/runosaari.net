@@ -17,6 +17,8 @@ defmodule RunosaariWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/info", PageController, :info
+    get "/covid19", PageController, :covid19
     resources "/performers", PerformerController, only: [:index, :show]
     resources "/performances", PerformanceController, only: [:index, :show]
   end
@@ -25,7 +27,7 @@ defmodule RunosaariWeb.Router do
     pipe_through :browser
 
     get "/performers", PerformerController, :admin
-    get "/performers", PerformanceController, :admin
+    get "/performances", PerformanceController, :admin
     resources "/performers", PerformerController, except: [:index, :show]
     resources "/performances", PerformanceController, except: [:index, :show]
   end
