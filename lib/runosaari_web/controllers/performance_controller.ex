@@ -9,6 +9,11 @@ defmodule RunosaariWeb.PerformanceController do
     render(conn, "index.html", performances: performances)
   end
 
+  def admin(conn, _params) do
+    performances = Schedule.list_performances()
+    render(conn, "admin.html", performances: performances)
+  end
+
   def new(conn, _params) do
     changeset = Schedule.change_performance(%Performance{})
     render(conn, "new.html", changeset: changeset)

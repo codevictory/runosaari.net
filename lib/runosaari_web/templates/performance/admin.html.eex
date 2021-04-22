@@ -1,0 +1,30 @@
+<h1>Ohjelma - HALLINTA</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Description</th>
+      <th>Notes</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for performance <- @performances do %>
+    <tr>
+      <td><%= performance.time %></td>
+      <td><%= performance.description %></td>
+      <td><%= performance.notes %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.performance_path(@conn, :show, performance) %></span>
+        <span><%= link "Edit", to: Routes.admin_performance_path(@conn, :edit, performance) %></span>
+        <span><%= link "Delete", to: Routes.admin_performance_path(@conn, :delete, performance), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Performance", to: Routes.admin_performance_path(@conn, :new) %></span>

@@ -9,6 +9,11 @@ defmodule RunosaariWeb.LocationController do
     render(conn, "index.html", locations: locations)
   end
 
+  def admin(conn, _params) do
+    locations = Area.list_locations()
+    render(conn, "admin.html", locations: locations)
+  end
+
   def new(conn, _params) do
     changeset = Area.change_location(%Location{})
     render(conn, "new.html", changeset: changeset)

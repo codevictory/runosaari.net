@@ -9,6 +9,11 @@ defmodule RunosaariWeb.PerformerController do
     render(conn, "index.html", performers: performers)
   end
 
+  def admin(conn, _params) do
+    performers = Registration.list_performers()
+    render(conn, "admin.html", performers: performers)
+  end
+
   def new(conn, _params) do
     changeset = Registration.change_performer(%Performer{})
     render(conn, "new.html", changeset: changeset)

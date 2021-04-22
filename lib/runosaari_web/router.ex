@@ -25,6 +25,9 @@ defmodule RunosaariWeb.Router do
   scope "/admin", RunosaariWeb, as: :admin do
     pipe_through :browser
 
+    get "/performers", PerformerController, :admin
+    get "/performers", PerformanceController, :admin
+    get "/performers", LocationController, :admin
     resources "/performers", PerformerController, except: [:index, :show]
     resources "/performances", PerformanceController, except: [:index, :show]
     resources "/locations", LocationController, except: [:index, :show]
