@@ -62,6 +62,6 @@ defmodule RunosaariWeb.PerformanceController do
 
     conn
     |> put_flash(:info, "Performance deleted successfully.")
-    |> redirect(to: Routes.performance_path(conn, :index))
+    |> redirect(to: Routes.admin_performance_path(conn, :admin))
   end
 end

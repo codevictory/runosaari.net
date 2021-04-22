@@ -62,6 +62,6 @@ defmodule RunosaariWeb.PerformerController do
 
     conn
     |> put_flash(:info, "Performer deleted successfully.")
-    |> redirect(to: Routes.performer_path(conn, :index))
+    |> redirect(to: Routes.admin_performer_path(conn, :admin))
   end
 end
