@@ -1,20 +1,9 @@
 <h1>Ohjelma</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nimi</th>
-      <th>Seloste</th>
-    </tr>
-  </thead>
-  <tbody>
 <%= for performance <- @performances do %>
-    <tr>
-      <td><%= performance.name %></td>
-      <td><%= performance.desc %></td>
-    </tr>
+    <article>
+      <h2><%= performance.name %></h2>
+      <p><%= performance.desc %></p>
+    </article>
 <% end %>
-  </tbody>
-</table>
-
 <span><%= link "Hallinta", to: Routes.admin_performance_path(@conn, :admin) %></span>
