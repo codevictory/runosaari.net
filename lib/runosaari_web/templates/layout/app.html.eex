@@ -29,18 +29,30 @@
       <%= @inner_content %>
     </main>
     <footer>
+      <div class="mobile-middle">
+        <a href="/#nav-bar"><img src="<%= Routes.static_path(@conn, "/images/small-logo.png") %>" /></a>
+      </div>
       <div class="container">
         <div class="left">
-          Livonsaari <br />
-          Naantali <br />
-          20. - 21.7.2021
+          Livonsaari & Velkua<br />
+          Naantalin saaristo<br />
         </div>
-        <div class="middle"><img src="<%= Routes.static_path(@conn, "/images/small-logo.png") %>" alt="Pieni logo" /></div>
+        <div class="middle">
+          <a href="/#nav-bar"><img src="<%= Routes.static_path(@conn, "/images/small-logo.png") %>" /></a>
+        </div>
         <div class="right">
-          Sdfas Asdinen <br />
-          Esiintyjä Aasfdas <br />
-          Asdf Esiintyjä
+          Inkeri Aula <br />
+          Katariina Vuorinen <br />
+          <a class="email-link" href="mailto:info@runosaari.net"
+            >info@runosaari.net</a
+          >
         </div>
+      </div>
+      <div class="credits">
+        <a href="https://github.com/codevictory/runosaari.net"
+          >lähdekoodi</a
+        >
+        | by codevictory
       </div>
     </footer>
   </body>
