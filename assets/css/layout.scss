@@ -1,12 +1,17 @@
 body {
-  background-color: white;
   font-family: 'Crimson Text', sans-serif;
-  text-shadow: 3px 3px 3px #ababab;
   color: #2f273e;
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: #d5caf2;
+  }
 }
 
 header {
-  .nav {
+  nav {
     display: flex;
     justify-content: center;
 
@@ -91,4 +96,40 @@ footer {
       visibility: visible;
     }
   }
+}
+
+a {
+  color: #2f273e;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  text-align: left;
+  max-width: 44%;
+}
+
+@media screen and (max-width: 600px) {
+  ul {
+    max-width: 90% !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-shadow: 3px 3px 3px #ababab;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+p {
+  text-align: justify;
 }

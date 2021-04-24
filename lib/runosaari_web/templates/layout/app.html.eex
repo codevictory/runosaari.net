@@ -14,7 +14,7 @@
   </head>
   <body>
     <header >
-        <nav class="nav" role="navigation">
+        <nav class="main-nav-bar" role="navigation">
           <%= link "Etusivu", to: Routes.page_path(@conn, :index) %>
           <%= link "Ohjelma", to: Routes.performance_path(@conn, :index) %>
           <%= link "Esiintyjät", to: Routes.performer_path(@conn, :index) %>
