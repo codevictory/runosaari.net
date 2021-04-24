@@ -1,19 +1,19 @@
 <%= form_for @changeset, @action, fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+      <p>Jokin kentistä on tyhjä.</p>
     </div>
   <% end %>
 
-  <%= label f, :name %>
+  <%= label f, :name, "Nimi" %>
   <%= text_input f, :name %>
   <%= error_tag f, :name %>
 
-  <%= label f, :desc %>
-  <%= text_input f, :desc %>
+  <%= label f, :desc, "Seloste" %>
+  <%= textarea f, :desc %>
   <%= error_tag f, :desc %>
 
   <div>
-    <%= submit "Save" %>
+    <%= submit "Tallenna" %>
   </div>
 <% end %>

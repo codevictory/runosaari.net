@@ -23,8 +23,11 @@ defmodule RunosaariWeb.PerformerController do
     case Registration.create_performer(performer_params) do
       {:ok, performer} ->
         conn
-        |> put_flash(:info, "Performer created successfully.")
-        |> redirect(to: Routes.performer_path(conn, :show, performer))
+        |> put_flash(
+          :info,
+          "Kiitokset ilmoittautumisestasi! Osallistumisesi tulee julkiseksi kun tapahtuman järjestäjät vahvistavat sen."
+        )
+        |> redirect(to: Routes.performer_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -48,7 +51,7 @@ defmodule RunosaariWeb.PerformerController do
     case Registration.update_performer(performer, performer_params) do
       {:ok, performer} ->
         conn
-        |> put_flash(:info, "Performer updated successfully.")
+        |> put_flash(:info, "Esiintyjän tiedot päivitetty.")
         |> redirect(to: Routes.performer_path(conn, :show, performer))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -61,7 +64,7 @@ defmodule RunosaariWeb.PerformerController do
     {:ok, _performer} = Registration.delete_performer(performer)
 
     conn
-    |> put_flash(:info, "Performer deleted successfully.")
+    |> put_flash(:info, "Esiintyjä poistettu.")
     |> redirect(to: Routes.admin_performer_path(conn, :admin))
   end
 end

@@ -1,12 +1,10 @@
-<h1>Listing Performances</h1>
+<h1>Ohjelma</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Time</th>
-      <th>Description</th>
-
-      <th></th>
+      <th>Nimi</th>
+      <th>Seloste</th>
     </tr>
   </thead>
   <tbody>

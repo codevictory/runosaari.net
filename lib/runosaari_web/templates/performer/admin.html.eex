@@ -1,4 +1,4 @@
-<h1>Esiintyjät - HALLINTA</h1>
+<h1>HALLINTA</h1>
 
 <table>
   <thead>
@@ -24,9 +24,9 @@
       <td><%= performer.desc %></td>
 
       <td>
-        <span><%= link "Näytä", to: Routes.performer_path(@conn, :show, performer) %></span>
+        <span><%= link "Lisätietoja", to: Routes.performer_path(@conn, :show, performer) %></span>
         <span><%= link "Muokkaa", to: Routes.admin_performer_path(@conn, :edit, performer) %></span>
-        <span><%= link "Poista", to: Routes.admin_performer_path(@conn, :delete, performer), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        <span><%= link "Poista", to: Routes.admin_performer_path(@conn, :delete, performer), method: :delete, data: [confirm: "Haluatko poistaa esiintyjän #{performer.fname} #{performer.lname}?"] %></span>
       </td>
     </tr>
 <% end %>

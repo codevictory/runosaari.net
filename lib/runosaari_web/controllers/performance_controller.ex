@@ -23,7 +23,7 @@ defmodule RunosaariWeb.PerformanceController do
     case Schedule.create_performance(performance_params) do
       {:ok, performance} ->
         conn
-        |> put_flash(:info, "Performance created successfully.")
+        |> put_flash(:info, "Näytös luotu.")
         |> redirect(to: Routes.performance_path(conn, :show, performance))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -48,7 +48,7 @@ defmodule RunosaariWeb.PerformanceController do
     case Schedule.update_performance(performance, performance_params) do
       {:ok, performance} ->
         conn
-        |> put_flash(:info, "Performance updated successfully.")
+        |> put_flash(:info, "Näytös päivitetty.")
         |> redirect(to: Routes.performance_path(conn, :show, performance))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -61,7 +61,7 @@ defmodule RunosaariWeb.PerformanceController do
     {:ok, _performance} = Schedule.delete_performance(performance)
 
     conn
-    |> put_flash(:info, "Performance deleted successfully.")
+    |> put_flash(:info, "Näytös poistettu.")
     |> redirect(to: Routes.admin_performance_path(conn, :admin))
   end
 end
