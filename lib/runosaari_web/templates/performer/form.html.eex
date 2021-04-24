@@ -25,30 +25,33 @@
   <%= textarea form, :desc %>
   <%= error_tag form, :desc %>
 
-  <%= label form, :confirmed, "Vahvistettu" %>
-  <%= checkbox form, :confirmed %>
-  <%= error_tag form, :confirmed %>
-
   <h2>Ilmoita alustava kiinnostuksesi tässä</h2>
-  <%= label form, :date1, "Torstai 22.7" %>
-  <%= checkbox form, :date1 %>
-  <%= error_tag form, :date1 %>
 
-  <%= label form, :date2, "Perjantai 23.7." %>
-  <%= checkbox form, :date2 %>
-  <%= error_tag form, :date2 %>
-
-  <%= label form, :date3, "Lauantai 24.7." %>
-  <%= checkbox form, :date3 %>
-  <%= error_tag form, :date3 %>
-
-  <%= label form, :bus, "Olen kiinnostunut bussikuljetuksesta" %>
-  <%= checkbox form, :bus %>
-  <%= error_tag form, :bus %>
-
-  <%= label form, :accom, "Olen kiinnostunut majoituksesta" %>
-  <%= checkbox form, :accom %>
-  <%= error_tag form, :accom %>
+  <div class="checkbox-container">
+    <%= checkbox form, :date1 %>
+    <%= label form, :date1, "Torstai 22.7" %>
+    <%= error_tag form, :date1 %>
+  </div>
+  <div class="checkbox-container">
+    <%= checkbox form, :date2 %>
+    <%= label form, :date2, "Perjantai 23.7." %>
+    <%= error_tag form, :date2 %>
+  </div>
+  <div class="checkbox-container">
+    <%= checkbox form, :date3 %>
+    <%= label form, :date3, "Lauantai 24.7." %>
+    <%= error_tag form, :date3 %>
+  </div>
+  <div class="checkbox-container">
+    <%= checkbox form, :bus %>
+    <%= label form, :bus, "Olen kiinnostunut bussikuljetuksesta" %>
+    <%= error_tag form, :bus %>
+  </div>
+  <div class="checkbox-container">
+    <%= checkbox form, :accom %>
+    <%= label form, :accom, "Olen kiinnostunut majoituksesta" %>
+    <%= error_tag form, :accom %>
+  </div>
 
   <div>
     <%= submit "Lähetä" %>
