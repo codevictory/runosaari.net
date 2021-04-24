@@ -5,17 +5,9 @@
     </div>
   <% end %>
 
-  <%= label f, :time %>
-  <%= datetime_select f, :time %>
-  <%= error_tag f, :time %>
-
-  <%= label f, :performer_id %>
-  <%= multiple_select f, :performer_id, Runosaari.Registration.list_performers |> Enum.map(fn perf -> {perf.fname <> " " <> perf.lname, perf.id} end) %>
-  <%= error_tag f, :performer_id %>
-
-  <%= label f, :description %>
-  <%= text_input f, :description %>
-  <%= error_tag f, :description %>
+  <%= label f, :name %>
+  <%= text_input f, :name %>
+  <%= error_tag f, :name %>
 
   <%= label f, :desc %>
   <%= text_input f, :desc %>

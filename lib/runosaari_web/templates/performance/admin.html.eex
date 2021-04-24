@@ -3,9 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Time</th>
-      <th>Description</th>
-      <th>Notes</th>
+      <th>Nimi</th>
+      <th>Seloste</th>
 
       <th></th>
     </tr>
@@ -13,9 +12,8 @@
   <tbody>
 <%= for performance <- @performances do %>
     <tr>
-      <td><%= performance.time %></td>
-      <td><%= performance.description %></td>
-      <td><%= performance.notes %></td>
+      <td><%= performance.name %></td>
+      <td><%= performance.desc %></td>
 
       <td>
         <span><%= link "Show", to: Routes.performance_path(@conn, :show, performance) %></span>

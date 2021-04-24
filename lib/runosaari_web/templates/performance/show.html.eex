@@ -4,17 +4,12 @@
 
   <li>
     <strong>Time:</strong>
-    <%= @performance.time %>
+    <%= @performance.name %>
   </li>
 
   <li>
     <strong>Description:</strong>
-    <%= @performance.description %>
-  </li>
-
-  <li>
-    <strong>Notes:</strong>
-    <%= @performance.notes %>
+    <%= @performance.desc %>
   </li>
 
 </ul>

@@ -3,10 +3,8 @@ defmodule Runosaari.Schedule.Performance do
   import Ecto.Changeset
 
   schema "performances" do
-    field :description, :string
-    field :notes, :string
-    field :time, :naive_datetime
-    field :performer_id, :id
+    field :name, :string
+    field :desc, :string
 
     timestamps()
   end
@@ -14,7 +12,7 @@ defmodule Runosaari.Schedule.Performance do
   @doc false
   def changeset(performance, attrs) do
     performance
-    |> cast(attrs, [:time, :description, :notes])
-    |> validate_required([:time, :description, :notes])
+    |> cast(attrs, [:name, :desc])
+    |> validate_required([:name, :desc])
   end
 end
