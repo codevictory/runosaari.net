@@ -1,4 +1,4 @@
-<h1>Edit Performer</h1>
+<h1>Muokkaa esiintyjän tietoja</h1>
 
 <%= render "form.html", Map.put(assigns, :action, Routes.admin_performer_path(@conn, :update, @performer)) %>
 

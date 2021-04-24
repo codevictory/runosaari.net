@@ -8,19 +8,41 @@ defmodule RunosaariWeb.PerformerControllerTest do
     email: "some email",
     fname: "some fname",
     lname: "some lname",
-    notes: "some notes",
-    tel: "some tel"
+    tel: "some tel",
+    desc: "some desc",
+    date1: true,
+    date2: true,
+    date3: true,
+    bus: true,
+    accom: true
   }
   @update_attrs %{
     confirmed: false,
     email: "some updated email",
     fname: "some updated fname",
     lname: "some updated lname",
-    notes: "some updated notes",
-    tel: "some updated tel"
+    tel: "some updated tel",
+    desc: "some updated desc",
+    date1: true,
+    date2: true,
+    date3: true,
+    bus: true,
+    accom: true
   }
-  @invalid_attrs %{confirmed: nil, email: nil, fname: nil, lname: nil, notes: nil, tel: nil}
 
+  @invalid_attrs %{
+    confirmed: nil,
+    email: nil,
+    fname: nil,
+    lname: nil,
+    tel: nil,
+    desc: nil,
+    date1: nil,
+    date2: nil,
+    date3: nil,
+    bus: nil,
+    accom: nil
+  }
   def fixture(:performer) do
     {:ok, performer} = Registration.create_performer(@create_attrs)
     performer
@@ -29,31 +51,31 @@ defmodule RunosaariWeb.PerformerControllerTest do
   describe "index" do
     test "lists all performers", %{conn: conn} do
       conn = get(conn, Routes.performer_path(conn, :index))
-      assert html_response(conn, 200) =~ "Listing Performers"
+      assert html_response(conn, 200) =~ "Esiintyjät"
     end
   end
 
   describe "new performer" do
     test "renders form", %{conn: conn} do
-      conn = get(conn, Routes.performer_path(conn, :new))
-      assert html_response(conn, 200) =~ "New Performer"
+      conn = get(conn, Routes.admin_performer_path(conn, :new))
+      assert html_response(conn, 200) =~ "Ilmoittaudu"
     end
   end
 
   describe "create performer" do
     test "redirects to show when data is valid", %{conn: conn} do
-      conn = post(conn, Routes.performer_path(conn, :create), performer: @create_attrs)
+      conn = post(conn, Routes.admin_performer_path(conn, :create), performer: @create_attrs)
 
       assert %{id: id} = redirected_params(conn)
       assert redirected_to(conn) == Routes.performer_path(conn, :show, id)
 
       conn = get(conn, Routes.performer_path(conn, :show, id))
-      assert html_response(conn, 200) =~ "Show Performer"
+      assert html_response(conn, 200) =~ "Esiintyjän tiedot"
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
-      conn = post(conn, Routes.performer_path(conn, :create), performer: @invalid_attrs)
-      assert html_response(conn, 200) =~ "New Performer"
+      conn = post(conn, Routes.admin_performer_path(conn, :create), performer: @invalid_attrs)
+      assert html_response(conn, 200) =~ "Ilmoittaudu"
     end
   end
 
@@ -61,8 +83,8 @@ defmodule RunosaariWeb.PerformerControllerTest do
     setup [:create_performer]
 
     test "renders form for editing chosen performer", %{conn: conn, performer: performer} do
-      conn = get(conn, Routes.performer_path(conn, :edit, performer))
-      assert html_response(conn, 200) =~ "Edit Performer"
+      conn = get(conn, Routes.admin_performer_path(conn, :edit, performer))
+      assert html_response(conn, 200) =~ "Muokkaa esiintyjän tietoja"
     end
   end
 
@@ -70,7 +92,9 @@ defmodule RunosaariWeb.PerformerControllerTest do
     setup [:create_performer]
 
     test "redirects when data is valid", %{conn: conn, performer: performer} do
-      conn = put(conn, Routes.performer_path(conn, :update, performer), performer: @update_attrs)
+      conn =
+        put(conn, Routes.admin_performer_path(conn, :update, performer), performer: @update_attrs)
+
       assert redirected_to(conn) == Routes.performer_path(conn, :show, performer)
 
       conn = get(conn, Routes.performer_path(conn, :show, performer))
@@ -78,8 +102,10 @@ defmodule RunosaariWeb.PerformerControllerTest do
     end
 
     test "renders errors when data is invalid", %{conn: conn, performer: performer} do
-      conn = put(conn, Routes.performer_path(conn, :update, performer), performer: @invalid_attrs)
-      assert html_response(conn, 200) =~ "Edit Performer"
+      conn =
+        put(conn, Routes.admin_performer_path(conn, :update, performer), performer: @invalid_attrs)
+
+      assert html_response(conn, 200) =~ "Muokkaa esiintyjän tietoja"
     end
   end
 
@@ -87,8 +113,8 @@ defmodule RunosaariWeb.PerformerControllerTest do
     setup [:create_performer]
 
     test "deletes chosen performer", %{conn: conn, performer: performer} do
-      conn = delete(conn, Routes.performer_path(conn, :delete, performer))
-      assert redirected_to(conn) == Routes.performer_path(conn, :index)
+      conn = delete(conn, Routes.admin_performer_path(conn, :delete, performer))
+      assert redirected_to(conn) == Routes.admin_performer_path(conn, :admin)
 
       assert_error_sent 404, fn ->
         get(conn, Routes.performer_path(conn, :show, performer))

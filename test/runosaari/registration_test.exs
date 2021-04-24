@@ -11,18 +11,40 @@ defmodule Runosaari.RegistrationTest do
       email: "some email",
       fname: "some fname",
       lname: "some lname",
-      notes: "some notes",
-      tel: "some tel"
+      tel: "some tel",
+      desc: "some desc",
+      date1: true,
+      date2: true,
+      date3: true,
+      bus: true,
+      accom: true
     }
     @update_attrs %{
       confirmed: false,
       email: "some updated email",
       fname: "some updated fname",
       lname: "some updated lname",
-      notes: "some updated notes",
-      tel: "some updated tel"
+      tel: "some updated tel",
+      desc: "some updated desc",
+      date1: true,
+      date2: true,
+      date3: true,
+      bus: true,
+      accom: true
     }
-    @invalid_attrs %{confirmed: nil, email: nil, fname: nil, lname: nil, notes: nil, tel: nil}
+    @invalid_attrs %{
+      confirmed: nil,
+      email: nil,
+      fname: nil,
+      lname: nil,
+      tel: nil,
+      desc: nil,
+      date1: nil,
+      date2: nil,
+      date3: nil,
+      bus: nil,
+      accom: nil
+    }
 
     def performer_fixture(attrs \\ %{}) do
       {:ok, performer} =
@@ -49,8 +71,13 @@ defmodule Runosaari.RegistrationTest do
       assert performer.email == "some email"
       assert performer.fname == "some fname"
       assert performer.lname == "some lname"
-      assert performer.notes == "some notes"
       assert performer.tel == "some tel"
+      assert performer.desc == "some desc"
+      assert performer.date1 == true
+      assert performer.date2 == true
+      assert performer.date3 == true
+      assert performer.bus == true
+      assert performer.accom == true
     end
 
     test "create_performer/1 with invalid data returns error changeset" do
@@ -67,8 +94,13 @@ defmodule Runosaari.RegistrationTest do
       assert performer.email == "some updated email"
       assert performer.fname == "some updated fname"
       assert performer.lname == "some updated lname"
-      assert performer.notes == "some updated notes"
       assert performer.tel == "some updated tel"
+      assert performer.desc == "some updated desc"
+      assert performer.date1 == true
+      assert performer.date2 == true
+      assert performer.date3 == true
+      assert performer.bus == true
+      assert performer.accom == true
     end
 
     test "update_performer/2 with invalid data returns error changeset" do
