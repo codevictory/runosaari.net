@@ -1,29 +1,12 @@
-<h1>Listing Performers</h1>
+<h1>Esiintyjät</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Fname</th>
-      <th>Lname</th>
-      <th>Email</th>
-      <th>Tel</th>
-      <th>Confirmed</th>
-      <th>Notes</th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
 <%= for performer <- @performers do %>
-    <tr>
-      <td><%= performer.fname %></td>
-      <td><%= performer.lname %></td>
-      <td><%= performer.email %></td>
-      <td><%= performer.tel %></td>
-      <td><%= performer.confirmed %></td>
-      <td><%= performer.notes %></td>
-    </tr>
+  <%= if performer.confirmed == true do %>
+    <article>
+          <h2><%= performer.fname %> <%= performer.lname %></h2>
+          <p><%= performer.notes %></p>
+    </article>
+  <% end %>
 <% end %>
-  </tbody>
-</table>
+
 <%= link "Hallinta", to: Routes.admin_performer_path(@conn, :admin) %>

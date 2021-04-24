@@ -3,12 +3,12 @@
 <table>
   <thead>
     <tr>
-      <th>Fname</th>
-      <th>Lname</th>
-      <th>Email</th>
-      <th>Tel</th>
-      <th>Confirmed</th>
-      <th>Notes</th>
+      <th>Etunimi</th>
+      <th>Sukunimi</th>
+      <th>Sähköposti</th>
+      <th>Puhelin numero</th>
+      <th>Vahvistettu</th>
+      <th>Seloste</th>
 
       <th></th>
     </tr>
@@ -24,13 +24,13 @@
       <td><%= performer.notes %></td>
 
       <td>
-        <span><%= link "Show", to: Routes.performer_path(@conn, :show, performer) %></span>
-        <span><%= link "Edit", to: Routes.admin_performer_path(@conn, :edit, performer) %></span>
-        <span><%= link "Delete", to: Routes.admin_performer_path(@conn, :delete, performer), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        <span><%= link "Näytä", to: Routes.performer_path(@conn, :show, performer) %></span>
+        <span><%= link "Muokkaa", to: Routes.admin_performer_path(@conn, :edit, performer) %></span>
+        <span><%= link "Poista", to: Routes.admin_performer_path(@conn, :delete, performer), method: :delete, data: [confirm: "Are you sure?"] %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Performance", to: Routes.admin_performance_path(@conn, :new) %></span>
+<span><%= link "Uusi esiintyjä", to: Routes.admin_performer_path(@conn, :new) %></span>
