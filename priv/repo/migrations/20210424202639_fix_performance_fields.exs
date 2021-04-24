@@ -6,7 +6,7 @@ defmodule Runosaari.Repo.Migrations.FixPerformanceFields do
       remove :notes
       remove :time
       remove :description
-      add :description, :string, size: 2000
+      add :desc, :string, size: 2000
       add :name, :string
     end
   end
