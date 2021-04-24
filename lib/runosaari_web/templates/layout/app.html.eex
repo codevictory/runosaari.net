@@ -16,8 +16,8 @@
     <header >
         <nav class="nav" role="navigation">
           <%= link "Etusivu", to: Routes.page_path(@conn, :index) %>
-          <%= link "Esiintyjät", to: Routes.performer_path(@conn, :index) %>
           <%= link "Ohjelma", to: Routes.performance_path(@conn, :index) %>
+          <%= link "Esiintyjät", to: Routes.performer_path(@conn, :index) %>
           <%= link "Info", to: Routes.page_path(@conn, :info) %>
           <%= link "Covid-19", to: Routes.page_path(@conn, :covid19) %>
           <%= link "Ilmoittautuminen", to: Routes.admin_performer_path(@conn, :new) %>

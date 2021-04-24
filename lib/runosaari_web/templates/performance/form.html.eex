@@ -9,10 +9,6 @@
   <%= datetime_select f, :time %>
   <%= error_tag f, :time %>
 
-  <%= label f, :location_id %>
-  <%= select f, :location_id, Runosaari.Area.list_locations |> Enum.map(fn loc -> {loc.name, loc.id} end)%>
-  <%= error_tag f, :location_id %>
-
   <%= label f, :performer_id %>
   <%= multiple_select f, :performer_id, Runosaari.Registration.list_performers |> Enum.map(fn perf -> {perf.fname <> " " <> perf.lname, perf.id} end) %>
   <%= error_tag f, :performer_id %>

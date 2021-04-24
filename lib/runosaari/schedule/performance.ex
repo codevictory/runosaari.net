@@ -6,7 +6,6 @@ defmodule Runosaari.Schedule.Performance do
     field :description, :string
     field :notes, :string
     field :time, :naive_datetime
-    field :location_id, :id
     field :performer_id, :id
 
     timestamps()
