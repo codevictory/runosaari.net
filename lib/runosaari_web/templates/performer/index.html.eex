@@ -4,7 +4,7 @@
   <%= if performer.confirmed == true do %>
     <article>
           <h2><%= performer.fname %> <%= performer.lname %></h2>
-          <p><%= performer.notes %></p>
+          <p><%= performer.desc %></p>
     </article>
   <% end %>
 <% end %>

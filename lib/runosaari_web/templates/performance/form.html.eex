@@ -21,9 +21,9 @@
   <%= text_input f, :description %>
   <%= error_tag f, :description %>
 
-  <%= label f, :notes %>
-  <%= text_input f, :notes %>
-  <%= error_tag f, :notes %>
+  <%= label f, :desc %>
+  <%= text_input f, :desc %>
+  <%= error_tag f, :desc %>
 
   <div>
     <%= submit "Save" %>

@@ -21,13 +21,34 @@
   <%= text_input form, :tel %>
   <%= error_tag form, :tel %>
 
-  <%= label form, :notes, "Huomiot" %>
-  <%= textarea form, :notes %>
-  <%= error_tag form, :notes %>
+  <%= label form, :desc, "Huomiot" %>
+  <%= textarea form, :desc %>
+  <%= error_tag form, :desc %>
 
-  <%= label form, :confirmed, "Vahvitettu" %>
+  <%= label form, :confirmed, "Vahvistettu" %>
   <%= checkbox form, :confirmed %>
   <%= error_tag form, :confirmed %>
+
+  <h2>Ilmoita alustava kiinnostuksesi tässä</h2>
+  <%= label form, :date1, "Torstai 22.7" %>
+  <%= checkbox form, :date1 %>
+  <%= error_tag form, :date1 %>
+
+  <%= label form, :date2, "Perjantai 23.7." %>
+  <%= checkbox form, :date2 %>
+  <%= error_tag form, :date2 %>
+
+  <%= label form, :date3, "Lauantai 24.7." %>
+  <%= checkbox form, :date3 %>
+  <%= error_tag form, :date3 %>
+
+  <%= label form, :bus, "olen kiinnostunut bussikuljetuksesta" %>
+  <%= checkbox form, :bus %>
+  <%= error_tag form, :bus %>
+
+  <%= label form, :accom, "olen kiinnostunut majoituksesta" %>
+  <%= checkbox form, :accom %>
+  <%= error_tag form, :accom %>
 
   <div>
     <%= submit "Lähetä" %>

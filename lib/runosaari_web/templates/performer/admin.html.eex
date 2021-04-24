@@ -21,7 +21,7 @@
       <td><%= performer.email %></td>
       <td><%= performer.tel %></td>
       <td><%= performer.confirmed %></td>
-      <td><%= performer.notes %></td>
+      <td><%= performer.desc %></td>
 
       <td>
         <span><%= link "Näytä", to: Routes.performer_path(@conn, :show, performer) %></span>
