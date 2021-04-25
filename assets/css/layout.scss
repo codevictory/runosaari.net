@@ -11,6 +11,10 @@ body {
 }
 
 header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   nav {
     display: flex;
     justify-content: center;
@@ -24,6 +28,56 @@ header {
     a:hover {
       background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #d5caf2);
       text-decoration: underline;
+    }
+
+    @media screen and (max-width: 600px) {
+      a {
+        width: 100%;
+        padding: 0px;
+        text-align: center;
+        text-decoration: underline;
+        font-size: 1.5rem;
+        margin-bottom: 4px;
+      }
+    }
+
+    &.mobile-main-nav-bar {
+      visibility: hidden;
+      height: 0px;
+    }
+
+    @media screen and (max-width: 600px) {
+      &.mobile-main-nav-bar {
+        height: auto;
+        display: flex;
+        visibility: visible;
+        flex-direction: column;
+        align-items: center;
+        background-color: #d5caf2;
+        width: 80%;
+        margin-bottom: 30px;
+      }
+
+      &.main-nav-bar {
+        visibility: hidden;
+        height: 0px;
+      }
+    }
+  }
+
+  .mobile-main-title {
+    visibility: hidden;
+    height: 0px;
+    margin: 0px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .mobile-main-title {
+      visibility: visible !important;
+      height: 100% !important;
+      margin-top: 30px !important;
+      margin-bottom: 30px !important;
+      text-align: center;
     }
   }
 }

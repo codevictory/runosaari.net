@@ -22,6 +22,22 @@
           <%= link "Covid-19", to: Routes.page_path(@conn, :covid19) %>
           <%= link "Ilmoittautuminen", to: Routes.admin_performer_path(@conn, :new) %>
         </nav>
+        <h1 class="mobile-main-title">
+          <a href="/#logo-container">Runosaari 2021</a>
+        </h1>
+        <nav class="mobile-main-nav-bar" id="nav-bar">
+          <a href="/#logo-container">Etusivu</a>
+          <a href="calendar.html#calendar-container"
+            >Ohjelma</a
+          >
+          <a href="performers.html#performers-container"
+            >Esiintyjät</a
+          >
+          <a href="contact.html#contact-container">Info</a>
+          <a href="covid19.html#covid-container"
+            >Covid-19</a
+          >
+        </nav>
     </header>
     <main role="main">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
