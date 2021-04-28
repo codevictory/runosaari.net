@@ -22,6 +22,19 @@ defmodule Runosaari.Schedule do
   end
 
   @doc """
+  Returns the list of performances sorted by seqnum.
+
+  ## Examples
+
+      iex> list_sorted_performances()
+      [%Performance{}, ...]
+
+  """
+  def list_sorted_performances do
+    Repo.all(Performance |> order_by(:seqnum))
+  end
+
+  @doc """
   Gets a single performance.
 
   Raises `Ecto.NoResultsError` if the Performance does not exist.

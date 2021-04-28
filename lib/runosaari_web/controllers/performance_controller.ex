@@ -5,7 +5,7 @@ defmodule RunosaariWeb.PerformanceController do
   alias Runosaari.Schedule.Performance
 
   def index(conn, _params) do
-    performances = Schedule.list_performances()
+    performances = Schedule.list_sorted_performances()
     render(conn, "index.html", performances: performances)
   end
 

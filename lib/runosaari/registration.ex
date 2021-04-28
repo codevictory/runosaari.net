@@ -22,6 +22,19 @@ defmodule Runosaari.Registration do
   end
 
   @doc """
+  Returns the list of performers.
+
+  ## Examples
+
+      iex> list_performers()
+      [%Performer{}, ...]
+
+  """
+  def list_sorted_performers do
+    Repo.all(Performer |> order_by(:seqnum))
+  end
+
+  @doc """
   Gets a single performer.
 
   Raises `Ecto.NoResultsError` if the Performer does not exist.
