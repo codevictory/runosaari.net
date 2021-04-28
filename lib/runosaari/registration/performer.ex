@@ -14,6 +14,7 @@ defmodule Runosaari.Registration.Performer do
     field :date3, :boolean, default: false
     field :bus, :boolean, default: false
     field :accom, :boolean, default: false
+    field :seqnum, :integer
 
     timestamps()
   end
@@ -32,7 +33,8 @@ defmodule Runosaari.Registration.Performer do
       :date2,
       :date3,
       :bus,
-      :accom
+      :accom,
+      :seqnum
     ])
     |> validate_required([
       :fname,
@@ -45,7 +47,8 @@ defmodule Runosaari.Registration.Performer do
       :date2,
       :date3,
       :bus,
-      :accom
+      :accom,
+      :seqnum
     ])
     |> unique_constraint(:email)
   end
