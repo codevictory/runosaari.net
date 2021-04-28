@@ -2,6 +2,7 @@ body {
   font-family: 'Crimson Text', sans-serif;
   color: #2f273e;
   font-size: 1.1rem;
+  margin: 0px;
 }
 
 @media screen and (max-width: 600px) {
@@ -109,6 +110,11 @@ footer {
 
     .right {
       text-align: right;
+
+      .email-link {
+        color: blue;
+        text-decoration: underline;
+      }
     }
   }
 
