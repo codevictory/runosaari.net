@@ -1,4 +1,4 @@
-<h1>Esiintyjät</h1>
+<h1 id="performers-start">Esiintyjät</h1>
 
 <%= for performer <- @performers do %>
   <%= if performer.confirmed == true do %>

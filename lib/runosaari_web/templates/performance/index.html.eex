@@ -1,4 +1,4 @@
-<h1>Ohjelma</h1>
+<h1 id="calendar-start">Ohjelma</h1>
 
 <%= for performance <- @performances do %>
     <article>

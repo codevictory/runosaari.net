@@ -1,6 +1,15 @@
 
-<section class="logo">
+<section class="logo" id="logo-start">
+  <picture>
+    <source
+      srcset="<%= Routes.static_path(@conn, "/images/runosaari-logo_small.jpg") %>"
+      media="(max-width: 600px)"
+      alt="Runosaari logo"
+    />
+    <source srcset="<%= Routes.static_path(@conn, "/images/runosaari-logo.jpg") %>" alt="Runosaari logo" />
     <img src="<%= Routes.static_path(@conn, "/images/runosaari-logo.jpg") %>" alt="Runosaari logo" />
+  </picture>
+  <div id="logo-credits"><div>@Sanna Hukkanen</div></div>
 </section>
 
 <section class="text">

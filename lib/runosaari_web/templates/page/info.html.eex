@@ -1,4 +1,4 @@
-<h1>Info</h1>
+<h1 id="contact-start">Info</h1>
 <i>[Tietoja päivitetään]</i>
 <p>
     Tapahtuman järjestää Saariston Savotta ry:n Runosaari-työryhmä.<br />
@@ -18,9 +18,7 @@
 </p>
 <p>
     <b><i>Ota yhteyttä:</i></b> Inkeri Aula & Katariina Vuorinen,
-    <a class="email-link" href="mailto:info@runosaari.net"
-    >info@runosaari.net</a
-    >
+    <a class="email-link" href="mailto:info@runosaari.net">info@runosaari.net</a>
 </p>
 <h2><i>[TULOSSA]</i> <br />SURVIVAL-ohjeet saariston syrjäseudulle</h2>
 <ul>
