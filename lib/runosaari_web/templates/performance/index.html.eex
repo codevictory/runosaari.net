@@ -1,9 +1,8 @@
 <h1 id="calendar-start">Ohjelma</h1>
-
+<section class=text>
 <%= for performance <- @performances do %>
-    <article>
-      <h2><%= performance.name %></h2>
-      <p><%= performance.desc %></p>
-    </article>
+  <h2><%= performance.name %></h2>
+  <p><%= performance.desc %></p>
 <% end %>
+</section>
 <span><%= link "Hallinta", to: Routes.admin_performance_path(@conn, :admin) %></span>

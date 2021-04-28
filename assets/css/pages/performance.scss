@@ -1,0 +1,14 @@
+section.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 1000px;
+  background-image: linear-gradient(to top, rgba(255, 0, 0, 0), #d5caf2);
+  text-align: center;
+
+  p {
+    padding: 0px 20px;
+    max-width: 56%;
+  }
+}
