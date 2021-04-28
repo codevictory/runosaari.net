@@ -21,7 +21,7 @@ defmodule RunosaariWeb.PerformerController do
 
   def create(conn, %{"performer" => performer_params}) do
     case Registration.create_performer(performer_params) do
-      {:ok, performer} ->
+      {:ok, _performer} ->
         conn
         |> put_flash(
           :info,
