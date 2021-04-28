@@ -3,11 +3,11 @@ defmodule Runosaari.Repo.Migrations.AddSequenceNumber do
 
   def change do
     alter table("performances") do
-      add :sequence_number, :integer
+      add :seqnum, :integer
     end
 
     alter table("performers") do
-      add :sequence_number, :integer
+      add :seqnum, :integer
     end
   end
 end
