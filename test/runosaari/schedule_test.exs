@@ -6,9 +6,19 @@ defmodule Runosaari.ScheduleTest do
   describe "performances" do
     alias Runosaari.Schedule.Performance
 
-    @valid_attrs %{description: "some description", notes: "some notes", time: ~N[2010-04-17 14:00:00]}
-    @update_attrs %{description: "some updated description", notes: "some updated notes", time: ~N[2011-05-18 15:01:01]}
-    @invalid_attrs %{description: nil, notes: nil, time: nil}
+    @valid_attrs %{
+      description: "some description",
+      notes: "some notes",
+      time: ~N[2010-04-17 14:00:00],
+      seqnum: 1
+    }
+    @update_attrs %{
+      description: "some updated description",
+      notes: "some updated notes",
+      time: ~N[2011-05-18 15:01:01],
+      seqnum: 2
+    }
+    @invalid_attrs %{description: nil, notes: nil, time: nil, seqnum: nil}
 
     def performance_fixture(attrs \\ %{}) do
       {:ok, performance} =
@@ -34,6 +44,7 @@ defmodule Runosaari.ScheduleTest do
       assert performance.description == "some description"
       assert performance.notes == "some notes"
       assert performance.time == ~N[2010-04-17 14:00:00]
+      assert performance.seqnum == 1
     end
 
     test "create_performance/1 with invalid data returns error changeset" do
@@ -42,15 +53,22 @@ defmodule Runosaari.ScheduleTest do
 
     test "update_performance/2 with valid data updates the performance" do
       performance = performance_fixture()
-      assert {:ok, %Performance{} = performance} = Schedule.update_performance(performance, @update_attrs)
+
+      assert {:ok, %Performance{} = performance} =
+               Schedule.update_performance(performance, @update_attrs)
+
       assert performance.description == "some updated description"
       assert performance.notes == "some updated notes"
       assert performance.time == ~N[2011-05-18 15:01:01]
+      assert performance.seqnum == 2
     end
 
     test "update_performance/2 with invalid data returns error changeset" do
       performance = performance_fixture()
-      assert {:error, %Ecto.Changeset{}} = Schedule.update_performance(performance, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               Schedule.update_performance(performance, @invalid_attrs)
+
       assert performance == Schedule.get_performance!(performance.id)
     end
 

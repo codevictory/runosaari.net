@@ -14,7 +14,8 @@ defmodule RunosaariWeb.PerformerControllerTest do
     date2: true,
     date3: true,
     bus: true,
-    accom: true
+    accom: true,
+    seqnum: 1
   }
   @update_attrs %{
     confirmed: false,
@@ -27,7 +28,8 @@ defmodule RunosaariWeb.PerformerControllerTest do
     date2: true,
     date3: true,
     bus: true,
-    accom: true
+    accom: true,
+    seqnum: 2
   }
 
   @invalid_attrs %{
@@ -41,7 +43,8 @@ defmodule RunosaariWeb.PerformerControllerTest do
     date2: nil,
     date3: nil,
     bus: nil,
-    accom: nil
+    accom: nil,
+    seqnum: nil
   }
   def fixture(:performer) do
     {:ok, performer} = Registration.create_performer(@create_attrs)

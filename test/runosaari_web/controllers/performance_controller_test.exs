@@ -6,14 +6,16 @@ defmodule RunosaariWeb.PerformanceControllerTest do
   @create_attrs %{
     description: "some description",
     notes: "some notes",
-    time: ~N[2010-04-17 14:00:00]
+    time: ~N[2010-04-17 14:00:00],
+    seqnum: 1
   }
   @update_attrs %{
     description: "some updated description",
     notes: "some updated notes",
-    time: ~N[2011-05-18 15:01:01]
+    time: ~N[2011-05-18 15:01:01],
+    seqnum: 2
   }
-  @invalid_attrs %{description: nil, notes: nil, time: nil}
+  @invalid_attrs %{description: nil, notes: nil, time: nil, seqnum: nil}
 
   def fixture(:performance) do
     {:ok, performance} = Schedule.create_performance(@create_attrs)
@@ -23,14 +25,14 @@ defmodule RunosaariWeb.PerformanceControllerTest do
   describe "index" do
     test "lists all performances", %{conn: conn} do
       conn = get(conn, Routes.performance_path(conn, :index))
-      assert html_response(conn, 200) =~ "Listing Performances"
+      assert html_response(conn, 200) =~ "Ohjelma"
     end
   end
 
   describe "new performance" do
     test "renders form", %{conn: conn} do
       conn = get(conn, Routes.admin_performance_path(conn, :new))
-      assert html_response(conn, 200) =~ "New Performance"
+      assert html_response(conn, 200) =~ "Luo näytös"
     end
   end
 
@@ -42,12 +44,12 @@ defmodule RunosaariWeb.PerformanceControllerTest do
       assert redirected_to(conn) == Routes.performance_path(conn, :show, id)
 
       conn = get(conn, Routes.performance_path(conn, :show, id))
-      assert html_response(conn, 200) =~ "Show Performance"
+      assert html_response(conn, 200) =~ "Näytös"
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post(conn, Routes.admin_performance_path(conn, :create), performance: @invalid_attrs)
-      assert html_response(conn, 200) =~ "New Performance"
+      assert html_response(conn, 200) =~ "Luo näytös"
     end
   end
 
@@ -56,7 +58,7 @@ defmodule RunosaariWeb.PerformanceControllerTest do
 
     test "renders form for editing chosen performance", %{conn: conn, performance: performance} do
       conn = get(conn, Routes.admin_performance_path(conn, :edit, performance))
-      assert html_response(conn, 200) =~ "Edit Performance"
+      assert html_response(conn, 200) =~ "Muokkaa näytöstä"
     end
   end
 
@@ -81,7 +83,7 @@ defmodule RunosaariWeb.PerformanceControllerTest do
           performance: @invalid_attrs
         )
 
-      assert html_response(conn, 200) =~ "Edit Performance"
+      assert html_response(conn, 200) =~ "Muokkaa näytöstä"
     end
   end
 

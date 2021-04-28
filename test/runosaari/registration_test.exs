@@ -17,7 +17,8 @@ defmodule Runosaari.RegistrationTest do
       date2: true,
       date3: true,
       bus: true,
-      accom: true
+      accom: true,
+      seqnum: 1
     }
     @update_attrs %{
       confirmed: false,
@@ -30,7 +31,8 @@ defmodule Runosaari.RegistrationTest do
       date2: true,
       date3: true,
       bus: true,
-      accom: true
+      accom: true,
+      seqnum: 2
     }
     @invalid_attrs %{
       confirmed: nil,
@@ -43,7 +45,8 @@ defmodule Runosaari.RegistrationTest do
       date2: nil,
       date3: nil,
       bus: nil,
-      accom: nil
+      accom: nil,
+      seqnum: nil
     }
 
     def performer_fixture(attrs \\ %{}) do
@@ -78,6 +81,7 @@ defmodule Runosaari.RegistrationTest do
       assert performer.date3 == true
       assert performer.bus == true
       assert performer.accom == true
+      assert performer.seqnum == 1
     end
 
     test "create_performer/1 with invalid data returns error changeset" do
@@ -101,6 +105,7 @@ defmodule Runosaari.RegistrationTest do
       assert performer.date3 == true
       assert performer.bus == true
       assert performer.accom == true
+      assert performer.seqnum == 2
     end
 
     test "update_performer/2 with invalid data returns error changeset" do
