@@ -5,6 +5,14 @@
     </div>
   <% end %>
 
+  <div class="confirmed-input">
+    <%= if @action != "/admin/performers" do %>
+      <%= checkbox form, :confirmed %>
+      <%= label form, :confirmed, "Hyväksytty #{@changeset.action}" %>
+      <%= error_tag form, :confirmed %>
+    <% end %>
+  </div>
+
   <%= label form, :fname, "Etunimi (julkistetaan nettisivuilla kun ilmoittautumisesi on hyväksytty)" %>
   <%= text_input form, :fname %>
   <%= error_tag form, :fname %>

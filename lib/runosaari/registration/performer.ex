@@ -14,7 +14,7 @@ defmodule Runosaari.Registration.Performer do
     field :date3, :boolean, default: false
     field :bus, :boolean, default: false
     field :accom, :boolean, default: false
-    field :seqnum, :integer
+    field :seqnum, :integer, default: 999
 
     timestamps()
   end
