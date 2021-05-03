@@ -1,5 +1,9 @@
 # Runosaari
 
+Website with admin capabilities for a festival event.
+
+## Quick start
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
