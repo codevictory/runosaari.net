@@ -1,8 +1,16 @@
 <section class=text>
-<h1 id="calendar-start">Ohjelma</h1>
-<%= for performance <- @performances do %>
-  <h2><%= performance.name %></h2>
-  <p><%= performance.desc %></p>
-<% end %>
-<span><%= link "Hallinta", to: Routes.admin_performance_path(@conn, :admin) %></span>
+  <h1 id="calendar-start">Ohjelma</h1>
+  <i>[Tietoja päivitetään]</i>
+  <%= for performance <- @performances do %>
+    <h2><%= performance.name %></h2>
+    <p><%= performance.desc %></p>
+  <% end %>
+  <h2>Työpajat</h2>
+  <p id="workshops">
+    <b>Jaana Kouri:</b> Shamanistinen kirjoitustyöpaja <br class="workshops-br">
+    <b>Hanna Toivonen:</b> Nuorten sanataidetyöpaja <br class="workshops-br">
+    <b>Donna Claudia:</b> Karjalainen löylytys <br class="workshops-br">
+    <b>Selma Kilpi:</b> Runolaulupiiri <br class="workshops-br"> <br>
+    <i>Näihin avataan ennakkoilmoittautuminen hyvissä ajoin.</i>
+  </p>
 </section>
