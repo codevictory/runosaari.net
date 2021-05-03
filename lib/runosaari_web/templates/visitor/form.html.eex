@@ -1,47 +1,55 @@
-<%= form_for @changeset, @action, fn f -> %>
+<%= form_for @changeset, @action, fn form -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+      <p>Jokin kentistä on tyhjä.</p>
     </div>
   <% end %>
 
-  <%= label f, :fname %>
-  <%= text_input f, :fname %>
-  <%= error_tag f, :fname %>
+  <%= label form, :fname, "Etunimi" %>
+  <%= text_input form, :fname %>
+  <%= error_tag form, :fname %>
 
-  <%= label f, :lname %>
-  <%= text_input f, :lname %>
-  <%= error_tag f, :lname %>
+  <%= label form, :lname, "Sukunimi" %>
+  <%= text_input form, :lname %>
+  <%= error_tag form, :lname %>
 
-  <%= label f, :email %>
-  <%= text_input f, :email %>
-  <%= error_tag f, :email %>
+  <%= label form, :email, "Sähköposti" %>
+  <%= email_input form, :email %>
+  <%= error_tag form, :email %>
 
-  <%= label f, :tel %>
-  <%= text_input f, :tel %>
-  <%= error_tag f, :tel %>
+  <%= label form, :tel, "Puhelinumero" %>
+  <%= text_input form, :tel %>
+  <%= error_tag form, :tel %>
 
-  <%= label f, :date1 %>
-  <%= checkbox f, :date1 %>
-  <%= error_tag f, :date1 %>
+  <h2>Ilmoita alustava kiinnostuksesi tässä</h2>
 
-  <%= label f, :date2 %>
-  <%= checkbox f, :date2 %>
-  <%= error_tag f, :date2 %>
-
-  <%= label f, :date3 %>
-  <%= checkbox f, :date3 %>
-  <%= error_tag f, :date3 %>
-
-  <%= label f, :bus %>
-  <%= checkbox f, :bus %>
-  <%= error_tag f, :bus %>
-
-  <%= label f, :accom %>
-  <%= checkbox f, :accom %>
-  <%= error_tag f, :accom %>
+  <div class="checkbox-container">
+    <%= checkbox form, :date1 %>
+    <%= label form, :date1, "Torstai 22.7" %>
+    <%= error_tag form, :date1 %>
+  </div>
+  <div class="checkbox-container">
+    <%= checkbox form, :date2 %>
+    <%= label form, :date2, "Perjantai 23.7." %>
+    <%= error_tag form, :date2 %>
+  </div>
+  <div class="checkbox-container">
+    <%= checkbox form, :date3 %>
+    <%= label form, :date3, "Lauantai 24.7." %>
+    <%= error_tag form, :date3 %>
+  </div>
+  <div class="checkbox-container">
+    <%= checkbox form, :bus %>
+    <%= label form, :bus, "Olen kiinnostunut bussikuljetuksesta" %>
+    <%= error_tag form, :bus %>
+  </div>
+  <div class="checkbox-container">
+    <%= checkbox form, :accom %>
+    <%= label form, :accom, "Olen kiinnostunut majoituksesta" %>
+    <%= error_tag form, :accom %>
+  </div>
 
   <div>
-    <%= submit "Save" %>
+    <%= submit "Lähetä" %>
   </div>
 <% end %>

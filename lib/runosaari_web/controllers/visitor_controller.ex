@@ -18,8 +18,7 @@ defmodule RunosaariWeb.VisitorController do
     case Registration.create_visitor(visitor_params) do
       {:ok, visitor} ->
         conn
-        |> put_flash(:info, "Visitor created successfully.")
-        |> redirect(to: Routes.visitor_path(conn, :show, visitor))
+        |> redirect(to: Routes.visitor_path(conn, :confirmation))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -58,5 +57,9 @@ defmodule RunosaariWeb.VisitorController do
     conn
     |> put_flash(:info, "Visitor deleted successfully.")
     |> redirect(to: Routes.visitor_path(conn, :index))
+  end
+
+  def confirmation(conn, _params) do
+    render(conn, "confirmation.html")
   end
 end

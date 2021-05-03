@@ -20,7 +20,7 @@
         <%= link "Esiintyjät", to: Routes.performer_path(@conn, :index) %>
         <%= link "Info", to: Routes.page_path(@conn, :info) %>
         <%= link "Covid-19", to: Routes.page_path(@conn, :covid19) %>
-        <%= link "Ilmoittautuminen", to: Routes.admin_performer_path(@conn, :new) %>
+        <%= link "Ilmoittautuminen", to: Routes.visitor_path(@conn, :new) %>
       </nav>
       <h1 class="mobile-main-title">
         <a href="/#logo-container">Runosaari 2021</a>
@@ -31,7 +31,7 @@
         <%= link "Esiintyjät", to: "#{Routes.performer_path(@conn, :index)}#performers-start" %>
         <%= link "Info", to: "#{Routes.page_path(@conn, :info)}#contact-start" %>
         <%= link "Covid-19", to: "#{Routes.page_path(@conn, :covid19)}#covid-start" %>
-        <%= link "Ilmoittautuminen", to: "#{Routes.admin_performer_path(@conn, :new)}#registration-start" %>
+        <%= link "Ilmoittautuminen", to: "#{Routes.visitor_path(@conn, :new)}#registration-start" %>
       </nav>
     </header>
     <main role="main">

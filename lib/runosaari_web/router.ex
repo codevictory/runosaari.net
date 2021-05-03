@@ -21,6 +21,8 @@ defmodule RunosaariWeb.Router do
     get "/covid19", PageController, :covid19
     resources "/performers", PerformerController, only: [:index, :show]
     resources "/performances", PerformanceController, only: [:index, :show]
+    resources "/visitors", VisitorController, only: [:new, :create]
+    get "/confirmation", VisitorController, :confirmation
   end
 
   scope "/admin", RunosaariWeb, as: :admin do
@@ -30,6 +32,7 @@ defmodule RunosaariWeb.Router do
     get "/performances", PerformanceController, :admin
     resources "/performers", PerformerController, except: [:index, :show]
     resources "/performances", PerformanceController, except: [:index, :show]
+    resources "/visitors", VisitorController, except: [:new, :create]
   end
 
   # Other scopes may use custom stacks.
