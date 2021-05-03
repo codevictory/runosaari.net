@@ -1,0 +1,53 @@
+<h1>Show Visitor</h1>
+
+<ul>
+
+  <li>
+    <strong>Fname:</strong>
+    <%= @visitor.fname %>
+  </li>
+
+  <li>
+    <strong>Lname:</strong>
+    <%= @visitor.lname %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @visitor.email %>
+  </li>
+
+  <li>
+    <strong>Tel:</strong>
+    <%= @visitor.tel %>
+  </li>
+
+  <li>
+    <strong>Date1:</strong>
+    <%= @visitor.date1 %>
+  </li>
+
+  <li>
+    <strong>Date2:</strong>
+    <%= @visitor.date2 %>
+  </li>
+
+  <li>
+    <strong>Date3:</strong>
+    <%= @visitor.date3 %>
+  </li>
+
+  <li>
+    <strong>Bus:</strong>
+    <%= @visitor.bus %>
+  </li>
+
+  <li>
+    <strong>Accom:</strong>
+    <%= @visitor.accom %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.visitor_path(@conn, :edit, @visitor) %></span>
+<span><%= link "Back", to: Routes.visitor_path(@conn, :index) %></span>
