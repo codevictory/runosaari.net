@@ -131,6 +131,11 @@ footer {
     border-radius: 50%;
     border: solid 2px;
   }
+
+  .credits {
+    position: relative;
+    left: 16px;
+  }
 }
 
 @media screen and (max-width: 600px) {
