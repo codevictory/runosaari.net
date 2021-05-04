@@ -43,7 +43,7 @@ defmodule RunosaariWeb.VisitorController do
       {:ok, visitor} ->
         conn
         |> put_flash(:info, "Visitor updated successfully.")
-        |> redirect(to: Routes.visitor_path(conn, :show, visitor))
+        |> redirect(to: Routes.admin_visitor_path(conn, :show, visitor))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", visitor: visitor, changeset: changeset)
@@ -52,11 +52,11 @@ defmodule RunosaariWeb.VisitorController do
 
   def delete(conn, %{"id" => id}) do
     visitor = Registration.get_visitor!(id)
-    {:ok, _visitor} = Registration.delete_visitor(visitor)
+    {:ok, _visitor} = Registration.admin_delete_visitor(visitor)
 
     conn
     |> put_flash(:info, "Visitor deleted successfully.")
-    |> redirect(to: Routes.visitor_path(conn, :index))
+    |> redirect(to: Routes.admin_visitor_path(conn, :index))
   end
 
   def confirmation(conn, _params) do

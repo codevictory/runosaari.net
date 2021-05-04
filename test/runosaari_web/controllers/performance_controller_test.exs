@@ -41,9 +41,9 @@ defmodule RunosaariWeb.PerformanceControllerTest do
       conn = post(conn, Routes.admin_performance_path(conn, :create), performance: @create_attrs)
 
       assert %{id: id} = redirected_params(conn)
-      assert redirected_to(conn) == Routes.performance_path(conn, :show, id)
+      assert redirected_to(conn) == Routes.admin_performance_path(conn, :show, id)
 
-      conn = get(conn, Routes.performance_path(conn, :show, id))
+      conn = get(conn, Routes.admin_performance_path(conn, :show, id))
       assert html_response(conn, 200) =~ "Näytös"
     end
 
@@ -71,9 +71,9 @@ defmodule RunosaariWeb.PerformanceControllerTest do
           performance: @update_attrs
         )
 
-      assert redirected_to(conn) == Routes.performance_path(conn, :show, performance)
+      assert redirected_to(conn) == Routes.admin_performance_path(conn, :show, performance)
 
-      conn = get(conn, Routes.performance_path(conn, :show, performance))
+      conn = get(conn, Routes.admin_performance_path(conn, :show, performance))
       assert html_response(conn, 200) =~ "some updated description"
     end
 
@@ -95,7 +95,7 @@ defmodule RunosaariWeb.PerformanceControllerTest do
       assert redirected_to(conn) == Routes.admin_performance_path(conn, :admin)
 
       assert_error_sent 404, fn ->
-        get(conn, Routes.performance_path(conn, :show, performance))
+        get(conn, Routes.admin_performance_path(conn, :show, performance))
       end
     end
   end

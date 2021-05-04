@@ -24,7 +24,7 @@ defmodule RunosaariWeb.PerformanceController do
       {:ok, performance} ->
         conn
         |> put_flash(:info, "Näytös luotu.")
-        |> redirect(to: Routes.performance_path(conn, :show, performance))
+        |> redirect(to: Routes.admin_performance_path(conn, :show, performance))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -49,7 +49,7 @@ defmodule RunosaariWeb.PerformanceController do
       {:ok, performance} ->
         conn
         |> put_flash(:info, "Näytös päivitetty.")
-        |> redirect(to: Routes.performance_path(conn, :show, performance))
+        |> redirect(to: Routes.admin_performance_path(conn, :show, performance))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", performance: performance, changeset: changeset)

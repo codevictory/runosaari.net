@@ -1,5 +1,5 @@
 <h1>Edit Visitor</h1>
 
-<%= render "form.html", Map.put(assigns, :action, Routes.visitor_path(@conn, :update, @visitor)) %>
+<%= render "form.html", Map.put(assigns, :action, Routes.admin_visitor_path(@conn, :update, @visitor)) %>
 
-<span><%= link "Back", to: Routes.visitor_path(@conn, :index) %></span>
+<span><%= link "Back", to: Routes.admin_visitor_path(@conn, :index) %></span>

@@ -49,5 +49,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.visitor_path(@conn, :edit, @visitor) %></span>
-<span><%= link "Back", to: Routes.visitor_path(@conn, :index) %></span>
+<span><%= link "Edit", to: Routes.admin_visitor_path(@conn, :edit, @visitor) %></span>
+<span><%= link "Back", to: Routes.admin_visitor_path(@conn, :index) %></span>

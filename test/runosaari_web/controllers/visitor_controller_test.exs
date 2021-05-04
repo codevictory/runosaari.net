@@ -44,7 +44,7 @@ defmodule RunosaariWeb.VisitorControllerTest do
 
   describe "index" do
     test "lists all visitors", %{conn: conn} do
-      conn = get(conn, Routes.visitor_path(conn, :index))
+      conn = get(conn, Routes.admin_visitor_path(conn, :index))
       assert html_response(conn, 200) =~ "Listing Visitors"
     end
   end
@@ -61,9 +61,9 @@ defmodule RunosaariWeb.VisitorControllerTest do
       conn = post(conn, Routes.visitor_path(conn, :create), visitor: @create_attrs)
 
       assert %{id: id} = redirected_params(conn)
-      assert redirected_to(conn) == Routes.visitor_path(conn, :show, id)
+      assert redirected_to(conn) == Routes.admin_visitor_path(conn, :show, id)
 
-      conn = get(conn, Routes.visitor_path(conn, :show, id))
+      conn = get(conn, Routes.admin_visitor_path(conn, :show, id))
       assert html_response(conn, 200) =~ "Show Visitor"
     end
 
@@ -77,7 +77,7 @@ defmodule RunosaariWeb.VisitorControllerTest do
     setup [:create_visitor]
 
     test "renders form for editing chosen visitor", %{conn: conn, visitor: visitor} do
-      conn = get(conn, Routes.visitor_path(conn, :edit, visitor))
+      conn = get(conn, Routes.admin_visitor_path(conn, :edit, visitor))
       assert html_response(conn, 200) =~ "Edit Visitor"
     end
   end
@@ -86,16 +86,16 @@ defmodule RunosaariWeb.VisitorControllerTest do
     setup [:create_visitor]
 
     test "redirects when data is valid", %{conn: conn, visitor: visitor} do
-      conn = put(conn, Routes.visitor_path(conn, :update, visitor), visitor: @update_attrs)
+      conn = put(conn, Routes.admin_visitor_path(conn, :update, visitor), visitor: @update_attrs)
 
-      assert redirected_to(conn) == Routes.visitor_path(conn, :show, visitor)
+      assert redirected_to(conn) == Routes.admin_visitor_path(conn, :show, visitor)
 
-      conn = get(conn, Routes.visitor_path(conn, :show, visitor))
+      conn = get(conn, Routes.admin_visitor_path(conn, :show, visitor))
       assert html_response(conn, 200) =~ "some updated email"
     end
 
     test "renders errors when data is invalid", %{conn: conn, visitor: visitor} do
-      conn = put(conn, Routes.visitor_path(conn, :update, visitor), visitor: @invalid_attrs)
+      conn = put(conn, Routes.admin_visitor_path(conn, :update, visitor), visitor: @invalid_attrs)
 
       assert html_response(conn, 200) =~ "Edit Visitor"
     end
@@ -105,11 +105,11 @@ defmodule RunosaariWeb.VisitorControllerTest do
     setup [:create_visitor]
 
     test "deletes chosen visitor", %{conn: conn, visitor: visitor} do
-      conn = delete(conn, Routes.visitor_path(conn, :delete, visitor))
-      assert redirected_to(conn) == Routes.visitor_path(conn, :index)
+      conn = delete(conn, Routes.admin_visitor_path(conn, :delete, visitor))
+      assert redirected_to(conn) == Routes.admin_visitor_path(conn, :index)
 
       assert_error_sent 404, fn ->
-        get(conn, Routes.visitor_path(conn, :show, visitor))
+        get(conn, Routes.admin_visitor_path(conn, :show, visitor))
       end
     end
   end

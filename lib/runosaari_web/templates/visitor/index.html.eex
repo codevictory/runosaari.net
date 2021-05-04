@@ -30,9 +30,9 @@
       <td><%= visitor.accom %></td>
 
       <td>
-        <span><%= link "Show", to: Routes.visitor_path(@conn, :show, visitor) %></span>
-        <span><%= link "Edit", to: Routes.visitor_path(@conn, :edit, visitor) %></span>
-        <span><%= link "Delete", to: Routes.visitor_path(@conn, :delete, visitor), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        <span><%= link "Show", to: Routes.admin_visitor_path(@conn, :show, visitor) %></span>
+        <span><%= link "Edit", to: Routes.admin_visitor_path(@conn, :edit, visitor) %></span>
+        <span><%= link "Delete", to: Routes.admin_visitor_path(@conn, :delete, visitor), method: :delete, data: [confirm: "Are you sure?"] %></span>
       </td>
     </tr>
 <% end %>
