@@ -19,8 +19,8 @@ defmodule RunosaariWeb.Router do
     get "/", PageController, :index
     get "/info", PageController, :info
     get "/covid19", PageController, :covid19
-    resources "/performers", PerformerController, only: [:index, :show]
-    resources "/performances", PerformanceController, only: [:index, :show]
+    resources "/performers", PerformerController, only: [:index]
+    resources "/performances", PerformanceController, only: [:index]
     resources "/visitors", VisitorController, only: [:new, :create]
     get "/confirmation", VisitorController, :confirmation
   end
@@ -30,8 +30,8 @@ defmodule RunosaariWeb.Router do
 
     get "/performers", PerformerController, :admin
     get "/performances", PerformanceController, :admin
-    resources "/performers", PerformerController, except: [:index, :show]
-    resources "/performances", PerformanceController, except: [:index, :show]
+    resources "/performers", PerformerController, except: [:index]
+    resources "/performances", PerformanceController, except: [:index]
     resources "/visitors", VisitorController, except: [:new, :create]
   end
 
@@ -50,7 +50,7 @@ defmodule RunosaariWeb.Router do
   if Mix.env() in [:dev, :test] do
     import Phoenix.LiveDashboard.Router
 
-    scope "/" do
+    scope "/admin" do
       pipe_through :browser
       live_dashboard "/dashboard", metrics: RunosaariWeb.Telemetry
     end
