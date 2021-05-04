@@ -7,6 +7,26 @@ form {
   display: flex;
 }
 
+.text-input {
+  display: flex;
+  align-items: center;
+
+  label {
+    width: 29%;
+    text-align: left;
+  }
+
+  input {
+    width: 71%;
+  }
+
+  @media screen and (max-width: 600px) {
+    label {
+      width: 47%;
+    }
+  }
+}
+
 input {
   margin-bottom: 10px;
 }
@@ -15,4 +35,9 @@ input {
   display: flex;
   justify-content: center;
   padding-bottom: 50px;
+}
+
+.submit-button {
+  padding-top: 31px;
+  padding-bottom: 31px;
 }
