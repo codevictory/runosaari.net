@@ -16,7 +16,7 @@ defmodule RunosaariWeb.VisitorController do
 
   def create(conn, %{"visitor" => visitor_params}) do
     case Registration.create_visitor(visitor_params) do
-      {:ok, visitor} ->
+      {:ok, _visitor} ->
         conn
         |> redirect(to: Routes.visitor_path(conn, :confirmation))
 
@@ -52,7 +52,7 @@ defmodule RunosaariWeb.VisitorController do
 
   def delete(conn, %{"id" => id}) do
     visitor = Registration.get_visitor!(id)
-    {:ok, _visitor} = Registration.admin_delete_visitor(visitor)
+    {:ok, _visitor} = Registration.delete_visitor(visitor)
 
     conn
     |> put_flash(:info, "Visitor deleted successfully.")
