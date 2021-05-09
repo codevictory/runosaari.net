@@ -1,36 +1,34 @@
-<h1>HALLINTA</h1>
+<section class="main">
+  <h1>HALLINTA - Esiintyjät</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Etunimi</th>
-      <th>Sukunimi</th>
-      <th>Sähköposti</th>
-      <th>Puhelin numero</th>
-      <th>Vahvistettu</th>
-      <th>Seloste</th>
+  <table>
+    <thead>
+      <tr>
+        <th>Etunimi</th>
+        <th>Sukunimi</th>
+        <th>Sähköposti</th>
+        <th>Puhelin numero</th>
+        <th>Vahvistettu</th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= for performer <- @performers do %>
+        <tr>
+          <td><%= performer.fname %></td>
+          <td><%= performer.lname %></td>
+          <td><%= performer.email %></td>
+          <td><%= performer.tel %></td>
+          <td><%= performer.confirmed %></td>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for performer <- @performers do %>
-    <tr>
-      <td><%= performer.fname %></td>
-      <td><%= performer.lname %></td>
-      <td><%= performer.email %></td>
-      <td><%= performer.tel %></td>
-      <td><%= performer.confirmed %></td>
-      <td><%= performer.desc %></td>
+          <td>
+            <span><%= link "Lisätietoja", to: Routes.admin_performer_path(@conn, :show, performer) %></span>
+            <span><%= link "Muokkaa", to: Routes.admin_performer_path(@conn, :edit, performer) %></span>
+            <span><%= link "Poista", to: Routes.admin_performer_path(@conn, :delete, performer), method: :delete, data: [confirm: "Haluatko poistaa esiintyjän #{performer.fname} #{performer.lname}?"] %></span>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
 
-      <td>
-        <span><%= link "Lisätietoja", to: Routes.admin_performer_path(@conn, :show, performer) %></span>
-        <span><%= link "Muokkaa", to: Routes.admin_performer_path(@conn, :edit, performer) %></span>
-        <span><%= link "Poista", to: Routes.admin_performer_path(@conn, :delete, performer), method: :delete, data: [confirm: "Haluatko poistaa esiintyjän #{performer.fname} #{performer.lname}?"] %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<span><%= link "Uusi esiintyjä", to: Routes.admin_performer_path(@conn, :new) %></span>
+  <span><%= link "Uusi esiintyjä", to: Routes.admin_performer_path(@conn, :new) %></span>
+</section>

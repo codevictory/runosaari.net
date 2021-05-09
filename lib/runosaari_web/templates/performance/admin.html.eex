@@ -1,28 +1,30 @@
-<h1>HALLINTA</h1>
+<section class="main">
+  <h1>HALLINTA - Näytökset</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nimi</th>
-      <th>Seloste</th>
+  <table>
+    <thead>
+      <tr>
+        <th>Nimi</th>
+        <th>Seloste</th>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  <%= for performance <- @performances do %>
-    <tr>
-      <td><%= performance.name %></td>
-      <td><%= performance.desc %></td>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= for performance <- @performances do %>
+      <tr>
+        <td><%= performance.name %></td>
+        <td><%= performance.desc %></td>
 
-      <td>
-        <span><%= link "Lisätietoja", to: Routes.admin_performance_path(@conn, :show, performance) %></span>
-        <span><%= link "Muokkaa", to: Routes.admin_performance_path(@conn, :edit, performance) %></span>
-        <span><%= link "Poista", to: Routes.admin_performance_path(@conn, :delete, performance), method: :delete, data: [confirm: "Haluatko poistaa näytöksen #{performance.name}?"] %></span>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+        <td>
+          <span><%= link "Lisätietoja", to: Routes.admin_performance_path(@conn, :show, performance) %></span>
+          <span><%= link "Muokkaa", to: Routes.admin_performance_path(@conn, :edit, performance) %></span>
+          <span><%= link "Poista", to: Routes.admin_performance_path(@conn, :delete, performance), method: :delete, data: [confirm: "Haluatko poistaa näytöksen #{performance.name}?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 
-<span><%= link "Uusi näytös", to: Routes.admin_performance_path(@conn, :new) %></span>
+  <span><%= link "Uusi näytös", to: Routes.admin_performance_path(@conn, :new) %></span>
+</section>

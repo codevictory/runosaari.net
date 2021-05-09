@@ -1,42 +1,42 @@
-<h1>Listing Visitors</h1>
+<section class="main">
+  <h1>Osallistujat</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Fname</th>
-      <th>Lname</th>
-      <th>Email</th>
-      <th>Tel</th>
-      <th>Date1</th>
-      <th>Date2</th>
-      <th>Date3</th>
-      <th>Bus</th>
-      <th>Accom</th>
+  <table>
+    <thead>
+      <tr>
+        <th>Etunimi</th>
+        <th>Sukunimi</th>
+        <th>Sähköposti</th>
+        <th>Puhelinnumero</th>
+        <th>Torstai</th>
+        <th>Perjantai</th>
+        <th>Lauantai</th>
+        <th>Bussi</th>
+        <th>Majoitus</th>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for visitor <- @visitors do %>
-    <tr>
-      <td><%= visitor.fname %></td>
-      <td><%= visitor.lname %></td>
-      <td><%= visitor.email %></td>
-      <td><%= visitor.tel %></td>
-      <td><%= visitor.date1 %></td>
-      <td><%= visitor.date2 %></td>
-      <td><%= visitor.date3 %></td>
-      <td><%= visitor.bus %></td>
-      <td><%= visitor.accom %></td>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= for visitor <- @visitors do %>
+        <tr>
+          <td><%= visitor.fname %></td>
+          <td><%= visitor.lname %></td>
+          <td><%= visitor.email %></td>
+          <td><%= visitor.tel %></td>
+          <td><%= visitor.date1 %></td>
+          <td><%= visitor.date2 %></td>
+          <td><%= visitor.date3 %></td>
+          <td><%= visitor.bus %></td>
+          <td><%= visitor.accom %></td>
 
-      <td>
-        <span><%= link "Show", to: Routes.admin_visitor_path(@conn, :show, visitor) %></span>
-        <span><%= link "Edit", to: Routes.admin_visitor_path(@conn, :edit, visitor) %></span>
-        <span><%= link "Delete", to: Routes.admin_visitor_path(@conn, :delete, visitor), method: :delete, data: [confirm: "Are you sure?"] %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<span><%= link "New Visitor", to: Routes.visitor_path(@conn, :new) %></span>
+          <td>
+            <span><%= link "Lisätietoja", to: Routes.admin_visitor_path(@conn, :show, visitor) %></span>
+            <span><%= link "Muokkaa", to: Routes.admin_visitor_path(@conn, :edit, visitor) %></span>
+            <span><%= link "Poista", to: Routes.admin_visitor_path(@conn, :delete, visitor), method: :delete, data: [confirm: "Oletko varma?"] %></span>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

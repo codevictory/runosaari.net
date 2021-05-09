@@ -1,18 +1,20 @@
-<h1>Näytös</h1>
+<section class="main">
+  <h1>Näytöksen tiedot</h1>
 
-<ul>
+  <ul>
 
-  <li>
-    <strong>Nimi:</strong>
-    <%= @performance.name %>
-  </li>
+    <li>
+      <strong>Nimi:</strong>
+      <%= @performance.name %>
+    </li>
 
-  <li>
-    <strong>Seloste:</strong>
-    <%= @performance.desc %>
-  </li>
+    <li>
+      <strong>Seloste:</strong>
+      <%= @performance.desc %>
+    </li>
 
-</ul>
+  </ul>
 
-<span><%= link "Muokkaa", to: Routes.admin_performance_path(@conn, :edit, @performance) %></span>
-<span><%= link "Takaisin", to: Routes.performance_path(@conn, :index) %></span>
+  <span><%= link "Muokkaa", to: Routes.admin_performance_path(@conn, :edit, @performance) %></span>
+  <span><%= link "Takaisin", to: Routes.performance_path(@conn, :index) %></span>
+</section>

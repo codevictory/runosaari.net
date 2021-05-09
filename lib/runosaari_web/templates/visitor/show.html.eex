@@ -1,53 +1,55 @@
-<h1>Show Visitor</h1>
+<section class="main">
+  <h1>Osallistujan tiedot</h1>
 
-<ul>
+  <ul>
 
-  <li>
-    <strong>Fname:</strong>
-    <%= @visitor.fname %>
-  </li>
+    <li>
+      <strong>Etunimi:</strong>
+      <%= @visitor.fname %>
+    </li>
 
-  <li>
-    <strong>Lname:</strong>
-    <%= @visitor.lname %>
-  </li>
+    <li>
+      <strong>Sukunimi:</strong>
+      <%= @visitor.lname %>
+    </li>
 
-  <li>
-    <strong>Email:</strong>
-    <%= @visitor.email %>
-  </li>
+    <li>
+      <strong>Sähköposti:</strong>
+      <%= @visitor.email %>
+    </li>
 
-  <li>
-    <strong>Tel:</strong>
-    <%= @visitor.tel %>
-  </li>
+    <li>
+      <strong>Puhelinnumero:</strong>
+      <%= @visitor.tel %>
+    </li>
 
-  <li>
-    <strong>Date1:</strong>
-    <%= @visitor.date1 %>
-  </li>
+    <li>
+      <strong>Torstai 22.7.:</strong>
+      <%= @visitor.date1 %>
+    </li>
 
-  <li>
-    <strong>Date2:</strong>
-    <%= @visitor.date2 %>
-  </li>
+    <li>
+      <strong>Perjantai 23.7.:</strong>
+      <%= @visitor.date2 %>
+    </li>
 
-  <li>
-    <strong>Date3:</strong>
-    <%= @visitor.date3 %>
-  </li>
+    <li>
+      <strong>Lauantai 24.7.:</strong>
+      <%= @visitor.date3 %>
+    </li>
 
-  <li>
-    <strong>Bus:</strong>
-    <%= @visitor.bus %>
-  </li>
+    <li>
+      <strong>Bus:</strong>
+      <%= @visitor.bus %>
+    </li>
 
-  <li>
-    <strong>Accom:</strong>
-    <%= @visitor.accom %>
-  </li>
+    <li>
+      <strong>Accom:</strong>
+      <%= @visitor.accom %>
+    </li>
 
-</ul>
+  </ul>
 
-<span><%= link "Edit", to: Routes.admin_visitor_path(@conn, :edit, @visitor) %></span>
-<span><%= link "Back", to: Routes.admin_visitor_path(@conn, :index) %></span>
+  <span><%= link "Muokkaa", to: Routes.admin_visitor_path(@conn, :edit, @visitor) %></span>
+  <span><%= link "Takaisin", to: Routes.admin_visitor_path(@conn, :index) %></span>
+</section>

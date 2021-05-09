@@ -1,63 +1,65 @@
-<h1>Esiintyjän tiedot</h1>
+<section class="main">
+  <h1>Esiintyjän tiedot</h1>
 
-<ul>
+  <ul>
 
-  <li>
-    <strong>Etunimi:</strong>
-    <%= @performer.fname %>
-  </li>
+    <li>
+      <strong>Etunimi:</strong>
+      <%= @performer.fname %>
+    </li>
 
-  <li>
-    <strong>Sukunimi:</strong>
-    <%= @performer.lname %>
-  </li>
+    <li>
+      <strong>Sukunimi:</strong>
+      <%= @performer.lname %>
+    </li>
 
-  <li>
-    <strong>Sähköposti:</strong>
-    <%= @performer.email %>
-  </li>
+    <li>
+      <strong>Sähköposti:</strong>
+      <%= @performer.email %>
+    </li>
 
-  <li>
-    <strong>Puhelin numero:</strong>
-    <%= @performer.tel %>
-  </li>
+    <li>
+      <strong>Puhelin numero:</strong>
+      <%= @performer.tel %>
+    </li>
 
-  <li>
-    <strong>Vahvistettu:</strong>
-    <%= @performer.confirmed %>
-  </li>
+    <li>
+      <strong>Vahvistettu:</strong>
+      <%= @performer.confirmed %>
+    </li>
 
-  <li>
-    <strong>Seloste:</strong>
-    <%= @performer.desc %>
-  </li>
+    <li>
+      <strong>Seloste:</strong>
+      <%= @performer.desc %>
+    </li>
 
-  <li>
-    <strong>Torstai:</strong>
-    <%= @performer.date1 %>
-  </li>
+    <li>
+      <strong>Torstai:</strong>
+      <%= @performer.date1 %>
+    </li>
 
-  <li>
-    <strong>Perjantai:</strong>
-    <%= @performer.date2 %>
-  </li>
+    <li>
+      <strong>Perjantai:</strong>
+      <%= @performer.date2 %>
+    </li>
 
-  <li>
-    <strong>Lauantai:</strong>
-    <%= @performer.date3 %>
-  </li>
+    <li>
+      <strong>Lauantai:</strong>
+      <%= @performer.date3 %>
+    </li>
 
-  <li>
-    <strong>Bussikuljetus:</strong>
-    <%= @performer.bus %>
-  </li>
+    <li>
+      <strong>Bussikuljetus:</strong>
+      <%= @performer.bus %>
+    </li>
 
-  <li>
-    <strong>Majoilus:</strong>
-    <%= @performer.accom %>
-  </li>
+    <li>
+      <strong>Majoilus:</strong>
+      <%= @performer.accom %>
+    </li>
 
-</ul>
+  </ul>
 
-<span><%= link "Muokkaa", to: Routes.admin_performer_path(@conn, :edit, @performer) %></span>
-<span><%= link "Takaisin", to: Routes.performer_path(@conn, :index) %></span>
+  <span><%= link "Muokkaa", to: Routes.admin_performer_path(@conn, :edit, @performer) %></span>
+  <span><%= link "Takaisin", to: Routes.performer_path(@conn, :index) %></span>
+</section>

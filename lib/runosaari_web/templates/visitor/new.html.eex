@@ -1,5 +1,5 @@
 <section class="main">
-    <h1 id="registration-start">Ilmoittaudu vierailijaksi</h1>
+    <h1 id="registration-start">Ilmoittaudu</h1>
 
     <%= render "form.html", Map.put(assigns, :action, Routes.visitor_path(@conn, :create)) %>
 </section>
