@@ -1,4 +1,4 @@
-section.text {
+section.main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +11,11 @@ section.text {
     padding: 0px 20px;
     max-width: 56%;
   }
+  border-radius: 3px 3px 0px 0px;
+}
+
+section.logo ~ section.main {
+  border-radius: 0px;
 }
 
 .email-link {
