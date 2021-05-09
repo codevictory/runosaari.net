@@ -1,4 +1,4 @@
-<section class="text">
+<section class="main">
     <h1>Ilmoittaudu</h1>
 
     <%= render "form.html", Map.put(assigns, :action, Routes.admin_performer_path(@conn, :create)) %>
