@@ -5,7 +5,7 @@ defmodule RunosaariWeb.PerformerController do
   alias Runosaari.Registration.Performer
 
   def index(conn, _params) do
-    performers = Registration.list_sorted_performers()
+    performers = Registration.list_sorted_confirmed_performers()
     render(conn, "index.html", performers: performers)
   end
 

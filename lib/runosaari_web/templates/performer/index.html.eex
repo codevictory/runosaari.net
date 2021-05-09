@@ -1,12 +1,12 @@
 <section class=text>
 <h1 id="performers-start">Esiintyjät</h1>
 
+<%= if length(@performers) == 0 do %>
+  <i>Lisätietoja tulossa myöhemmin!</i>
+<% end %>
 <%= for performer <- @performers do %>
-  <%= if performer.confirmed == true do %>
-    <h2><%= performer.fname %> <%= performer.lname %></h2>
-    <p><%= performer.desc %></p>
-  <% end %>
+  <h2><%= performer.fname %> <%= performer.lname %></h2>
+  <p><%= performer.desc %></p>
 <% end %>
 
-<%= link "Hallinta", to: Routes.admin_performer_path(@conn, :admin) %>
 </section>

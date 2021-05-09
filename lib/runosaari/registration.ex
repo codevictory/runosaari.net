@@ -1,4 +1,6 @@
 defmodule Runosaari.Registration do
+  import Enum
+
   @moduledoc """
   The Registration context.
   """
@@ -22,16 +24,19 @@ defmodule Runosaari.Registration do
   end
 
   @doc """
-  Returns the list of performers.
+  Returns the :seqnum sorted list of confirmed performers.
 
   ## Examples
 
-      iex> list_performers()
+      iex> list_sorted_confirmed_performers()
       [%Performer{}, ...]
 
   """
-  def list_sorted_performers do
-    Repo.all(Performer |> order_by(:seqnum))
+  def list_sorted_confirmed_performers do
+    Performer
+    |> where([p], p.confirmed == true)
+    |> order_by(:seqnum)
+    |> Repo.all()
   end
 
   @doc """
