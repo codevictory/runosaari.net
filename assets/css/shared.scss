@@ -18,7 +18,11 @@ section.logo ~ section.main {
   border-radius: 0px;
 }
 
-.email-link {
+.generic-link {
   color: blue;
   text-decoration: underline;
+}
+
+hr {
+  width: inherit;
 }

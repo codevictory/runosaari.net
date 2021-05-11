@@ -1,0 +1,16 @@
+table {
+  width: 93%;
+  border-spacing: 13px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+}
+
+.choices-collection {
+  font-size: 0.9em;
+  border-left: 1px solid;
+  border-right: 1px solid;
+}

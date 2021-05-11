@@ -30,7 +30,7 @@
           <td><%= visitor.bus %></td>
           <td><%= visitor.accom %></td>
 
-          <td>
+          <td class="actions">
             <span><%= link "Lisätietoja", to: Routes.admin_visitor_path(@conn, :show, visitor) %></span>
             <span><%= link "Muokkaa", to: Routes.admin_visitor_path(@conn, :edit, visitor) %></span>
             <span><%= link "Poista", to: Routes.admin_visitor_path(@conn, :delete, visitor), method: :delete, data: [confirm: "Oletko varma?"] %></span>
@@ -38,5 +38,16 @@
         </tr>
     <% end %>
     </tbody>
+    <tfoot>
+    <%= for visitor <- @visitors do %>
+        <tr>
+          <td><%= visitor.date1 %></td>
+          <td><%= visitor.date2 %></td>
+          <td><%= visitor.date3 %></td>
+          <td><%= visitor.bus %></td>
+          <td><%= visitor.accom %></td>
+        </tr>
+    <% end %>
+    </tfoot>
   </table>
 </section>

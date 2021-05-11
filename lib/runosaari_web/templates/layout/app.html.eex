@@ -54,7 +54,7 @@
         <div class="right">
           Inkeri Aula <br />
           Katariina Vuorinen <br />
-          <a class="email-link" href="mailto:info@runosaari.net"
+          <a class="generic-link" href="mailto:info@runosaari.net"
             >info@runosaari.net</a
           >
         </div>

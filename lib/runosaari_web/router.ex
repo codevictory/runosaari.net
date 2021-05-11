@@ -19,6 +19,7 @@ defmodule RunosaariWeb.Router do
     get "/", PageController, :index
     get "/info", PageController, :info
     get "/covid19", PageController, :covid19
+    get "/privacy", PageController, :privacy
     resources "/performers", PerformerController, only: [:index]
     resources "/performances", PerformanceController, only: [:index]
     resources "/visitors", VisitorController, only: [:new, :create]

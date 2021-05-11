@@ -16,7 +16,7 @@
         <td><%= performance.name %></td>
         <td><%= performance.desc %></td>
 
-        <td>
+        <td class="actions">
           <span><%= link "Lisätietoja", to: Routes.admin_performance_path(@conn, :show, performance) %></span>
           <span><%= link "Muokkaa", to: Routes.admin_performance_path(@conn, :edit, performance) %></span>
           <span><%= link "Poista", to: Routes.admin_performance_path(@conn, :delete, performance), method: :delete, data: [confirm: "Haluatko poistaa näytöksen #{performance.name}?"] %></span>

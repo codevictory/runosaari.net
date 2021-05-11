@@ -1,0 +1,32 @@
+.privacy-text {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+
+  h2 {
+    text-align: left;
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .privacy-text {
+    width: 100%;
+  }
+}
+
+.disclaimer {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+  align-items: center;
+  margin-bottom: 20px;
+
+  p {
+    margin-bottom: 0px !important;
+  }
+}
+
+p {
+  max-width: 100% !important;
+}
