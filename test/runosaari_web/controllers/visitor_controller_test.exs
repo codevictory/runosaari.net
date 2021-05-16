@@ -5,7 +5,7 @@ defmodule RunosaariWeb.VisitorControllerTest do
 
   @create_attrs %{
     accom: true,
-    bus: true,
+    shared: true,
     date1: true,
     date2: true,
     date3: true,
@@ -16,7 +16,7 @@ defmodule RunosaariWeb.VisitorControllerTest do
   }
   @update_attrs %{
     accom: false,
-    bus: false,
+    shared: false,
     date1: false,
     date2: false,
     date3: false,
@@ -27,7 +27,7 @@ defmodule RunosaariWeb.VisitorControllerTest do
   }
   @invalid_attrs %{
     accom: nil,
-    bus: nil,
+    shared: nil,
     date1: nil,
     date2: nil,
     date3: nil,

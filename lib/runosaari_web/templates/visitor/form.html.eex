@@ -40,8 +40,8 @@
     <%= label form, :date3, "Lauantai 24.7." %>
   </div>
   <div class="checkbox-container">
-    <%= checkbox form, :bus %>
-    <%= label form, :bus, "Olen kiinnostunut bussikuljetuksesta" %>
+    <%= checkbox form, :shared %>
+    <%= label form, :shared, "Olen kiinnostunut kimppakyydeistä (Turku-Livonsaari)" %>
   </div>
   <div class="checkbox-container">
     <%= checkbox form, :accom %>

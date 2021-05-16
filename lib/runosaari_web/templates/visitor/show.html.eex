@@ -39,12 +39,12 @@
     </li>
 
     <li>
-      <strong>Bus:</strong>
-      <%= @visitor.bus %>
+      <strong>Kimppakyyti:</strong>
+      <%= @visitor.shared %>
     </li>
 
     <li>
-      <strong>Accom:</strong>
+      <strong>Majoitus:</strong>
       <%= @visitor.accom %>
     </li>
 

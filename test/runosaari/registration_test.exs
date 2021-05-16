@@ -132,9 +132,39 @@ defmodule Runosaari.RegistrationTest do
   describe "visitors" do
     alias Runosaari.Registration.Visitor
 
-    @valid_attrs %{accom: true, bus: true, date1: true, date2: true, date3: true, email: "some email", fname: "some fname", lname: "some lname", tel: "some tel"}
-    @update_attrs %{accom: false, bus: false, date1: false, date2: false, date3: false, email: "some updated email", fname: "some updated fname", lname: "some updated lname", tel: "some updated tel"}
-    @invalid_attrs %{accom: nil, bus: nil, date1: nil, date2: nil, date3: nil, email: nil, fname: nil, lname: nil, tel: nil}
+    @valid_attrs %{
+      accom: true,
+      shared: true,
+      date1: true,
+      date2: true,
+      date3: true,
+      email: "some email",
+      fname: "some fname",
+      lname: "some lname",
+      tel: "some tel"
+    }
+    @update_attrs %{
+      accom: false,
+      shared: false,
+      date1: false,
+      date2: false,
+      date3: false,
+      email: "some updated email",
+      fname: "some updated fname",
+      lname: "some updated lname",
+      tel: "some updated tel"
+    }
+    @invalid_attrs %{
+      accom: nil,
+      shared: nil,
+      date1: nil,
+      date2: nil,
+      date3: nil,
+      email: nil,
+      fname: nil,
+      lname: nil,
+      tel: nil
+    }
 
     def visitor_fixture(attrs \\ %{}) do
       {:ok, visitor} =
@@ -158,7 +188,7 @@ defmodule Runosaari.RegistrationTest do
     test "create_visitor/1 with valid data creates a visitor" do
       assert {:ok, %Visitor{} = visitor} = Registration.create_visitor(@valid_attrs)
       assert visitor.accom == true
-      assert visitor.bus == true
+      assert visitor.shared == true
       assert visitor.date1 == true
       assert visitor.date2 == true
       assert visitor.date3 == true
@@ -176,7 +206,7 @@ defmodule Runosaari.RegistrationTest do
       visitor = visitor_fixture()
       assert {:ok, %Visitor{} = visitor} = Registration.update_visitor(visitor, @update_attrs)
       assert visitor.accom == false
-      assert visitor.bus == false
+      assert visitor.shared == false
       assert visitor.date1 == false
       assert visitor.date2 == false
       assert visitor.date3 == false

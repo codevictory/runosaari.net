@@ -11,7 +11,7 @@
         <th>Torstai</th>
         <th>Perjantai</th>
         <th>Lauantai</th>
-        <th>Bussi</th>
+        <th>Kimppakyyti</th>
         <th>Majoitus</th>
 
         <th></th>
@@ -27,7 +27,7 @@
           <td><%= visitor.date1 %></td>
           <td><%= visitor.date2 %></td>
           <td><%= visitor.date3 %></td>
-          <td><%= visitor.bus %></td>
+          <td><%= visitor.shared %></td>
           <td><%= visitor.accom %></td>
 
           <td class="actions">
