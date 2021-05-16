@@ -4,28 +4,8 @@
   <ul>
 
     <li>
-      <strong>Etunimi:</strong>
-      <%= @performer.fname %>
-    </li>
-
-    <li>
-      <strong>Sukunimi:</strong>
-      <%= @performer.lname %>
-    </li>
-
-    <li>
-      <strong>Sähköposti:</strong>
-      <%= @performer.email %>
-    </li>
-
-    <li>
-      <strong>Puhelin numero:</strong>
-      <%= @performer.tel %>
-    </li>
-
-    <li>
-      <strong>Vahvistettu:</strong>
-      <%= @performer.confirmed %>
+      <strong>Nimi:</strong>
+      <%= @performer.name %>
     </li>
 
     <li>
@@ -34,28 +14,13 @@
     </li>
 
     <li>
-      <strong>Torstai:</strong>
-      <%= @performer.date1 %>
+      <strong>Vahvistettu:</strong>
+      <%= @performer.confirmed %>
     </li>
 
     <li>
-      <strong>Perjantai:</strong>
-      <%= @performer.date2 %>
-    </li>
-
-    <li>
-      <strong>Lauantai:</strong>
-      <%= @performer.date3 %>
-    </li>
-
-    <li>
-      <strong>Bussikuljetus:</strong>
-      <%= @performer.bus %>
-    </li>
-
-    <li>
-      <strong>Majoilus:</strong>
-      <%= @performer.accom %>
+      <strong>Prioriteetti:</strong>
+      <%= @performer.seqnum %>
     </li>
 
   </ul>

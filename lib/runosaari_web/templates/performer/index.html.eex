@@ -5,7 +5,7 @@
   <i>Lisätietoja tulossa myöhemmin!</i>
 <% end %>
 <%= for performer <- @performers do %>
-  <h2><%= performer.fname %> <%= performer.lname %></h2>
+  <h2><%= performer.name %></h2>
   <p><%= performer.desc %></p>
 <% end %>
 

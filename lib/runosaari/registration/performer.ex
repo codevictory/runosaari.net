@@ -3,17 +3,9 @@ defmodule Runosaari.Registration.Performer do
   import Ecto.Changeset
 
   schema "performers" do
+    field :name, :string
     field :confirmed, :boolean, default: false
-    field :email, :string
-    field :fname, :string
-    field :lname, :string
     field :desc, :string
-    field :tel, :string
-    field :date1, :boolean, default: false
-    field :date2, :boolean, default: false
-    field :date3, :boolean, default: false
-    field :bus, :boolean, default: false
-    field :accom, :boolean, default: false
     field :seqnum, :integer, default: 999
 
     timestamps()
@@ -23,31 +15,15 @@ defmodule Runosaari.Registration.Performer do
   def changeset(performer, attrs) do
     performer
     |> cast(attrs, [
-      :fname,
-      :lname,
-      :email,
-      :tel,
+      :name,
       :confirmed,
       :desc,
-      :date1,
-      :date2,
-      :date3,
-      :bus,
-      :accom,
       :seqnum
     ])
     |> validate_required([
-      :fname,
-      :lname,
-      :email,
-      :tel,
+      :name,
       :confirmed,
       :desc,
-      :date1,
-      :date2,
-      :date3,
-      :bus,
-      :accom,
       :seqnum
     ])
     |> unique_constraint(:email)

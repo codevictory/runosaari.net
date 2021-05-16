@@ -4,26 +4,22 @@
   <table>
     <thead>
       <tr>
-        <th>Etunimi</th>
-        <th>Sukunimi</th>
-        <th>Sähköposti</th>
-        <th>Puhelin numero</th>
+        <th>Nimi</th>
         <th>Vahvistettu</th>
+        <th>Prioriteetti</th>
       </tr>
     </thead>
     <tbody>
     <%= for performer <- @performers do %>
         <tr>
-          <td><%= performer.fname %></td>
-          <td><%= performer.lname %></td>
-          <td><%= performer.email %></td>
-          <td><%= performer.tel %></td>
+          <td><%= performer.name %></td>
           <td><%= performer.confirmed %></td>
+          <td><%= performer.seqnum %></td>
 
           <td class="actions">
             <span><%= link "Lisätietoja", to: Routes.admin_performer_path(@conn, :show, performer) %></span>
             <span><%= link "Muokkaa", to: Routes.admin_performer_path(@conn, :edit, performer) %></span>
-            <span><%= link "Poista", to: Routes.admin_performer_path(@conn, :delete, performer), method: :delete, data: [confirm: "Haluatko poistaa esiintyjän #{performer.fname} #{performer.lname}?"] %></span>
+            <span><%= link "Poista", to: Routes.admin_performer_path(@conn, :delete, performer), method: :delete, data: [confirm: "Haluatko poistaa esiintyjän #{performer.name}?"] %></span>
           </td>
         </tr>
     <% end %>

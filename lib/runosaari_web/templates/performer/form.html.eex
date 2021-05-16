@@ -5,63 +5,25 @@
     </div>
   <% end %>
 
-  <div class="confirmed-input">
-    <%= if @action != "/admin/performers" do %>
-      <%= checkbox form, :confirmed %>
-      <%= label form, :confirmed, "Hyväksytty #{@changeset.action}" %>
-      <%= error_tag form, :confirmed %>
-    <% end %>
-  </div>
+  <%= label form, :name, "Nimi" %>
+  <%= text_input form, :name %>
+  <%= error_tag form, :name %>
 
-  <%= label form, :fname, "Etunimi (julkistetaan nettisivuilla kun ilmoittautumisesi on hyväksytty)" %>
-  <%= text_input form, :fname %>
-  <%= error_tag form, :fname %>
-
-  <%= label form, :lname, "Sukunimi (julkistetaan nettisivuilla kun ilmoittautumisesi on hyväksytty)" %>
-  <%= text_input form, :lname %>
-  <%= error_tag form, :lname %>
-
-  <%= label form, :email, "Sähköposti" %>
-  <%= email_input form, :email %>
-  <%= error_tag form, :email %>
-
-  <%= label form, :tel, "Puhelinumero" %>
-  <%= text_input form, :tel %>
-  <%= error_tag form, :tel %>
-
-  <%= label form, :desc, "Seloste (julkistetaan nettisivuilla kun ilmoittautumisesi on hyväksytty)" %>
+  <%= label form, :desc, "Seloste" %>
   <%= textarea form, :desc %>
   <%= error_tag form, :desc %>
 
-  <h2>Ilmoita alustava kiinnostuksesi tässä</h2>
+  <%= label form, :seqnum, "Prioriteetti (1 on korkein)" %>
+  <%= textarea form, :seqnum %>
+  <%= error_tag form, :seqnum %>
 
   <div class="checkbox-container">
-    <%= checkbox form, :date1 %>
-    <%= label form, :date1, "Torstai 22.7" %>
-    <%= error_tag form, :date1 %>
-  </div>
-  <div class="checkbox-container">
-    <%= checkbox form, :date2 %>
-    <%= label form, :date2, "Perjantai 23.7." %>
-    <%= error_tag form, :date2 %>
-  </div>
-  <div class="checkbox-container">
-    <%= checkbox form, :date3 %>
-    <%= label form, :date3, "Lauantai 24.7." %>
-    <%= error_tag form, :date3 %>
-  </div>
-  <div class="checkbox-container">
-    <%= checkbox form, :bus %>
-    <%= label form, :bus, "Olen kiinnostunut bussikuljetuksesta" %>
-    <%= error_tag form, :bus %>
-  </div>
-  <div class="checkbox-container">
-    <%= checkbox form, :accom %>
-    <%= label form, :accom, "Olen kiinnostunut majoituksesta" %>
-    <%= error_tag form, :accom %>
+    <%= checkbox form, :confirmed %>
+    <%= label form, :confirmed, "Vahvistettu" %>
+    <%= error_tag form, :confirmed %>
   </div>
 
   <div>
-    <%= submit "Lähetä" %>
+    <%= submit "Tallenna" %>
   </div>
 <% end %>
