@@ -8,10 +8,12 @@
 @import './pages/privacy.scss';
 /* Alerts and form errors */
 .alert {
+  display: flex;
+  justify-content: center;
   padding: 15px;
-  margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
+  margin-bottom: 20px;
 }
 .alert-info {
   color: #31708f;
@@ -29,7 +31,8 @@
   border-color: #ebccd1;
 }
 .alert p {
-  margin-bottom: 0;
+  text-align: center;
+  margin: 0px;
 }
 .alert:empty {
   display: none;
