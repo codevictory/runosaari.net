@@ -7,6 +7,10 @@
     text-align: left;
     padding-left: 20px;
   }
+
+  p {
+    max-width: 100% !important;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -25,8 +29,4 @@
   p {
     margin-bottom: 0px !important;
   }
-}
-
-p {
-  max-width: 100% !important;
 }
