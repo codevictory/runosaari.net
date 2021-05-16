@@ -38,16 +38,5 @@
         </tr>
     <% end %>
     </tbody>
-    <tfoot>
-    <%= for visitor <- @visitors do %>
-        <tr>
-          <td><%= visitor.date1 %></td>
-          <td><%= visitor.date2 %></td>
-          <td><%= visitor.date3 %></td>
-          <td><%= visitor.bus %></td>
-          <td><%= visitor.accom %></td>
-        </tr>
-    <% end %>
-    </tfoot>
   </table>
 </section>
