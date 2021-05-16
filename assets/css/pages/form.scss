@@ -5,6 +5,10 @@ form {
 
 .checkbox-container {
   display: flex;
+
+  label {
+    text-align: left;
+  }
 }
 
 .text-input {
