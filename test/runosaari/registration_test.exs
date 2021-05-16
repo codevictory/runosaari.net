@@ -6,48 +6,23 @@ defmodule Runosaari.RegistrationTest do
   describe "performers" do
     alias Runosaari.Registration.Performer
 
-    @valid_attrs %{
-      confirmed: true,
-      email: "some email",
-      fname: "some fname",
-      lname: "some lname",
-      tel: "some tel",
-      desc: "some desc",
-      date1: true,
-      date2: true,
-      date3: true,
-      bus: true,
-      accom: true,
+    @create_attrs %{
+      name: "some name",
+      desc: "some description",
+      confirmed: false,
       seqnum: 1
     }
+
     @update_attrs %{
-      confirmed: false,
-      email: "some updated email",
-      fname: "some updated fname",
-      lname: "some updated lname",
-      tel: "some updated tel",
-      desc: "some updated desc",
-      date1: true,
-      date2: true,
-      date3: true,
-      bus: true,
-      accom: true,
+      name: "some updated name",
+      desc: "some updated description",
+      confirmed: true,
       seqnum: 2
     }
-    @invalid_attrs %{
-      confirmed: nil,
-      email: nil,
-      fname: nil,
-      lname: nil,
-      tel: nil,
-      desc: nil,
-      date1: nil,
-      date2: nil,
-      date3: nil,
-      bus: nil,
-      accom: nil,
-      seqnum: nil
-    }
+
+    @valid_attrs %{name: "some name", desc: "some description", confirmed: false, seqnum: 1}
+
+    @invalid_attrs %{name: nil, desc: nil, confirmed: nil, seqnum: nil}
 
     def performer_fixture(attrs \\ %{}) do
       {:ok, performer} =
@@ -70,17 +45,9 @@ defmodule Runosaari.RegistrationTest do
 
     test "create_performer/1 with valid data creates a performer" do
       assert {:ok, %Performer{} = performer} = Registration.create_performer(@valid_attrs)
-      assert performer.confirmed == true
-      assert performer.email == "some email"
-      assert performer.fname == "some fname"
-      assert performer.lname == "some lname"
-      assert performer.tel == "some tel"
-      assert performer.desc == "some desc"
-      assert performer.date1 == true
-      assert performer.date2 == true
-      assert performer.date3 == true
-      assert performer.bus == true
-      assert performer.accom == true
+      assert performer.name == "some name"
+      assert performer.desc == "some description"
+      assert performer.confirmed == false
       assert performer.seqnum == 1
     end
 
@@ -94,17 +61,9 @@ defmodule Runosaari.RegistrationTest do
       assert {:ok, %Performer{} = performer} =
                Registration.update_performer(performer, @update_attrs)
 
-      assert performer.confirmed == false
-      assert performer.email == "some updated email"
-      assert performer.fname == "some updated fname"
-      assert performer.lname == "some updated lname"
-      assert performer.tel == "some updated tel"
-      assert performer.desc == "some updated desc"
-      assert performer.date1 == true
-      assert performer.date2 == true
-      assert performer.date3 == true
-      assert performer.bus == true
-      assert performer.accom == true
+      assert performer.name == "some updated name"
+      assert performer.desc == "some updated description"
+      assert performer.confirmed == true
       assert performer.seqnum == 2
     end
 

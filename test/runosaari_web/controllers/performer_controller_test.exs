@@ -4,48 +4,21 @@ defmodule RunosaariWeb.PerformerControllerTest do
   alias Runosaari.Registration
 
   @create_attrs %{
-    confirmed: true,
-    email: "some email",
-    fname: "some fname",
-    lname: "some lname",
-    tel: "some tel",
-    desc: "some desc",
-    date1: true,
-    date2: true,
-    date3: true,
-    bus: true,
-    accom: true,
+    name: "some name",
+    desc: "some description",
+    confirmed: false,
     seqnum: 1
   }
+
   @update_attrs %{
-    confirmed: false,
-    email: "some updated email",
-    fname: "some updated fname",
-    lname: "some updated lname",
-    tel: "some updated tel",
-    desc: "some updated desc",
-    date1: true,
-    date2: true,
-    date3: true,
-    bus: true,
-    accom: true,
+    name: "some updated name",
+    desc: "some updated description",
+    confirmed: true,
     seqnum: 2
   }
 
-  @invalid_attrs %{
-    confirmed: nil,
-    email: nil,
-    fname: nil,
-    lname: nil,
-    tel: nil,
-    desc: nil,
-    date1: nil,
-    date2: nil,
-    date3: nil,
-    bus: nil,
-    accom: nil,
-    seqnum: nil
-  }
+  @invalid_attrs %{name: nil, desc: nil, confirmed: nil, seqnum: nil}
+
   def fixture(:performer) do
     {:ok, performer} = Registration.create_performer(@create_attrs)
     performer
@@ -69,11 +42,10 @@ defmodule RunosaariWeb.PerformerControllerTest do
     test "redirects to show when data is valid", %{conn: conn} do
       conn = post(conn, Routes.admin_performer_path(conn, :create), performer: @create_attrs)
 
-      assert %{id: id} = redirected_params(conn)
-      assert redirected_to(conn) == Routes.admin_performer_path(conn, :show, id)
+      assert redirected_to(conn) == Routes.admin_performer_path(conn, :admin)
 
-      conn = get(conn, Routes.admin_performer_path(conn, :show, id))
-      assert html_response(conn, 200) =~ "Esiintyjän tiedot"
+      conn = get(conn, Routes.admin_performer_path(conn, :admin))
+      assert html_response(conn, 200) =~ "HALLINTA - Esiintyjät"
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
@@ -101,7 +73,7 @@ defmodule RunosaariWeb.PerformerControllerTest do
       assert redirected_to(conn) == Routes.admin_performer_path(conn, :show, performer)
 
       conn = get(conn, Routes.admin_performer_path(conn, :show, performer))
-      assert html_response(conn, 200) =~ "some updated email"
+      assert html_response(conn, 200) =~ "some updated name"
     end
 
     test "renders errors when data is invalid", %{conn: conn, performer: performer} do

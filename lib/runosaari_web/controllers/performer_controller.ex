@@ -27,7 +27,7 @@ defmodule RunosaariWeb.PerformerController do
           :info,
           "Kiitokset ilmoittautumisestasi! Osallistumisesi tulee julkiseksi kun tapahtuman järjestäjät vahvistavat sen."
         )
-        |> redirect(to: Routes.performer_path(conn, :index))
+        |> redirect(to: Routes.admin_performer_path(conn, :admin))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)

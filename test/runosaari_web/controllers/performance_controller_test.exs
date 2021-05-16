@@ -4,18 +4,18 @@ defmodule RunosaariWeb.PerformanceControllerTest do
   alias Runosaari.Schedule
 
   @create_attrs %{
-    description: "some description",
-    notes: "some notes",
-    time: ~N[2010-04-17 14:00:00],
+    name: "some name",
+    desc: "some description",
     seqnum: 1
   }
+
   @update_attrs %{
-    description: "some updated description",
-    notes: "some updated notes",
-    time: ~N[2011-05-18 15:01:01],
+    name: "some updated name",
+    desc: "some updated description",
     seqnum: 2
   }
-  @invalid_attrs %{description: nil, notes: nil, time: nil, seqnum: nil}
+
+  @invalid_attrs %{name: nil, desc: nil, seqnum: nil}
 
   def fixture(:performance) do
     {:ok, performance} = Schedule.create_performance(@create_attrs)
@@ -58,7 +58,7 @@ defmodule RunosaariWeb.PerformanceControllerTest do
 
     test "renders form for editing chosen performance", %{conn: conn, performance: performance} do
       conn = get(conn, Routes.admin_performance_path(conn, :edit, performance))
-      assert html_response(conn, 200) =~ "Muokkaa näytöstä"
+      assert html_response(conn, 200) =~ "Muokkaa näytöksen tietoja"
     end
   end
 
@@ -83,7 +83,7 @@ defmodule RunosaariWeb.PerformanceControllerTest do
           performance: @invalid_attrs
         )
 
-      assert html_response(conn, 200) =~ "Muokkaa näytöstä"
+      assert html_response(conn, 200) =~ "Muokkaa näytöksen tietoja"
     end
   end
 

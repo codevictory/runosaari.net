@@ -3,15 +3,15 @@ defmodule Runosaari.Registration.Visitor do
   import Ecto.Changeset
 
   schema "visitors" do
-    field :accom, :boolean, default: false
-    field :shared, :boolean, default: false
+    field :fname, :string
+    field :lname, :string
+    field :email, :string
+    field :tel, :string
     field :date1, :boolean, default: false
     field :date2, :boolean, default: false
     field :date3, :boolean, default: false
-    field :email, :string
-    field :fname, :string
-    field :lname, :string
-    field :tel, :string
+    field :accom, :boolean, default: false
+    field :shared, :boolean, default: false
 
     timestamps()
   end

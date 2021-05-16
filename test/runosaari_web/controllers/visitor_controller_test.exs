@@ -4,37 +4,37 @@ defmodule RunosaariWeb.VisitorControllerTest do
   alias Runosaari.Registration
 
   @create_attrs %{
-    accom: true,
-    shared: true,
+    fname: "some fname",
+    lname: "some lname",
+    email: "some email",
+    tel: "some tel",
     date1: true,
     date2: true,
     date3: true,
-    email: "some email",
-    fname: "some fname",
-    lname: "some lname",
-    tel: "some tel"
+    accom: true,
+    shared: true
   }
   @update_attrs %{
-    accom: false,
-    shared: false,
+    fname: "some updated fname",
+    lname: "some updated lname",
+    email: "some updated email",
+    tel: "some updated tel",
     date1: false,
     date2: false,
     date3: false,
-    email: "some updated email",
-    fname: "some updated fname",
-    lname: "some updated lname",
-    tel: "some updated tel"
+    accom: false,
+    shared: false
   }
   @invalid_attrs %{
-    accom: nil,
-    shared: nil,
+    fname: nil,
+    lname: nil,
+    email: nil,
+    tel: nil,
     date1: nil,
     date2: nil,
     date3: nil,
-    email: nil,
-    fname: nil,
-    lname: nil,
-    tel: nil
+    accom: nil,
+    shared: nil
   }
 
   def fixture(:visitor) do
@@ -45,14 +45,14 @@ defmodule RunosaariWeb.VisitorControllerTest do
   describe "index" do
     test "lists all visitors", %{conn: conn} do
       conn = get(conn, Routes.admin_visitor_path(conn, :index))
-      assert html_response(conn, 200) =~ "Listing Visitors"
+      assert html_response(conn, 200) =~ "HALLINTA - Osallistujat"
     end
   end
 
   describe "new visitor" do
     test "renders form", %{conn: conn} do
       conn = get(conn, Routes.visitor_path(conn, :new))
-      assert html_response(conn, 200) =~ "New Visitor"
+      assert html_response(conn, 200) =~ "Ilmoittaudu"
     end
   end
 
@@ -60,16 +60,15 @@ defmodule RunosaariWeb.VisitorControllerTest do
     test "redirects to show when data is valid", %{conn: conn} do
       conn = post(conn, Routes.visitor_path(conn, :create), visitor: @create_attrs)
 
-      assert %{id: id} = redirected_params(conn)
-      assert redirected_to(conn) == Routes.admin_visitor_path(conn, :show, id)
+      assert redirected_to(conn) == Routes.visitor_path(conn, :confirmation)
 
-      conn = get(conn, Routes.admin_visitor_path(conn, :show, id))
-      assert html_response(conn, 200) =~ "Show Visitor"
+      conn = get(conn, Routes.visitor_path(conn, :confirmation))
+      assert html_response(conn, 200) =~ "Ilmoittautumisesi on rekisteröity."
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post(conn, Routes.visitor_path(conn, :create), visitor: @invalid_attrs)
-      assert html_response(conn, 200) =~ "New Visitor"
+      assert html_response(conn, 200) =~ "Ilmoittaudu"
     end
   end
 
@@ -78,7 +77,7 @@ defmodule RunosaariWeb.VisitorControllerTest do
 
     test "renders form for editing chosen visitor", %{conn: conn, visitor: visitor} do
       conn = get(conn, Routes.admin_visitor_path(conn, :edit, visitor))
-      assert html_response(conn, 200) =~ "Edit Visitor"
+      assert html_response(conn, 200) =~ "Muokkaa osallistujan tietoja"
     end
   end
 
@@ -97,7 +96,7 @@ defmodule RunosaariWeb.VisitorControllerTest do
     test "renders errors when data is invalid", %{conn: conn, visitor: visitor} do
       conn = put(conn, Routes.admin_visitor_path(conn, :update, visitor), visitor: @invalid_attrs)
 
-      assert html_response(conn, 200) =~ "Edit Visitor"
+      assert html_response(conn, 200) =~ "Muokkaa osallistujan tietoja"
     end
   end
 

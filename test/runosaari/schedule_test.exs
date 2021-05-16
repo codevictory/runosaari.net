@@ -6,19 +6,21 @@ defmodule Runosaari.ScheduleTest do
   describe "performances" do
     alias Runosaari.Schedule.Performance
 
-    @valid_attrs %{
-      description: "some description",
-      notes: "some notes",
-      time: ~N[2010-04-17 14:00:00],
+    @create_attrs %{
+      name: "some name",
+      desc: "some description",
       seqnum: 1
     }
+
     @update_attrs %{
-      description: "some updated description",
-      notes: "some updated notes",
-      time: ~N[2011-05-18 15:01:01],
+      name: "some updated name",
+      desc: "some updated description",
       seqnum: 2
     }
-    @invalid_attrs %{description: nil, notes: nil, time: nil, seqnum: nil}
+
+    @valid_attrs %{name: "some name", desc: "some description", seqnum: 1}
+
+    @invalid_attrs %{name: nil, desc: nil, seqnum: nil}
 
     def performance_fixture(attrs \\ %{}) do
       {:ok, performance} =
@@ -41,9 +43,8 @@ defmodule Runosaari.ScheduleTest do
 
     test "create_performance/1 with valid data creates a performance" do
       assert {:ok, %Performance{} = performance} = Schedule.create_performance(@valid_attrs)
-      assert performance.description == "some description"
-      assert performance.notes == "some notes"
-      assert performance.time == ~N[2010-04-17 14:00:00]
+      assert performance.name == "some name"
+      assert performance.desc == "some description"
       assert performance.seqnum == 1
     end
 
@@ -57,9 +58,8 @@ defmodule Runosaari.ScheduleTest do
       assert {:ok, %Performance{} = performance} =
                Schedule.update_performance(performance, @update_attrs)
 
-      assert performance.description == "some updated description"
-      assert performance.notes == "some updated notes"
-      assert performance.time == ~N[2011-05-18 15:01:01]
+      assert performance.name == "some updated name"
+      assert performance.desc == "some updated description"
       assert performance.seqnum == 2
     end
 
