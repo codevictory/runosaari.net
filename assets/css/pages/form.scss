@@ -1,47 +1,51 @@
 form {
   display: flex;
   flex-direction: column;
-}
 
-.checkbox-container {
-  display: flex;
+  .checkbox-container {
+    display: flex;
 
-  label {
-    text-align: left;
+    label {
+      text-align: left;
+    }
   }
-}
 
-.text-input {
-  display: flex;
-  align-items: center;
+  .text-input {
+    display: flex;
+    align-items: center;
 
-  label {
-    width: 29%;
-    text-align: left;
+    label {
+      width: 29%;
+      text-align: left;
+    }
+
+    input {
+      width: 71%;
+    }
+
+    @media screen and (max-width: 600px) {
+      label {
+        width: 47%;
+      }
+    }
   }
 
   input {
-    width: 71%;
+    margin-bottom: 10px;
   }
 
-  @media screen and (max-width: 600px) {
-    label {
-      width: 47%;
-    }
+  .confirmed-input {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
   }
-}
 
-input {
-  margin-bottom: 10px;
-}
+  .submit-button {
+    padding-top: 31px;
+    padding-bottom: 31px;
+  }
 
-.confirmed-input {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 50px;
-}
-
-.submit-button {
-  padding-top: 31px;
-  padding-bottom: 31px;
+  i {
+    margin-top: 30px;
+  }
 }
