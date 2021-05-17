@@ -2,12 +2,14 @@
     <h1>Rekisteri- ja tietosuojaseloste</h1>
     <div class="privacy-text">
         <p>
-            Tämä on Runosaari-työryhmän EU:n yleisen tietosuoja-asetuksen (GDPR) mukainen rekisteri- ja tietosuojaseloste. Laadittu 11.5.2021. Viimeisin muutos 11.5.2021.
+            Tämä on Runosaari-työryhmän EU:n yleisen tietosuoja-asetuksen (GDPR) mukainen rekisteri- ja tietosuojaseloste. Laadittu 11.5.2021. Viimeisin muutos 16.5.2021.
         </p>
 
         <h2>1. Rekisterin ylläpitäjä</h2>
             <p>
-                Runosaari-työryhmä
+                Saariston Savotta Ry<br>
+                Pohjanpääntie 49<br>
+                21180 LIVONSAARI<br>
             </p>
 
         <h2>2. Rekisteristä vastaava yhteyshenkilö</h2>
@@ -54,17 +56,15 @@
             sosiaalisen median palvelujen kautta ja muista tilanteista, joissa asiakas luovuttaa tietojaan.
         </p>
 
-        <h2>7. Tietojen säännönmukaiset luovutukset ja tietojen siirto EU:n tai ETA:n ulkopuolelle</h2>
+        <h2>7. Palvelimen sijainti</h2>
         <p>
-            Tietoja ei luovuteta säännönmukaisesti muille tahoille. Tietoja voidaan julkaista siltä osin kuin niin on sovittu asiakkaan kanssa.
+            Palvelin, jolla henkilötiedot säilötään sijaitsee Helsingissä Suomessa Telian palvelinkeskuksessa. Palvelimen ylläpidosta
+            vastaa <a class="generic-link" href="https://upcloud.com/">UpCloud</a>.
         </p>
 
-        <h2>8. Rekisterin suojauksen periaatteet</h2>
+        <h2>8. Tietojen luovutukset ja tietojen siirto EU:n tai ETA:n ulkopuolelle</h2>
         <p>
-            Rekisterin käsittelyssä noudatetaan huolellisuutta ja tietojärjestelmien avulla käsiteltävät tiedot suojataan asianmukaisesti.
-            Kun rekisteritietoja säilytetään Internet-palvelimilla, niiden laitteiston fyysisestä ja digitaalisesta tietoturvasta huolehditaan asiaankuuluvasti.
-            Rekisterinpitäjä huolehtii siitä, että tallennettuja tietoja sekä palvelimien käyttöoikeuksia ja muita henkilötietojen turvallisuuden kannalta
-            kriittisiä tietoja käsitellään luottamuksellisesti ja vain niiden työntekijöiden toimesta, joiden työnkuvaan se kuuluu.
+            Tietoja ei luovuteta muille tahoille. Tietoja voidaan julkaista siltä osin kuin niin on sovittu osallistujan kanssa.
         </p>
 
         <h2>9. Tarkastusoikeus ja oikeus vaatia tiedon korjaamista</h2>
