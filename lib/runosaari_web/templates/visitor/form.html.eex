@@ -48,7 +48,9 @@
     <%= label form, :accom, "Olen kiinnostunut majoituksesta" %>
   </div>
 
+  <i>Käsittelemme lomakkeen henkilötietoja<br /><a class="generic-link" href="/privacy">rekisteri- ja tietosuojaselosteessamme</a><br />määritellyllä tavoin.</i>
+
   <div class="submit-button">
-    <%= submit "Lähetä" %>
+    <%= submit "Tallenna lomakkeen tiedot osallistuaksesi tapahtumaan" %>
   </div>
 <% end %>
