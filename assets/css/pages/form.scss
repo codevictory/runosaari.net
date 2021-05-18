@@ -1,12 +1,19 @@
 form {
   display: flex;
   flex-direction: column;
+  max-width: 50%;
 
   .checkbox-container {
     display: flex;
 
     label {
       text-align: left;
+      padding-left: 5px;
+    }
+
+    &.consent-checkbox {
+      font-style: italic;
+      padding-top: 30px;
     }
   }
 
@@ -47,5 +54,11 @@ form {
 
   i {
     margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  form {
+    max-width: 100%;
   }
 }

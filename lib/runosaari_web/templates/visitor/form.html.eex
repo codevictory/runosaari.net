@@ -48,9 +48,15 @@
     <%= label form, :accom, "Olen kiinnostunut majoituksesta" %>
   </div>
 
-  <i>Käsittelemme lomakkeen henkilötietoja<br /><a class="generic-link" href="/privacy">rekisteri- ja tietosuojaselosteessamme</a><br />määritellyllä tavoin.</i>
-
-  <div class="submit-button">
-    <%= submit "Tallenna lomakkeen tiedot osallistuaksesi tapahtumaan" %>
+  <div class="checkbox-container consent-checkbox">
+    <input type="checkbox" required="true" id="privacy-consent" />
+    <label for="privacy-consent">
+      Olen lukenut ja hyväksyn yhteystietojeni käsittelyn
+      <a class="generic-link" href="/privacy">rekisteri- ja tietosuojaselosteessamme</a>
+      määritellyin tavoin.
+    </label>
+  </div>
+  <div div class="submit-button">
+    <%= submit "Lähetä" %>
   </div>
 <% end %>
