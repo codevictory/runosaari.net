@@ -5,7 +5,7 @@ defmodule Runosaari.Schedule.Performance do
   schema "performances" do
     field :name, :string
     field :desc, :string
-    field :seqnum, :integer
+    field :seqnum, :integer, default: 999
 
     timestamps()
   end

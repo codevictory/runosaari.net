@@ -6,6 +6,7 @@
       <tr>
         <th>Nimi</th>
         <th>Seloste</th>
+        <th>Prioriteetti</th>
 
         <th></th>
       </tr>
@@ -15,6 +16,7 @@
       <tr>
         <td><%= performance.name %></td>
         <td><%= performance.desc %></td>
+        <td><%= performance.seqnum %></td>
 
         <td class="actions">
           <span><%= link "Lisätietoja", to: Routes.admin_performance_path(@conn, :show, performance) %></span>
