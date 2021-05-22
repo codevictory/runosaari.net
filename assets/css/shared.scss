@@ -6,12 +6,18 @@ section.main {
   max-width: 1000px;
   background-image: linear-gradient(to top, rgba(255, 0, 0, 0), #d5caf2);
   text-align: center;
+  border-radius: 3px 3px 0px 0px;
 
   p {
     padding: 0px 20px;
     max-width: 56%;
   }
-  border-radius: 3px 3px 0px 0px;
+
+  @media screen and (max-width: 600px) {
+    p {
+      max-width: none;
+    }
+  }
 }
 
 section.logo ~ section.main {
