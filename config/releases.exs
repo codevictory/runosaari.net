@@ -1,15 +1,23 @@
 import Config
 
-database_url =
-  System.get_env("DATABASE_URL") ||
+database_name =
+  System.get_env("DATABASE_NAME") ||
     raise """
-    environment variable DATABASE_URL is missing.
-    For example: ecto://USER:PASS@HOST/DATABASE
+    environment variable DATABASE_NAME is missing.
+    For example: runosaari
+    """
+
+database_socket_dir =
+  System.get_env("DATABASE_SOCKET_DIR") ||
+    raise """
+    environment variable DATABASE_SOCKET_DIR is missing.
+    For example: /var/run/postgresql
     """
 
 config :runosaari, Runosaari.Repo,
   # ssl: true,
-  url: database_url,
+  database: database_name,
+  socket_dir: database_socket_dir,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
 
 secret_key_base =
