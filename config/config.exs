@@ -35,5 +35,5 @@ config :ex_aws,
   access_key_id: System.get_env("S3_ACCESS_KEY"),
   secret_access_key: System.get_env("S3_SECRET_KEY"),
   s3: [
-    host: System.get_env("S3_BUCKET_NAME") <> ".parmenides.fi-hel2.upcloudobjects.com"
+    host: System.get_env("S3_BUCKET_HOST")
   ]
