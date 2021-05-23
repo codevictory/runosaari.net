@@ -1,6 +1,4 @@
 defmodule Runosaari.Registration do
-  import Enum
-
   @moduledoc """
   The Registration context.
   """
