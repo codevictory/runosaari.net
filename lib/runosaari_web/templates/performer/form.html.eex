@@ -1,4 +1,4 @@
-<%= form_for @changeset, @action, fn form -> %>
+<%= form_for @changeset, @action, [multipart: true], fn form -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
       <p>Jokin kentistä on tyhjä.</p>
@@ -16,6 +16,10 @@
   <%= label form, :seqnum, "Prioriteetti (1 on korkein)" %>
   <%= textarea form, :seqnum %>
   <%= error_tag form, :seqnum %>
+
+  <%= label form, :photo_path, "Esiintyjän kuva" %>
+  <%= file_input form, :photo_path %>
+  <%= error_tag form, :photo_path %>
 
   <div class="checkbox-container">
     <%= checkbox form, :confirmed %>
