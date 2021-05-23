@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 config :runosaari, RunosaariWeb.Endpoint,
   url: [host: "runosaari.net", port: 3000],
