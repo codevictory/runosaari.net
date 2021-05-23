@@ -29,3 +29,11 @@ config :phoenix, :json_library, Jason
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
+
+# Configure :ex_aws
+config :ex_aws,
+  access_key_id: System.get_env("S3_ACCESS_KEY"),
+  secret_access_key: System.get_env("S3_SECRET_KEY"),
+  s3: [
+    host: System.get_env("S3_BUCKET_NAME") <> ".parmenides.fi-hel2.upcloudobjects.com"
+  ]
