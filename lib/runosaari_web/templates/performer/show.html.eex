@@ -26,5 +26,5 @@
   </ul>
 
   <span><%= link "Muokkaa", to: Routes.admin_performer_path(@conn, :edit, @performer) %></span>
-  <span><%= link "Takaisin", to: Routes.performer_path(@conn, :index) %></span>
+  <span><%= link "Takaisin", to: Routes.admin_performer_path(@conn, :admin) %></span>
 </section>

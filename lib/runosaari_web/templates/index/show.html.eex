@@ -16,5 +16,5 @@
   </ul>
 
   <span><%= link "Muokkaa", to: Routes.admin_index_path(@conn, :edit, @index) %></span>
-  <span><%= link "Takaisin", to: Routes.index_path(@conn, :index) %></span>
+  <span><%= link "Takaisin", to: Routes.admin_index_path(@conn, :admin) %></span>
 </section>
