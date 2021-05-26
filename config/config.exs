@@ -8,7 +8,8 @@
 import Config
 
 config :runosaari,
-  ecto_repos: [Runosaari.Repo]
+  ecto_repos: [Runosaari.Repo],
+  public_s3_host: System.get_env("S3_PUBLIC_HOST")
 
 # Configures the endpoint
 config :runosaari, RunosaariWeb.Endpoint,
@@ -35,5 +36,5 @@ config :ex_aws,
   access_key_id: System.get_env("S3_ACCESS_KEY"),
   secret_access_key: System.get_env("S3_SECRET_KEY"),
   s3: [
-    host: System.get_env("S3_BUCKET_HOST")
+    host: System.get_env("S3_PRIVATE_HOST")
   ]

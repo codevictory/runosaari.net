@@ -19,8 +19,27 @@ defmodule RunosaariWeb.PerformerController do
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"performer" => performer_params}) do
-    case Registration.create_performer(performer_params) do
+  def create(conn, %{"performer" => %{"photo" => photo_params} = performer_params}) do
+    file_uuid = UUID.uuid4(:hex)
+    photo_filename = photo_params.filename
+    unique_filename = "#{file_uuid}-#{photo_filename}"
+    {:ok, photo_binary} = File.read(photo_params.path)
+    bucket_name = System.get_env("S3_BUCKET_NAME")
+    public_host = System.get_env("S3_PUBLIC_HOST")
+
+    photo =
+      ExAws.S3.put_object(bucket_name, unique_filename, photo_binary)
+      |> ExAws.request!()
+
+    updated_params =
+      performer_params
+      |> Map.update(photo, photo_params, fn _value ->
+        "https://#{public_host}/#{bucket_name}/performer_photos/#{unique_filename}"
+      end)
+
+    updated_changeset = Performer.changeset(%Performer{}, updated_params)
+
+    case Registration.create_performer(updated_changeset) do
       {:ok, _performer} ->
         conn
         |> put_flash(

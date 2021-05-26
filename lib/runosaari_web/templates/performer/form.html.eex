@@ -17,9 +17,9 @@
   <%= textarea form, :seqnum %>
   <%= error_tag form, :seqnum %>
 
-  <%= label form, :photo_path, "Esiintyjän kuva" %>
-  <%= file_input form, :photo_path %>
-  <%= error_tag form, :photo_path %>
+  <%= label form, :photo, "Esiintyjän kuva" %>
+  <%= file_input form, :photo %>
+  <%= error_tag form, :photo %>
 
   <div class="checkbox-container">
     <%= checkbox form, :confirmed %>
