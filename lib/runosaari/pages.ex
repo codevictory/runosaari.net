@@ -22,6 +22,19 @@ defmodule Runosaari.Pages do
   end
 
   @doc """
+  Returns the list of paragraphs sorted by seqnum.
+
+  ## Examples
+
+      iex> list_sorted_index_paragraphs()
+      [%Index{}, ...]
+
+  """
+  def list_sorted_index_paragraphs do
+    Repo.all(Index |> order_by(:seqnum))
+  end
+
+  @doc """
   Gets a single index.
 
   Raises `Ecto.NoResultsError` if the Index does not exist.

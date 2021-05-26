@@ -5,7 +5,7 @@ defmodule RunosaariWeb.IndexController do
   alias Runosaari.Pages.Index
 
   def index(conn, _params) do
-    index_paragraphs = Pages.list_index_paragraphs()
+    index_paragraphs = Pages.list_sorted_index_paragraphs()
     render(conn, "index.html", index_paragraphs: index_paragraphs)
   end
 
