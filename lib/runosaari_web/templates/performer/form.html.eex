@@ -14,7 +14,7 @@
   <%= error_tag form, :desc %>
 
   <%= label form, :seqnum, "Prioriteetti (1 on korkein)" %>
-  <%= textarea form, :seqnum %>
+  <%= number_input form, :seqnum %>
   <%= error_tag form, :seqnum %>
 
   <%= label form, :photo, "Esiintyjän kuva" %>

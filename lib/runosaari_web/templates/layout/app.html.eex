@@ -15,7 +15,7 @@
   <body>
     <header >
       <nav class="main-nav-bar" role="navigation">
-        <%= link "Etusivu", to: Routes.page_path(@conn, :index) %>
+        <%= link "Etusivu", to: Routes.index_path(@conn, :index) %>
         <%= link "Ohjelma", to: Routes.performance_path(@conn, :index) %>
         <%= link "Esiintyjät", to: Routes.performer_path(@conn, :index) %>
         <%= link "Info", to: Routes.page_path(@conn, :info) %>
@@ -26,7 +26,7 @@
         <a href="/#logo-container">Runosaari 2021</a>
       </h1>
       <nav class="mobile-main-nav-bar" id="nav-bar">
-        <%= link "Etusivu", to: "#{Routes.page_path(@conn, :index)}#logo-start" %>
+        <%= link "Etusivu", to: "#{Routes.index_path(@conn, :index)}#logo-start" %>
         <%= link "Ohjelma", to: "#{Routes.performance_path(@conn, :index)}#calendar-start" %>
         <%= link "Esiintyjät", to: "#{Routes.performer_path(@conn, :index)}#performers-start" %>
         <%= link "Info", to: "#{Routes.page_path(@conn, :info)}#contact-start" %>

@@ -1,0 +1,30 @@
+<section class="main">
+    <h1>HALLINTA - Etusivu</h1>
+
+    <table>
+    <thead>
+        <tr>
+        <th>Sisältö</th>
+        <th>Prioriteetti</th>
+
+        <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <%= for index <- @index_paragraphs do %>
+            <tr>
+            <td><%= index.content %></td>
+            <td><%= index.seqnum %></td>
+
+            <td class="actions">
+                <span><%= link "Lisätietoja", to: Routes.admin_index_path(@conn, :show, index) %></span>
+                <span><%= link "Muokkaa", to: Routes.admin_index_path(@conn, :edit, index) %></span>
+                <span><%= link "Poista", to: Routes.admin_index_path(@conn, :delete, index), method: :delete, data: [confirm: "Are you sure?"] %></span>
+            </td>
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+
+    <span><%= link "Uusi Kappale", to: Routes.admin_index_path(@conn, :new) %></span>
+</section>

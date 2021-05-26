@@ -1,5 +1,5 @@
 <section class="main">
-    <h1>Ilmoittaudu</h1>
+    <h1>Luo esiintyjä</h1>
 
     <%= render "form.html", Map.put(assigns, :action, Routes.admin_performer_path(@conn, :create)) %>
 </section>

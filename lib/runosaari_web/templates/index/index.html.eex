@@ -1,0 +1,28 @@
+<section class="logo" id="logo-start">
+  <picture>
+    <source
+      srcset="<%= Routes.static_path(@conn, "/images/runosaari-logo_small.jpg") %>"
+      media="(max-width: 600px)"
+      alt="Runosaari logo"
+    />
+    <source srcset="<%= Routes.static_path(@conn, "/images/runosaari-logo.jpg") %>" alt="Runosaari logo" />
+    <img src="<%= Routes.static_path(@conn, "/images/runosaari-logo.jpg") %>" alt="Runosaari logo" />
+  </picture>
+  <div id="logo-credits"><div>@Sanna Hukkanen</div></div>
+</section>
+
+<section class="main">
+  <h1 id="main-title">Runosaari 2021</h1>
+    <h2>
+      <span class="time-and-place"
+        >~ 22.-24.7. Livonsaari & Velkuanmaa ~</span
+      ><br />
+      Eksymisretki omaan luontoosi, metsänpeiton suojaan!
+    </h2>
+    <%= for index <- @index_paragraphs do %>
+      <p><%= index.content %></p>
+    <% end %>
+    <p>
+      <i>[Ohjelmaa päivitetään muuttuvan tilanteen mukaan]</i>
+    </p>
+</section>

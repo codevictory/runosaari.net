@@ -1,0 +1,5 @@
+<h1>Muokkaa kappaletta</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.admin_index_path(@conn, :update, @index)) %>
+
+<span><%= link "Takaisin", to: Routes.index_path(@conn, :index) %></span>
