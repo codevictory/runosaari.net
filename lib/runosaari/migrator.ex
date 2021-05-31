@@ -1,4 +1,4 @@
-defmodule Runosaari.Release do
+defmodule Runosaari.Migrator do
   @app :runosaari
 
   def migrate do
