@@ -20,7 +20,7 @@ defmodule RunosaariWeb.Router do
     get "/info", PageController, :info
     get "/covid19", PageController, :covid19
     get "/privacy", PageController, :privacy
-    resources "/performers", PerformerController, only: [:index]
+    resources "/performers", PerformerController, only: [:index, :show]
     resources "/performances", PerformanceController, only: [:index]
     resources "/visitors", VisitorController, only: [:new, :create]
     get "/confirmation", VisitorController, :confirmation
@@ -33,7 +33,7 @@ defmodule RunosaariWeb.Router do
     resources "/index", IndexController, except: [:index]
     get "/performers", PerformerController, :admin
     get "/performances", PerformanceController, :admin
-    resources "/performers", PerformerController, except: [:index]
+    resources "/performers", PerformerController, except: [:index, :show]
     resources "/performances", PerformanceController, except: [:index]
     resources "/visitors", VisitorController, except: [:new, :create]
   end

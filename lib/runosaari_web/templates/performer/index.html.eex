@@ -4,8 +4,9 @@
   <%= if length(@performers) == 0 do %>
     <i>Lisätietoja tulossa myöhemmin!</i>
   <% end %>
-  <%= for performer <- @performers do %>
-    <h2><%= performer.name %></h2>
-    <p><%= performer.desc %></p>
-  <% end %>
+  <div class="performers-container">
+    <%= for performer <- @performers do %>
+      <%= link "#{performer.name}", to: Routes.performer_path(@conn, :show, performer), class: "performer-name" %>
+    <% end %>
+  </div>
 </section>

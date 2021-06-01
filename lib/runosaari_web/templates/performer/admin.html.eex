@@ -17,7 +17,7 @@
           <td><%= performer.seqnum %></td>
 
           <td class="actions">
-            <span><%= link "Lisätietoja", to: Routes.admin_performer_path(@conn, :show, performer) %></span>
+            <span><%= link "Esiintyjäsivu", to: Routes.performer_path(@conn, :show, performer) %></span>
             <span><%= link "Muokkaa", to: Routes.admin_performer_path(@conn, :edit, performer) %></span>
             <span><%= link "Poista", to: Routes.admin_performer_path(@conn, :delete, performer), method: :delete, data: [confirm: "Haluatko poistaa esiintyjän #{performer.name}?"] %></span>
           </td>

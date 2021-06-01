@@ -70,9 +70,9 @@ defmodule RunosaariWeb.PerformerControllerTest do
       conn =
         put(conn, Routes.admin_performer_path(conn, :update, performer), performer: @update_attrs)
 
-      assert redirected_to(conn) == Routes.admin_performer_path(conn, :show, performer)
+      assert redirected_to(conn) == Routes.performer_path(conn, :show, performer)
 
-      conn = get(conn, Routes.admin_performer_path(conn, :show, performer))
+      conn = get(conn, Routes.performer_path(conn, :show, performer))
       assert html_response(conn, 200) =~ "some updated name"
     end
 
@@ -92,7 +92,7 @@ defmodule RunosaariWeb.PerformerControllerTest do
       assert redirected_to(conn) == Routes.admin_performer_path(conn, :admin)
 
       assert_error_sent 404, fn ->
-        get(conn, Routes.admin_performer_path(conn, :show, performer))
+        get(conn, Routes.performer_path(conn, :show, performer))
       end
     end
   end
