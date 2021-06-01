@@ -23,7 +23,7 @@ defmodule RunosaariWeb.PerformerController do
     %{"photo" => photo_params} = performer_params
     file_uuid = UUID.uuid4(:hex)
     photo_filename = photo_params.filename
-    unique_filename = "#{file_uuid}-#{photo_filename}"
+    unique_filename = "performer_photos/#{file_uuid}-#{photo_filename}"
     {:ok, photo_binary} = File.read(photo_params.path)
     bucket_name = System.get_env("S3_BUCKET_NAME")
     public_host = System.get_env("S3_PUBLIC_HOST")
@@ -36,7 +36,7 @@ defmodule RunosaariWeb.PerformerController do
       |> Map.delete("photo")
       |> Map.put(
         "photo_path",
-        "https://#{public_host}/#{bucket_name}/performer_photos/#{unique_filename}"
+        "https://#{public_host}/#{bucket_name}/#{unique_filename}"
       )
 
     case Registration.create_performer(updated_params) do
