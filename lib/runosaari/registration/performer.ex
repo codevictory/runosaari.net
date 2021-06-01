@@ -4,10 +4,10 @@ defmodule Runosaari.Registration.Performer do
 
   schema "performers" do
     field :name, :string
-    field :confirmed, :boolean, default: false
     field :desc, :string
     field :seqnum, :integer, default: 999
     field :photo_path, :string
+    field :confirmed, :boolean, default: false
 
     timestamps()
   end
@@ -17,17 +17,17 @@ defmodule Runosaari.Registration.Performer do
     performer
     |> cast(attrs, [
       :name,
-      :confirmed,
       :desc,
       :seqnum,
-      :photo_path
+      :photo_path,
+      :confirmed
     ])
     |> validate_required([
       :name,
-      :confirmed,
       :desc,
       :seqnum,
-      :photo_path
+      :photo_path,
+      :confirmed
     ])
     |> unique_constraint(:email)
   end

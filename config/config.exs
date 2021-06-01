@@ -36,5 +36,6 @@ config :ex_aws,
   access_key_id: System.get_env("S3_ACCESS_KEY"),
   secret_access_key: System.get_env("S3_SECRET_KEY"),
   s3: [
-    host: System.get_env("S3_PRIVATE_HOST")
+    host: System.get_env("S3_PRIVATE_HOST"),
+    region: System.get_env("S3_REGION")
   ]
