@@ -9,20 +9,18 @@ defmodule Runosaari.RegistrationTest do
     @create_attrs %{
       name: "some name",
       desc: "some description",
-      confirmed: false,
-      seqnum: 1
+      confirmed: false
     }
 
     @update_attrs %{
       name: "some updated name",
       desc: "some updated description",
-      confirmed: true,
-      seqnum: 2
+      confirmed: true
     }
 
-    @valid_attrs %{name: "some name", desc: "some description", confirmed: false, seqnum: 1}
+    @valid_attrs %{name: "some name", desc: "some description", confirmed: false}
 
-    @invalid_attrs %{name: nil, desc: nil, confirmed: nil, seqnum: nil}
+    @invalid_attrs %{name: nil, desc: nil, confirmed: nil}
 
     def performer_fixture(attrs \\ %{}) do
       {:ok, performer} =
@@ -48,7 +46,6 @@ defmodule Runosaari.RegistrationTest do
       assert performer.name == "some name"
       assert performer.desc == "some description"
       assert performer.confirmed == false
-      assert performer.seqnum == 1
     end
 
     test "create_performer/1 with invalid data returns error changeset" do
@@ -64,7 +61,6 @@ defmodule Runosaari.RegistrationTest do
       assert performer.name == "some updated name"
       assert performer.desc == "some updated description"
       assert performer.confirmed == true
-      assert performer.seqnum == 2
     end
 
     test "update_performer/2 with invalid data returns error changeset" do

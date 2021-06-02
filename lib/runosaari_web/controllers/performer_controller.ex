@@ -71,7 +71,7 @@ defmodule RunosaariWeb.PerformerController do
       {:ok, performer} ->
         conn
         |> put_flash(:info, "Esiintyjän tiedot päivitetty.")
-        |> redirect(to: Routes.performer_path(conn, :show, performer))
+        |> redirect(to: Routes.admin_performer_path(conn, :admin))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", performer: performer, changeset: changeset)

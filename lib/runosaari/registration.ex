@@ -22,7 +22,7 @@ defmodule Runosaari.Registration do
   end
 
   @doc """
-  Returns the :seqnum sorted list of confirmed performers.
+  Returns the :name sorted list of confirmed performers.
 
   ## Examples
 
@@ -33,7 +33,7 @@ defmodule Runosaari.Registration do
   def list_sorted_confirmed_performers do
     Performer
     |> where([p], p.confirmed == true)
-    |> order_by(:seqnum)
+    |> order_by(:name)
     |> Repo.all()
   end
 

@@ -9,7 +9,6 @@ defmodule Runosaari.Registration.Performer do
     field :paragraph3, :string
     field :paragraph4, :string
     field :paragraph5, :string
-    field :seqnum, :integer, default: 999
     field :photo_path, :string
     field :confirmed, :boolean, default: false
 
@@ -21,7 +20,6 @@ defmodule Runosaari.Registration.Performer do
     performer
     |> cast(attrs, [
       :name,
-      :seqnum,
       :paragraph1,
       :paragraph2,
       :paragraph3,
@@ -32,7 +30,6 @@ defmodule Runosaari.Registration.Performer do
     ])
     |> validate_required([
       :name,
-      :seqnum,
       :photo_path,
       :confirmed
     ])

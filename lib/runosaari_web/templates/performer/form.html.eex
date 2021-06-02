@@ -9,7 +9,6 @@
   <%= text_input form, :name %>
   <%= error_tag form, :name %>
 
-  <hr />
   <%= label form, :paragraph1, "Kappale 1 (max 2000 merkkiä)" %>
   <%= textarea form, :paragraph1 %>
   <%= error_tag form, :paragraph1 %>
@@ -29,10 +28,6 @@
   <%= label form, :paragraph5, "Kappale 5 (max 2000 merkkiä)" %>
   <%= textarea form, :paragraph5 %>
   <%= error_tag form, :paragraph5 %>
-
-  <%= label form, :seqnum, "Prioriteetti (1 on korkein)" %>
-  <%= number_input form, :seqnum %>
-  <%= error_tag form, :seqnum %>
 
   <%= label form, :photo, "Esiintyjän kuva (muokatessa ei vaadi uudelleen lisäys vaikka tyhjä)" %>
   <%= file_input form, :photo %>
