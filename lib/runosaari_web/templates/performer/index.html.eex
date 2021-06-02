@@ -6,7 +6,10 @@
   <% end %>
   <div class="performers-container">
     <%= for performer <- @performers do %>
-      <%= link "#{performer.name}", to: Routes.performer_path(@conn, :show, performer), class: "performer-name" %>
+      <div class="performer-name">
+        <span class="fa fa-chevron-right" ></span>
+        <%= link "#{performer.name}", to: "#{Routes.performer_path(@conn, :show, performer)}#performer-start" %>
+      </div>
     <% end %>
   </div>
 </section>

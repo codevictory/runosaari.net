@@ -11,12 +11,20 @@ section.main {
   p {
     padding: 0px 20px;
     max-width: 56%;
+    width: 100%;
   }
 
   @media screen and (max-width: 600px) {
     p {
       max-width: none;
     }
+  }
+
+  .link-back {
+    font-weight: bolder;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: underline;
   }
 }
 

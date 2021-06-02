@@ -1,5 +1,20 @@
-<section class="main">
+<section class="main performer" id="performer-start">
   <h1><%= @performer.name %></h1>
-  <p><%= @performer.desc %></p>
+  <%= if @performer.paragraph1 != nil do %>
+    <p class="performer-paragraph"><%= @performer.paragraph1 %></p>
+  <% end %>
+  <%= if @performer.paragraph2 != nil do %>
+    <p class="performer-paragraph"><%= @performer.paragraph2 %></p>
+  <% end %>
+  <%= if @performer.paragraph3 != nil do %>
+    <p class="performer-paragraph"><%= @performer.paragraph3 %></p>
+  <% end %>
+  <%= if @performer.paragraph4 != nil do %>
+    <p class="performer-paragraph"><%= @performer.paragraph4 %></p>
+  <% end %>
+  <%= if @performer.paragraph5 != nil do %>
+    <p class="performer-paragraph"><%= @performer.paragraph5 %></p>
+  <% end %>
   <img src="<%= @performer.photo_path %>" alt="Esiintyjän kuva" class="performer-img" />
+  <span class="link-back"><%= link "Takaisin esiintyjälistalle", to: Routes.performer_path(@conn, :index) %></span>
 </section>
