@@ -4,7 +4,11 @@ defmodule Runosaari.Registration.Performer do
 
   schema "performers" do
     field :name, :string
-    field :desc, :string
+    field :paragraph1, :string
+    field :paragraph2, :string
+    field :paragraph3, :string
+    field :paragraph4, :string
+    field :paragraph5, :string
     field :seqnum, :integer, default: 999
     field :photo_path, :string
     field :confirmed, :boolean, default: false
@@ -17,14 +21,17 @@ defmodule Runosaari.Registration.Performer do
     performer
     |> cast(attrs, [
       :name,
-      :desc,
       :seqnum,
+      :paragraph1,
+      :paragraph2,
+      :paragraph3,
+      :paragraph4,
+      :paragraph5,
       :photo_path,
       :confirmed
     ])
     |> validate_required([
       :name,
-      :desc,
       :seqnum,
       :photo_path,
       :confirmed
