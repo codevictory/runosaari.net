@@ -29,7 +29,7 @@
   <%= textarea form, :paragraph5 %>
   <%= error_tag form, :paragraph5 %>
 
-  <%= label form, :link, "Linkki esiintyjän sivuille" %>
+  <%= label form, :link, "Linkki esiintyjän sivuille (muotoa www.sivu.fi tai sivu.fi)" %>
   <%= textarea form, :link %>
   <%= error_tag form, :link %>
 
