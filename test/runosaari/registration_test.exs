@@ -8,19 +8,51 @@ defmodule Runosaari.RegistrationTest do
 
     @create_attrs %{
       name: "some name",
-      desc: "some description",
+      paragraph1: "some paragraph 1",
+      paragraph2: "some paragraph 2",
+      paragraph3: "some paragraph 3",
+      paragraph4: "some paragraph 4",
+      paragraph5: "some paragraph 5",
+      link: "some link",
+      photo_path: "some photo path",
       confirmed: false
     }
 
     @update_attrs %{
       name: "some updated name",
-      desc: "some updated description",
+      paragraph1: "some updated paragraph 1",
+      paragraph2: "some updated paragraph 2",
+      paragraph3: "some updated paragraph 3",
+      paragraph4: "some updated paragraph 4",
+      paragraph5: "some updated paragraph 5",
+      link: "some updated link",
+      photo_path: "some updated photo path",
       confirmed: true
     }
 
-    @valid_attrs %{name: "some name", desc: "some description", confirmed: false}
+    @valid_attrs %{
+      name: "some name",
+      paragraph1: "some paragraph 1",
+      paragraph2: "some paragraph 2",
+      paragraph3: "some paragraph 3",
+      paragraph4: "some paragraph 4",
+      paragraph5: "some paragraph 5",
+      link: "some link",
+      photo_path: "some photo path",
+      confirmed: false
+    }
 
-    @invalid_attrs %{name: nil, desc: nil, confirmed: nil}
+    @invalid_attrs %{
+      name: nil,
+      paragraph1: nil,
+      paragraph2: nil,
+      paragraph3: nil,
+      paragraph4: nil,
+      paragraph5: nil,
+      link: nil,
+      photo_path: nil,
+      confirmed: false
+    }
 
     def performer_fixture(attrs \\ %{}) do
       {:ok, performer} =
@@ -44,7 +76,13 @@ defmodule Runosaari.RegistrationTest do
     test "create_performer/1 with valid data creates a performer" do
       assert {:ok, %Performer{} = performer} = Registration.create_performer(@valid_attrs)
       assert performer.name == "some name"
-      assert performer.desc == "some description"
+      assert performer.paragraph1 == "some paragraph 1"
+      assert performer.paragraph2 == "some paragraph 2"
+      assert performer.paragraph3 == "some paragraph 3"
+      assert performer.paragraph4 == "some paragraph 4"
+      assert performer.paragraph5 == "some paragraph 5"
+      assert performer.link == "some link"
+      assert performer.photo_path == "some photo path"
       assert performer.confirmed == false
     end
 
@@ -59,7 +97,13 @@ defmodule Runosaari.RegistrationTest do
                Registration.update_performer(performer, @update_attrs)
 
       assert performer.name == "some updated name"
-      assert performer.desc == "some updated description"
+      assert performer.paragraph1 == "some updated paragraph 1"
+      assert performer.paragraph2 == "some updated paragraph 2"
+      assert performer.paragraph3 == "some updated paragraph 3"
+      assert performer.paragraph4 == "some updated paragraph 4"
+      assert performer.paragraph5 == "some updated paragraph 5"
+      assert performer.link == "some updated link"
+      assert performer.photo_path == "some updated photo path"
       assert performer.confirmed == true
     end
 

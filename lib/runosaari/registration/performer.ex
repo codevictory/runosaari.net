@@ -35,6 +35,5 @@ defmodule Runosaari.Registration.Performer do
       :photo_path,
       :confirmed
     ])
-    |> unique_constraint(:email)
   end
 end

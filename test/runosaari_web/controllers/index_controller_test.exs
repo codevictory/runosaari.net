@@ -15,14 +15,14 @@ defmodule RunosaariWeb.IndexControllerTest do
   describe "index" do
     test "lists all index_paragraphs", %{conn: conn} do
       conn = get(conn, Routes.index_path(conn, :index))
-      assert html_response(conn, 200) =~ "Listing Index paragraphs"
+      assert html_response(conn, 200) =~ "Runosaari 2021"
     end
   end
 
   describe "new index" do
     test "renders form", %{conn: conn} do
       conn = get(conn, Routes.admin_index_path(conn, :new))
-      assert html_response(conn, 200) =~ "New Index"
+      assert html_response(conn, 200) =~ "Luo kappale"
     end
   end
 
@@ -34,12 +34,12 @@ defmodule RunosaariWeb.IndexControllerTest do
       assert redirected_to(conn) == Routes.admin_index_path(conn, :show, id)
 
       conn = get(conn, Routes.admin_index_path(conn, :show, id))
-      assert html_response(conn, 200) =~ "Show Index"
+      assert html_response(conn, 200) =~ "Kappaleen tiedot"
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post(conn, Routes.admin_index_path(conn, :create), index: @invalid_attrs)
-      assert html_response(conn, 200) =~ "New Index"
+      assert html_response(conn, 200) =~ "Luo kappale"
     end
   end
 
@@ -48,7 +48,7 @@ defmodule RunosaariWeb.IndexControllerTest do
 
     test "renders form for editing chosen index", %{conn: conn, index: index} do
       conn = get(conn, Routes.admin_index_path(conn, :edit, index))
-      assert html_response(conn, 200) =~ "Edit Index"
+      assert html_response(conn, 200) =~ "Muokkaa kappaletta"
     end
   end
 
@@ -65,7 +65,7 @@ defmodule RunosaariWeb.IndexControllerTest do
 
     test "renders errors when data is invalid", %{conn: conn, index: index} do
       conn = put(conn, Routes.admin_index_path(conn, :update, index), index: @invalid_attrs)
-      assert html_response(conn, 200) =~ "Edit Index"
+      assert html_response(conn, 200) =~ "Muokkaa kappaletta"
     end
   end
 
