@@ -29,7 +29,11 @@
   <%= textarea form, :paragraph5 %>
   <%= error_tag form, :paragraph5 %>
 
-  <%= label form, :photo, "Esiintyjän kuva (muokatessa ei vaadi uudelleen lisäys vaikka tyhjä)" %>
+  <%= label form, :link, "Linkki esiintyjän sivuille" %>
+  <%= textarea form, :link %>
+  <%= error_tag form, :link %>
+
+  <%= label form, :photo, "Esiintyjän kuva (muokatessa ei vaadi uudelleen lisäystä vaikka tyhjä)" %>
   <%= file_input form, :photo %>
   <%= error_tag form, :photo %>
 

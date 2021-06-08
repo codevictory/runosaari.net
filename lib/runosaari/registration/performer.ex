@@ -9,6 +9,7 @@ defmodule Runosaari.Registration.Performer do
     field :paragraph3, :string
     field :paragraph4, :string
     field :paragraph5, :string
+    field :link, :string
     field :photo_path, :string
     field :confirmed, :boolean, default: false
 
@@ -25,6 +26,7 @@ defmodule Runosaari.Registration.Performer do
       :paragraph3,
       :paragraph4,
       :paragraph5,
+      :link,
       :photo_path,
       :confirmed
     ])

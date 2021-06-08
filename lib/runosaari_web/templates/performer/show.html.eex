@@ -15,6 +15,9 @@
   <%= if @performer.paragraph5 != nil do %>
     <p class="performer-paragraph"><%= @performer.paragraph5 %></p>
   <% end %>
+  <%= if @performer.link != nil do %>
+    <a href="<%= @performer.link %>" class="performer-link"><%= @performer.link %></a>
+  <% end %>
   <img src="<%= @performer.photo_path %>" alt="Esiintyjän kuva" class="performer-img" />
   <span class="link-back"><%= link "Takaisin esiintyjälistalle", to: Routes.performer_path(@conn, :index) %></span>
 </section>
