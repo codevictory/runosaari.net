@@ -1,0 +1,30 @@
+<section class="main">
+    <h1>HALLINTA - Infon kappaleet</h1>
+
+    <table>
+    <thead>
+        <tr>
+        <th>Sisältö</th>
+        <th>Prioriteetti</th>
+
+        <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <%= for info <- @info_paragraphs do %>
+            <tr>
+            <td><%= info.content %></td>
+            <td><%= info.seqnum %></td>
+
+            <td class="actions">
+                <span><%= link "Lisätietoja", to: Routes.admin_info_path(@conn, :show, info) %></span>
+                <span><%= link "Muokkaa", to: Routes.admin_info_path(@conn, :edit, info) %></span>
+                <span><%= link "Poista", to: Routes.admin_info_path(@conn, :delete, info), method: :delete, data: [confirm: "Oletko varma?"] %></span>
+            </td>
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+
+    <span><%= link "Uusi kappale", to: Routes.admin_info_path(@conn, :new) %></span>
+</section>

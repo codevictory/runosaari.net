@@ -19,7 +19,7 @@
         <%= link "Etusivu", to: Routes.index_path(@conn, :index) %>
         <%= link "Ohjelma", to: Routes.performance_path(@conn, :index) %>
         <%= link "Esiintyjät", to: Routes.performer_path(@conn, :index) %>
-        <%= link "Info", to: Routes.page_path(@conn, :info) %>
+        <%= link "Info", to: Routes.info_path(@conn, :index) %>
         <%= link "Covid-19", to: Routes.page_path(@conn, :covid19) %>
         <%= link "Ilmoittautuminen", to: Routes.visitor_path(@conn, :new) %>
       </nav>
@@ -30,7 +30,7 @@
         <%= link "Etusivu", to: "#{Routes.index_path(@conn, :index)}#logo-start" %>
         <%= link "Ohjelma", to: "#{Routes.performance_path(@conn, :index)}#calendar-start" %>
         <%= link "Esiintyjät", to: "#{Routes.performer_path(@conn, :index)}#performers-start" %>
-        <%= link "Info", to: "#{Routes.page_path(@conn, :info)}#contact-start" %>
+        <%= link "Info", to: "#{Routes.info_path(@conn, :index )}#contact-start" %>
         <%= link "Covid-19", to: "#{Routes.page_path(@conn, :covid19)}#covid-start" %>
         <%= link "Ilmoittautuminen", to: "#{Routes.visitor_path(@conn, :new)}#registration-start" %>
       </nav>

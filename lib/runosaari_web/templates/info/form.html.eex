@@ -1,0 +1,19 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Jokin kentistä on tyhjä.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :content, "Sisältö" %>
+  <%= text_input f, :content %>
+  <%= error_tag f, :content %>
+
+  <%= label f, :seqnum, "Prioritetti (1 on korkein)" %>
+  <%= number_input f, :seqnum %>
+  <%= error_tag f, :seqnum %>
+
+  <div>
+    <%= submit "Tallenna" %>
+  </div>
+<% end %>

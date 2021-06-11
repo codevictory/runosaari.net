@@ -9,18 +9,9 @@
         Kirjan talo – Bokens hus ry, Livonsaaren kyläyhdistys ry ja
         Saaristohotelli Vaihela.
     </p>
-    <p>
-        Tapahtuma tuo korkeatasoista kotimaista runoutta helposti
-        lähestyttävässä muodossa maaseudun uusille yleisöille, niin
-        paikallisille saaristolaisille kuin mökkiläisille, kutsuvieraille ja
-        kauempaa tulleillekin. Samalla se voimistaa paikallista
-        yhteisöllisyyttä ja taiteen tekemistä ja kokemista vaikeina
-        korona-aikoina.
-    </p>
-    <p>
-        Esitykset striimataan Suomeen ja mahdollisesti myös kansainvälisten
-        yhteistyökumppanien sivuille.
-    </p>
+    <%= for info <- @info_paragraphs do %>
+      <p><%= info.content %></p>
+    <% end %>
     <p>
         <b><i>Ota yhteyttä:</i></b> Inkeri Aula & Katariina Vuorinen,
         <a class="generic-link" href="mailto:info@runosaari.net">info@runosaari.net</a>

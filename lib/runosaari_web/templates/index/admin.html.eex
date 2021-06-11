@@ -1,5 +1,5 @@
 <section class="main">
-    <h1>HALLINTA - Etusivu</h1>
+    <h1>HALLINTA - Etusivu<n kappaleet/h1>
 
     <table>
     <thead>
@@ -19,12 +19,12 @@
             <td class="actions">
                 <span><%= link "Lisätietoja", to: Routes.admin_index_path(@conn, :show, index) %></span>
                 <span><%= link "Muokkaa", to: Routes.admin_index_path(@conn, :edit, index) %></span>
-                <span><%= link "Poista", to: Routes.admin_index_path(@conn, :delete, index), method: :delete, data: [confirm: "Are you sure?"] %></span>
+                <span><%= link "Poista", to: Routes.admin_index_path(@conn, :delete, index), method: :delete, data: [confirm: "Oletko varma?"] %></span>
             </td>
             </tr>
         <% end %>
     </tbody>
     </table>
 
-    <span><%= link "Uusi Kappale", to: Routes.admin_index_path(@conn, :new) %></span>
+    <span><%= link "Uusi kappale", to: Routes.admin_index_path(@conn, :new) %></span>
 </section>
