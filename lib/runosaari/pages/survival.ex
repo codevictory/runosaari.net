@@ -4,7 +4,7 @@ defmodule Runosaari.Pages.Survival do
 
   schema "survival_items" do
     field :content, :string
-    field :seqnum, :integer
+    field :seqnum, :integer, default: 999
 
     timestamps()
   end
