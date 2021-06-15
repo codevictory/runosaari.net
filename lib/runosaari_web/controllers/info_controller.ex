@@ -6,7 +6,16 @@ defmodule RunosaariWeb.InfoController do
 
   def index(conn, _params) do
     info_paragraphs = Pages.list_sorted_info_paragraphs()
-    render(conn, "index.html", info_paragraphs: info_paragraphs)
+    survival_items = Pages.list_sorted_survival_items()
+
+    render(
+      conn,
+      "index.html",
+      Map.new(
+        info_paragraphs: info_paragraphs,
+        survival_items: survival_items
+      )
+    )
   end
 
   def admin(conn, _params) do
@@ -21,7 +30,7 @@ defmodule RunosaariWeb.InfoController do
 
   def create(conn, %{"info" => info_params}) do
     case Pages.create_info(info_params) do
-      {:ok, info} ->
+      {:ok} ->
         conn
         |> put_flash(:info, "Info created successfully.")
         |> redirect(to: Routes.admin_info_path(conn, :admin))

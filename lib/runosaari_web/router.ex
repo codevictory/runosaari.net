@@ -38,6 +38,8 @@ defmodule RunosaariWeb.Router do
     resources "/visitors", VisitorController, except: [:new, :create]
     resources "/info", InfoController, except: [:index]
     get "/info", InfoController, :admin
+    resources "/survival", SurvivalController, except: [:index]
+    get "/survival", SurvivalController, :admin
   end
 
   # Other scopes may use custom stacks.

@@ -1,0 +1,5 @@
+<h1>Uusi survival listan kohta</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.admin_survival_path(@conn, :create)) %>
+
+<span><%= link "Takaisin", to: Routes.admin_survival_path(@conn, :admin) %></span>

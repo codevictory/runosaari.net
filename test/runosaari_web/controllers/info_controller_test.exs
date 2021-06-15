@@ -15,14 +15,14 @@ defmodule RunosaariWeb.InfoControllerTest do
   describe "index" do
     test "lists all info_paragraphs", %{conn: conn} do
       conn = get(conn, Routes.info_path(conn, :index))
-      assert html_response(conn, 200) =~ "Listing Info paragraphs"
+      assert html_response(conn, 200) =~ "Info"
     end
   end
 
   describe "new info" do
     test "renders form", %{conn: conn} do
       conn = get(conn, Routes.info_path(conn, :new))
-      assert html_response(conn, 200) =~ "New Info"
+      assert html_response(conn, 200) =~ "Uusi info kappale"
     end
   end
 
@@ -34,12 +34,12 @@ defmodule RunosaariWeb.InfoControllerTest do
       assert redirected_to(conn) == Routes.info_path(conn, :show, id)
 
       conn = get(conn, Routes.info_path(conn, :show, id))
-      assert html_response(conn, 200) =~ "Show Info"
+      assert html_response(conn, 200) =~ "Kappaleen tiedot"
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post(conn, Routes.info_path(conn, :create), info: @invalid_attrs)
-      assert html_response(conn, 200) =~ "New Info"
+      assert html_response(conn, 200) =~ "Uusi info kappale"
     end
   end
 
@@ -48,7 +48,7 @@ defmodule RunosaariWeb.InfoControllerTest do
 
     test "renders form for editing chosen info", %{conn: conn, info: info} do
       conn = get(conn, Routes.info_path(conn, :edit, info))
-      assert html_response(conn, 200) =~ "Edit Info"
+      assert html_response(conn, 200) =~ "Muokkaa kappaletta"
     end
   end
 
@@ -65,7 +65,7 @@ defmodule RunosaariWeb.InfoControllerTest do
 
     test "renders errors when data is invalid", %{conn: conn, info: info} do
       conn = put(conn, Routes.info_path(conn, :update, info), info: @invalid_attrs)
-      assert html_response(conn, 200) =~ "Edit Info"
+      assert html_response(conn, 200) =~ "Muokkaa kappaletta"
     end
   end
 
@@ -75,6 +75,7 @@ defmodule RunosaariWeb.InfoControllerTest do
     test "deletes chosen info", %{conn: conn, info: info} do
       conn = delete(conn, Routes.info_path(conn, :delete, info))
       assert redirected_to(conn) == Routes.info_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.info_path(conn, :show, info))
       end

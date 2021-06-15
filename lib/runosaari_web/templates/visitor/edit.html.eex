@@ -1,5 +1,7 @@
-<h1>Muokkaa osallistujan tietoja</h1>
+<section class="main">
+    <h1>Muokkaa osallistujan tietoja</h1>
 
-<%= render "form.html", Map.put(assigns, :action, Routes.admin_visitor_path(@conn, :update, @visitor)) %>
+    <%= render "form.html", Map.put(assigns, :action, Routes.admin_visitor_path(@conn, :update, @visitor)) %>
 
-<span><%= link "Takaisin", to: Routes.admin_visitor_path(@conn, :index) %></span>
+    <span><%= link "Takaisin", to: Routes.admin_visitor_path(@conn, :index) %></span>
+</section>

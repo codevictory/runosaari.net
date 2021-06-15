@@ -1,0 +1,20 @@
+<section class="main">
+  <h1>Survival listan kohdan tiedot</h1>
+
+  <ul>
+
+    <li>
+      <strong>Sisältö:</strong>
+      <%= @survival.content %>
+    </li>
+
+    <li>
+      <strong>Prioriteetti:</strong>
+      <%= @survival.seqnum %>
+    </li>
+
+  </ul>
+
+  <span><%= link "Muokkaa", to: Routes.admin_survival_path(@conn, :edit, @survival) %></span>
+  <span><%= link "Takaisin", to: Routes.admin_survival_path(@conn, :admin) %></span>
+</section>

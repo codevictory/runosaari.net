@@ -1,0 +1,30 @@
+<section class="main">
+  <h1>HALLINTA - Survival listan kohdat</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Sisältö</th>
+        <th>Priotiteetti</th>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= for survival <- @survival_items do %>
+        <tr>
+          <td><%= survival.content %></td>
+          <td><%= survival.seqnum %></td>
+
+          <td class="actions">
+              <span><%= link "Lisätietoja", to: Routes.admin_survival_path(@conn, :show, survival) %></span>
+              <span><%= link "Muokkaa", to: Routes.admin_survival_path(@conn, :edit, survival) %></span>
+              <span><%= link "Poista", to: Routes.admin_survival_path(@conn, :delete, survival), method: :delete, data: [confirm: "Oletko varma?"] %></span>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <span><%= link "Luo uusi survival kohta", to: Routes.admin_survival_path(@conn, :new) %></span>
+</section>

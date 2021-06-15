@@ -124,4 +124,65 @@ defmodule Runosaari.PagesTest do
       assert %Ecto.Changeset{} = Pages.change_info(info)
     end
   end
+
+  describe "survival_items" do
+    alias Runosaari.Pages.Survival
+
+    @valid_attrs %{content: "some content", seqnum: 42}
+    @update_attrs %{content: "some updated content", seqnum: 43}
+    @invalid_attrs %{content: nil, seqnum: nil}
+
+    def survival_fixture(attrs \\ %{}) do
+      {:ok, survival} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Pages.create_survival()
+
+      survival
+    end
+
+    test "list_survival_items/0 returns all survival_items" do
+      survival = survival_fixture()
+      assert Pages.list_survival_items() == [survival]
+    end
+
+    test "get_survival!/1 returns the survival with given id" do
+      survival = survival_fixture()
+      assert Pages.get_survival!(survival.id) == survival
+    end
+
+    test "create_survival/1 with valid data creates a survival" do
+      assert {:ok, %Survival{} = survival} = Pages.create_survival(@valid_attrs)
+      assert survival.content == "some content"
+      assert survival.seqnum == 42
+    end
+
+    test "create_survival/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Pages.create_survival(@invalid_attrs)
+    end
+
+    test "update_survival/2 with valid data updates the survival" do
+      survival = survival_fixture()
+      assert {:ok, %Survival{} = survival} = Pages.update_survival(survival, @update_attrs)
+      assert survival.content == "some updated content"
+      assert survival.seqnum == 43
+    end
+
+    test "update_survival/2 with invalid data returns error changeset" do
+      survival = survival_fixture()
+      assert {:error, %Ecto.Changeset{}} = Pages.update_survival(survival, @invalid_attrs)
+      assert survival == Pages.get_survival!(survival.id)
+    end
+
+    test "delete_survival/1 deletes the survival" do
+      survival = survival_fixture()
+      assert {:ok, %Survival{}} = Pages.delete_survival(survival)
+      assert_raise Ecto.NoResultsError, fn -> Pages.get_survival!(survival.id) end
+    end
+
+    test "change_survival/1 returns a survival changeset" do
+      survival = survival_fixture()
+      assert %Ecto.Changeset{} = Pages.change_survival(survival)
+    end
+  end
 end

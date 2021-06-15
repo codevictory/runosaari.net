@@ -223,4 +223,113 @@ defmodule Runosaari.Pages do
   def change_info(%Info{} = info, attrs \\ %{}) do
     Info.changeset(info, attrs)
   end
+
+  alias Runosaari.Pages.Survival
+
+  @doc """
+  Returns the list of survival_items.
+
+  ## Examples
+
+      iex> list_survival_items()
+      [%Survival{}, ...]
+
+  """
+  def list_survival_items do
+    Repo.all(Survival)
+  end
+
+  @doc """
+  Returns the list of survival_items.
+
+  ## Examples
+
+      iex> list_survival_items()
+      [%Survival{}, ...]
+
+  """
+  def list_sorted_survival_items do
+    Repo.all(Survival |> order_by(:seqnum))
+  end
+
+  @doc """
+  Gets a single survival.
+
+  Raises `Ecto.NoResultsError` if the Survival does not exist.
+
+  ## Examples
+
+      iex> get_survival!(123)
+      %Survival{}
+
+      iex> get_survival!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_survival!(id), do: Repo.get!(Survival, id)
+
+  @doc """
+  Creates a survival.
+
+  ## Examples
+
+      iex> create_survival(%{field: value})
+      {:ok, %Survival{}}
+
+      iex> create_survival(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_survival(attrs \\ %{}) do
+    %Survival{}
+    |> Survival.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a survival.
+
+  ## Examples
+
+      iex> update_survival(survival, %{field: new_value})
+      {:ok, %Survival{}}
+
+      iex> update_survival(survival, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_survival(%Survival{} = survival, attrs) do
+    survival
+    |> Survival.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a survival.
+
+  ## Examples
+
+      iex> delete_survival(survival)
+      {:ok, %Survival{}}
+
+      iex> delete_survival(survival)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_survival(%Survival{} = survival) do
+    Repo.delete(survival)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking survival changes.
+
+  ## Examples
+
+      iex> change_survival(survival)
+      %Ecto.Changeset{data: %Survival{}}
+
+  """
+  def change_survival(%Survival{} = survival, attrs \\ %{}) do
+    Survival.changeset(survival, attrs)
+  end
 end
