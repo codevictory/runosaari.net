@@ -5,6 +5,7 @@ defmodule Runosaari.Pages.Survival do
   schema "survival_items" do
     field :content, :string
     field :seqnum, :integer, default: 999
+    field :link, :string
 
     timestamps()
   end
@@ -12,7 +13,7 @@ defmodule Runosaari.Pages.Survival do
   @doc false
   def changeset(survival, attrs) do
     survival
-    |> cast(attrs, [:content, :seqnum])
+    |> cast(attrs, [:content, :seqnum, :link])
     |> validate_required([:content, :seqnum])
   end
 end

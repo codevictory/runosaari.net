@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th>Sisältö</th>
+        <th>Linkki</th>
         <th>Priotiteetti</th>
 
         <th></th>
@@ -14,6 +15,7 @@
     <%= for survival <- @survival_items do %>
         <tr>
           <td><%= survival.content %></td>
+          <td><%= survival.link %></td>
           <td><%= survival.seqnum %></td>
 
           <td class="actions">

@@ -128,9 +128,9 @@ defmodule Runosaari.PagesTest do
   describe "survival_items" do
     alias Runosaari.Pages.Survival
 
-    @valid_attrs %{content: "some content", seqnum: 42}
-    @update_attrs %{content: "some updated content", seqnum: 43}
-    @invalid_attrs %{content: nil, seqnum: nil}
+    @valid_attrs %{content: "some content", seqnum: 42, link: "some link"}
+    @update_attrs %{content: "some updated content", seqnum: 43, link: "some updated link"}
+    @invalid_attrs %{content: nil, seqnum: nil, link: nil}
 
     def survival_fixture(attrs \\ %{}) do
       {:ok, survival} =

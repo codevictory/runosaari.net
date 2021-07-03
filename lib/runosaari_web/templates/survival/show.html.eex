@@ -9,6 +9,11 @@
     </li>
 
     <li>
+      <strong>Linkki:</strong>
+      <%= @survival.link %>
+    </li>
+
+    <li>
       <strong>Prioriteetti:</strong>
       <%= @survival.seqnum %>
     </li>

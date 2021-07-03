@@ -3,9 +3,9 @@ defmodule RunosaariWeb.SurvivalControllerTest do
 
   alias Runosaari.Pages
 
-  @create_attrs %{content: "some content", seqnum: 42}
-  @update_attrs %{content: "some updated content", seqnum: 43}
-  @invalid_attrs %{content: nil, seqnum: nil}
+  @create_attrs %{content: "some content", seqnum: 42, link: "some link"}
+  @update_attrs %{content: "some updated content", seqnum: 43, link: "some updated link"}
+  @invalid_attrs %{content: nil, seqnum: nil, link: nil}
 
   def fixture(:survival) do
     {:ok, survival} = Pages.create_survival(@create_attrs)

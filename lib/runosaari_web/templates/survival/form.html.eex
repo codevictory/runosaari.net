@@ -9,6 +9,10 @@
   <%= textarea f, :content %>
   <%= error_tag f, :content %>
 
+  <%= label f, :link, "Linkki" %>
+  <%= text_input f, :link %>
+  <%= error_tag f, :link %>
+
   <%= label f, :seqnum, "Prioritetti (1 on korkein)" %>
   <%= number_input f, :seqnum %>
   <%= error_tag f, :seqnum %>

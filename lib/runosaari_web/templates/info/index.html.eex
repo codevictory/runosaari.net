@@ -19,7 +19,12 @@
     <h2>SURVIVAL-ohjeet saariston syrjäseudulle</h2>
     <ul>
     <%= for survival <- @survival_items do %>
-        <li><%= survival.content %>
+        <li>
+            <%= survival.content %>
+            <%= if survival.link != nil do %>
+                <a href="https://<%= survival.link %>" class="generic-link"><%= survival.link %></a>
+            <% end %>
+        </li>
     <% end %>
     </ul>
 </section>
