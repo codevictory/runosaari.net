@@ -16,7 +16,7 @@
         <b><i>Ota yhteyttä:</i></b> Inkeri Aula & Katariina Vuorinen,
         <a class="generic-link" href="mailto:runosaari@gmail.com">runosaari@gmail.com</a>
     </p>
-    <h2><i>[TULOSSA]</i> <br />SURVIVAL-ohjeet saariston syrjäseudulle</h2>
+    <h2>SURVIVAL-ohjeet saariston syrjäseudulle</h2>
     <ul>
     <%= for survival <- @survival_items do %>
         <li><%= survival.content %>
