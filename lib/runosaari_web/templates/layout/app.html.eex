@@ -60,11 +60,11 @@
           >
         </div>
       </div>
-      <div class="credits">
-        <a href="https://github.com/codevictory/runosaari.net"
+      <div>
+        <a class="generic-link" href="https://github.com/codevictory/runosaari.net"
           >lähdekoodi</a
         >
-        | by codevictory
+        by codevictory
       </div>
     </footer>
   </body>
