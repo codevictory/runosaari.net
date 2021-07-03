@@ -9,9 +9,41 @@
   <%= text_input form, :name %>
   <%= error_tag form, :name %>
 
-  <%= label form, :desc, "Seloste" %>
-  <%= textarea form, :desc %>
-  <%= error_tag form, :desc %>
+  <%= label form, :paragraph1, "Kappale 1" %>
+  <%= textarea form, :paragraph1 %>
+  <%= error_tag form, :paragraph1 %>
+
+  <%= label form, :paragraph2, "Kappale 2" %>
+  <%= textarea form, :paragraph2 %>
+  <%= error_tag form, :paragraph2 %>
+
+  <%= label form, :paragraph3, "Kappale 3" %>
+  <%= textarea form, :paragraph3 %>
+  <%= error_tag form, :paragraph3 %>
+
+  <%= label form, :paragraph4, "Kappale 4" %>
+  <%= textarea form, :paragraph4 %>
+  <%= error_tag form, :paragraph4 %>
+
+  <%= label form, :paragraph5, "Kappale 5" %>
+  <%= textarea form, :paragraph5 %>
+  <%= error_tag form, :paragraph5 %>
+
+  <%= label form, :paragraph6, "Kappale 6" %>
+  <%= textarea form, :paragraph6 %>
+  <%= error_tag form, :paragraph6 %>
+
+  <%= label form, :paragraph7, "Kappale 7" %>
+  <%= textarea form, :paragraph7 %>
+  <%= error_tag form, :paragraph7 %>
+
+  <%= label form, :paragraph8, "Kappale 8" %>
+  <%= textarea form, :paragraph8 %>
+  <%= error_tag form, :paragraph8 %>
+
+  <%= label form, :paragraph9, "Kappale 9" %>
+  <%= textarea form, :paragraph9 %>
+  <%= error_tag form, :paragraph9 %>
 
   <%= label form, :seqnum, "Prioriteetti (1 on korkein)" %>
   <%= textarea form, :seqnum %>

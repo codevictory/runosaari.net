@@ -8,19 +8,59 @@ defmodule Runosaari.ScheduleTest do
 
     @create_attrs %{
       name: "some name",
-      desc: "some description",
+      paragraph1: "some paragraph1",
+      paragraph2: "some paragraph2",
+      paragraph3: "some paragraph3",
+      paragraph4: "some paragraph4",
+      paragraph5: "some paragraph5",
+      paragraph6: "some paragraph6",
+      paragraph7: "some paragraph7",
+      paragraph8: "some paragraph8",
+      paragraph9: "some paragraph9",
       seqnum: 1
     }
 
     @update_attrs %{
       name: "some updated name",
-      desc: "some updated description",
+      paragraph1: "some updated paragraph1",
+      paragraph2: "some updated paragraph2",
+      paragraph3: "some updated paragraph3",
+      paragraph4: "some updated paragraph4",
+      paragraph5: "some updated paragraph5",
+      paragraph6: "some updated paragraph6",
+      paragraph7: "some updated paragraph7",
+      paragraph8: "some updated paragraph8",
+      paragraph9: "some updated paragraph9",
       seqnum: 2
     }
 
-    @valid_attrs %{name: "some name", desc: "some description", seqnum: 1}
+    @valid_attrs %{
+      name: "some name",
+      paragraph1: "some paragraph1",
+      paragraph2: "some paragraph2",
+      paragraph3: "some paragraph3",
+      paragraph4: "some paragraph4",
+      paragraph5: "some paragraph5",
+      paragraph6: "some paragraph6",
+      paragraph7: "some paragraph7",
+      paragraph8: "some paragraph8",
+      paragraph9: "some paragraph9",
+      seqnum: 1
+    }
 
-    @invalid_attrs %{name: nil, desc: nil, seqnum: nil}
+    @invalid_attrs %{
+      name: nil,
+      paragraph1: nil,
+      paragraph2: nil,
+      paragraph3: nil,
+      paragraph4: nil,
+      paragraph5: nil,
+      paragraph6: nil,
+      paragraph7: nil,
+      paragraph8: nil,
+      paragraph9: nil,
+      seqnum: nil
+    }
 
     def performance_fixture(attrs \\ %{}) do
       {:ok, performance} =
@@ -44,7 +84,15 @@ defmodule Runosaari.ScheduleTest do
     test "create_performance/1 with valid data creates a performance" do
       assert {:ok, %Performance{} = performance} = Schedule.create_performance(@valid_attrs)
       assert performance.name == "some name"
-      assert performance.desc == "some description"
+      assert performance.paragraph1 == "some paragraph1"
+      assert performance.paragraph2 == "some paragraph2"
+      assert performance.paragraph3 == "some paragraph3"
+      assert performance.paragraph4 == "some paragraph4"
+      assert performance.paragraph5 == "some paragraph5"
+      assert performance.paragraph6 == "some paragraph6"
+      assert performance.paragraph7 == "some paragraph7"
+      assert performance.paragraph8 == "some paragraph8"
+      assert performance.paragraph9 == "some paragraph9"
       assert performance.seqnum == 1
     end
 
@@ -59,7 +107,15 @@ defmodule Runosaari.ScheduleTest do
                Schedule.update_performance(performance, @update_attrs)
 
       assert performance.name == "some updated name"
-      assert performance.desc == "some updated description"
+      assert performance.paragraph1 == "some updated paragraph1"
+      assert performance.paragraph2 == "some updated paragraph2"
+      assert performance.paragraph3 == "some updated paragraph3"
+      assert performance.paragraph4 == "some updated paragraph4"
+      assert performance.paragraph5 == "some updated paragraph5"
+      assert performance.paragraph6 == "some updated paragraph6"
+      assert performance.paragraph7 == "some updated paragraph7"
+      assert performance.paragraph8 == "some updated paragraph8"
+      assert performance.paragraph9 == "some updated paragraph9"
       assert performance.seqnum == 2
     end
 

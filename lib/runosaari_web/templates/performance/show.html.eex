@@ -9,8 +9,48 @@
     </li>
 
     <li>
-      <strong>Seloste:</strong>
-      <%= @performance.desc %>
+      <strong>Kappale 1:</strong>
+      <%= @performance.paragraph1 %>
+    </li>
+
+    <li>
+      <strong>Kappale 2:</strong>
+      <%= @performance.paragraph2 %>
+    </li>
+
+    <li>
+      <strong>Kappale 3:</strong>
+      <%= @performance.paragraph3 %>
+    </li>
+
+    <li>
+      <strong>Kappale 4:</strong>
+      <%= @performance.paragraph4 %>
+    </li>
+
+    <li>
+      <strong>Kappale 5:</strong>
+      <%= @performance.paragraph5 %>
+    </li>
+
+    <li>
+      <strong>Kappale 6:</strong>
+      <%= @performance.paragraph6 %>
+    </li>
+
+    <li>
+      <strong>Kappale 7:</strong>
+      <%= @performance.paragraph7 %>
+    </li>
+
+    <li>
+      <strong>Kappale 8:</strong>
+      <%= @performance.paragraph8 %>
+    </li>
+
+    <li>
+      <strong>Kappale 9:</strong>
+      <%= @performance.paragraph9 %>
     </li>
 
   </ul>

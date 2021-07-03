@@ -3,7 +3,33 @@
   <i>[Tietoja päivitetään]</i>
   <%= for performance <- @performances do %>
     <h2><%= performance.name %></h2>
-    <p><%= performance.desc %></p>
+    <%= if performance.paragraph1 != nil do %>
+      <p class="performance-paragraph"><%= performance.paragraph1 %></p>
+    <% end %>
+    <%= if performance.paragraph2 != nil do %>
+      <p class="performance-paragraph"><%= performance.paragraph2 %></p>
+    <% end %>
+    <%= if performance.paragraph3 != nil do %>
+      <p class="performance-paragraph"><%= performance.paragraph3 %></p>
+    <% end %>
+    <%= if performance.paragraph4 != nil do %>
+      <p class="performance-paragraph"><%= performance.paragraph4 %></p>
+    <% end %>
+    <%= if performance.paragraph5 != nil do %>
+      <p class="performance-paragraph"><%= performance.paragraph5 %></p>
+    <% end %>
+    <%= if performance.paragraph6 != nil do %>
+      <p class="performance-paragraph"><%= performance.paragraph1 %></p>
+    <% end %>
+    <%= if performance.paragraph7 != nil do %>
+      <p class="performance-paragraph"><%= performance.paragraph2 %></p>
+    <% end %>
+    <%= if performance.paragraph8 != nil do %>
+      <p class="performance-paragraph"><%= performance.paragraph3 %></p>
+    <% end %>
+    <%= if performance.paragraph9 != nil do %>
+      <p class="performance-paragraph"><%= performance.paragraph4 %></p>
+    <% end %>
   <% end %>
   <h2>Työpajat</h2>
   <p id="workshops">

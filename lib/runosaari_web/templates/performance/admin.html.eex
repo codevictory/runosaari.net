@@ -5,7 +5,6 @@
     <thead>
       <tr>
         <th>Nimi</th>
-        <th>Seloste</th>
         <th>Prioriteetti</th>
 
         <th></th>
@@ -15,7 +14,6 @@
     <%= for performance <- @performances do %>
       <tr>
         <td><%= performance.name %></td>
-        <td><%= performance.desc %></td>
         <td><%= performance.seqnum %></td>
 
         <td class="actions">

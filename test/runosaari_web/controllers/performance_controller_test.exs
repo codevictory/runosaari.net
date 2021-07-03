@@ -5,17 +5,45 @@ defmodule RunosaariWeb.PerformanceControllerTest do
 
   @create_attrs %{
     name: "some name",
-    desc: "some description",
+    paragraph1: "some paragraph1",
+    paragraph2: "some paragraph2",
+    paragraph3: "some paragraph3",
+    paragraph4: "some paragraph4",
+    paragraph5: "some paragraph5",
+    paragraph6: "some paragraph6",
+    paragraph7: "some paragraph7",
+    paragraph8: "some paragraph8",
+    paragraph9: "some paragraph9",
     seqnum: 1
   }
 
   @update_attrs %{
     name: "some updated name",
-    desc: "some updated description",
+    paragraph1: "some updated paragraph1",
+    paragraph2: "some updated paragraph2",
+    paragraph3: "some updated paragraph3",
+    paragraph4: "some updated paragraph4",
+    paragraph5: "some updated paragraph5",
+    paragraph6: "some updated paragraph6",
+    paragraph7: "some updated paragraph7",
+    paragraph8: "some updated paragraph8",
+    paragraph9: "some updated paragraph9",
     seqnum: 2
   }
 
-  @invalid_attrs %{name: nil, desc: nil, seqnum: nil}
+  @invalid_attrs %{
+    name: nil,
+    paragraph1: nil,
+    paragraph2: nil,
+    paragraph3: nil,
+    paragraph4: nil,
+    paragraph5: nil,
+    paragraph6: nil,
+    paragraph7: nil,
+    paragraph8: nil,
+    paragraph9: nil,
+    seqnum: nil
+  }
 
   def fixture(:performance) do
     {:ok, performance} = Schedule.create_performance(@create_attrs)
@@ -74,7 +102,7 @@ defmodule RunosaariWeb.PerformanceControllerTest do
       assert redirected_to(conn) == Routes.admin_performance_path(conn, :show, performance)
 
       conn = get(conn, Routes.admin_performance_path(conn, :show, performance))
-      assert html_response(conn, 200) =~ "some updated description"
+      assert html_response(conn, 200) =~ "some updated paragraph1"
     end
 
     test "renders errors when data is invalid", %{conn: conn, performance: performance} do
