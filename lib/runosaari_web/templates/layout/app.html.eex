@@ -20,7 +20,7 @@
         <%= link "Ohjelma", to: Routes.performance_path(@conn, :index) %>
         <%= link "Esiintyjät", to: Routes.performer_path(@conn, :index) %>
         <%= link "Info", to: Routes.info_path(@conn, :index) %>
-        <%= link "Covid-19", to: Routes.page_path(@conn, :covid19) %>
+        <%= link "Turvallisuus", to: Routes.page_path(@conn, :safety) %>
         <%= link "Ilmoittautuminen", to: Routes.visitor_path(@conn, :new) %>
       </nav>
       <h1 class="mobile-main-title">
@@ -31,7 +31,7 @@
         <%= link "Ohjelma", to: "#{Routes.performance_path(@conn, :index)}#calendar-start" %>
         <%= link "Esiintyjät", to: "#{Routes.performer_path(@conn, :index)}#performers-start" %>
         <%= link "Info", to: "#{Routes.info_path(@conn, :index )}#contact-start" %>
-        <%= link "Covid-19", to: "#{Routes.page_path(@conn, :covid19)}#covid-start" %>
+        <%= link "Turvallisuus", to: "#{Routes.page_path(@conn, :safety)}#covid-start" %>
         <%= link "Ilmoittautuminen", to: "#{Routes.visitor_path(@conn, :new)}#registration-start" %>
       </nav>
     </header>

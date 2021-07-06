@@ -68,7 +68,7 @@ defmodule RunosaariWeb.PerformerController do
     performer = Registration.get_performer!(id)
 
     case Registration.update_performer(performer, performer_params) do
-      {:ok, performer} ->
+      {:ok, _performer} ->
         conn
         |> put_flash(:info, "Esiintyjän tiedot päivitetty.")
         |> redirect(to: Routes.admin_performer_path(conn, :admin))
