@@ -6,18 +6,6 @@ defmodule Runosaari.RegistrationTest do
   describe "performers" do
     alias Runosaari.Registration.Performer
 
-    @create_attrs %{
-      name: "some name",
-      paragraph1: "some paragraph 1",
-      paragraph2: "some paragraph 2",
-      paragraph3: "some paragraph 3",
-      paragraph4: "some paragraph 4",
-      paragraph5: "some paragraph 5",
-      link: "some link",
-      photo_path: "some photo path",
-      confirmed: false
-    }
-
     @update_attrs %{
       name: "some updated name",
       paragraph1: "some updated paragraph 1",

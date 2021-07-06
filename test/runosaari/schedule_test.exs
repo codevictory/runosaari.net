@@ -6,20 +6,6 @@ defmodule Runosaari.ScheduleTest do
   describe "performances" do
     alias Runosaari.Schedule.Performance
 
-    @create_attrs %{
-      name: "some name",
-      paragraph1: "some paragraph1",
-      paragraph2: "some paragraph2",
-      paragraph3: "some paragraph3",
-      paragraph4: "some paragraph4",
-      paragraph5: "some paragraph5",
-      paragraph6: "some paragraph6",
-      paragraph7: "some paragraph7",
-      paragraph8: "some paragraph8",
-      paragraph9: "some paragraph9",
-      seqnum: 1
-    }
-
     @update_attrs %{
       name: "some updated name",
       paragraph1: "some updated paragraph1",
