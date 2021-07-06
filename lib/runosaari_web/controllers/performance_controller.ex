@@ -6,7 +6,9 @@ defmodule RunosaariWeb.PerformanceController do
 
   def index(conn, _params) do
     performances = Schedule.list_sorted_performances()
-    render(conn, "index.html", performances: performances)
+    workshops = Schedule.list_sorted_workshops()
+
+    render(conn, "index.html", Map.new(performances: performances, workshops: workshops))
   end
 
   def admin(conn, _params) do

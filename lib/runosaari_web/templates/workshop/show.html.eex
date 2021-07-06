@@ -1,0 +1,23 @@
+<h1>Työpajan tiedot</h1>
+
+<ul>
+
+  <li>
+    <strong>Nimi:</strong>
+    <%= @workshop.name %>
+  </li>
+
+  <li>
+    <strong>Teksti:</strong>
+    <%= @workshop.text %>
+  </li>
+
+  <li>
+    <strong>Prioriteetti:</strong>
+    <%= @workshop.seqnum %>
+  </li>
+
+</ul>
+
+<span><%= link "Muokkaa", to: Routes.admin_workshop_path(@conn, :edit, @workshop) %></span>
+<span><%= link "Takaisin", to: Routes.admin_workshop_path(@conn, :admin) %></span>

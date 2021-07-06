@@ -1,0 +1,23 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Joku kentistä on tyhjä.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :name, "Nimi" %>
+  <%= text_input f, :name %>
+  <%= error_tag f, :name %>
+
+  <%= label f, :text, "Teksti" %>
+  <%= textarea f, :text %>
+  <%= error_tag f, :text %>
+
+  <%= label f, :seqnum, "Prioriteetti (1 on korkein)" %>
+  <%= number_input f, :seqnum %>
+  <%= error_tag f, :seqnum %>
+
+  <div>
+    <%= submit "Tallenna" %>
+  </div>
+<% end %>

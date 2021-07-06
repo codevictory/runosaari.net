@@ -1,0 +1,5 @@
+<h1>Luo uusi työpaja</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.admin_workshop_path(@conn, :create)) %>
+
+<span><%= link "Takaisin", to: Routes.admin_workshop_path(@conn, :admin) %></span>

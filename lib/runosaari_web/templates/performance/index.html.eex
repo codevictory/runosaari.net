@@ -32,10 +32,10 @@
     <% end %>
   <% end %>
   <h2>Työpajat</h2>
-  <p id="workshops">
-    <b>Jaana Kouri:</b> Shamanistinen kirjoitustyöpaja <br class="workshops-br">
-    <b>Hanna Toivonen:</b> Sarjakuvatyöpaja <br class="workshops-br">
-    <br />
-    <i>Näihin avataan ennakkoilmoittautuminen hyvissä ajoin.</i>
-  </p>
+  <%= for workshop <- @workshops do %>
+    <p class="workshop-paragraph">
+      <b><%= workshop.name %></b><%= workshop.text %>
+    </p>
+  <% end %>
+  <i class="foot-note">Näihin avataan ennakkoilmoittautuminen hyvissä ajoin.</i>
 </section>

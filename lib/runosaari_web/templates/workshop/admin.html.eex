@@ -1,0 +1,32 @@
+<section class="main">
+  <h1>HALLINTA - Työpajat</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nimi</th>
+        <th>Teksti</th>
+        <th>Prioriteetti</th>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= for workshop <- @workshops do %>
+        <tr>
+          <td><%= workshop.name %></td>
+          <td><%= workshop.text %></td>
+          <td><%= workshop.seqnum %></td>
+
+          <td class="actions">
+            <span><%= link "Lisätietoja", to: Routes.admin_workshop_path(@conn, :show, workshop) %></span>
+            <span><%= link "Muokkaa", to: Routes.admin_workshop_path(@conn, :edit, workshop) %></span>
+            <span><%= link "Poista", to: Routes.admin_workshop_path(@conn, :delete, workshop), method: :delete, data: [confirm: "Oletko varma?"] %></span>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <span><%= link "Luo uusi työpaja", to: Routes.admin_workshop_path(@conn, :new) %></span>
+</section>

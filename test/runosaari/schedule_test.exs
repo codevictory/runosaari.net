@@ -139,4 +139,65 @@ defmodule Runosaari.ScheduleTest do
       assert %Ecto.Changeset{} = Schedule.change_performance(performance)
     end
   end
+
+  describe "workshops" do
+    alias Runosaari.Schedule.Workshop
+
+    @valid_attrs %{name: "some name", text: "some text", seqnum: 42}
+    @update_attrs %{name: "some updated name", text: "some updated text", seqnum: 43}
+    @invalid_attrs %{seqnum: nil, text: nil}
+
+    def workshop_fixture(attrs \\ %{}) do
+      {:ok, workshop} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Schedule.create_workshop()
+
+      workshop
+    end
+
+    test "list_workshops/0 returns all workshops" do
+      workshop = workshop_fixture()
+      assert Schedule.list_workshops() == [workshop]
+    end
+
+    test "get_workshop!/1 returns the workshop with given id" do
+      workshop = workshop_fixture()
+      assert Schedule.get_workshop!(workshop.id) == workshop
+    end
+
+    test "create_workshop/1 with valid data creates a workshop" do
+      assert {:ok, %Workshop{} = workshop} = Schedule.create_workshop(@valid_attrs)
+      assert workshop.seqnum == 42
+      assert workshop.text == "some text"
+    end
+
+    test "create_workshop/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Schedule.create_workshop(@invalid_attrs)
+    end
+
+    test "update_workshop/2 with valid data updates the workshop" do
+      workshop = workshop_fixture()
+      assert {:ok, %Workshop{} = workshop} = Schedule.update_workshop(workshop, @update_attrs)
+      assert workshop.seqnum == 43
+      assert workshop.text == "some updated text"
+    end
+
+    test "update_workshop/2 with invalid data returns error changeset" do
+      workshop = workshop_fixture()
+      assert {:error, %Ecto.Changeset{}} = Schedule.update_workshop(workshop, @invalid_attrs)
+      assert workshop == Schedule.get_workshop!(workshop.id)
+    end
+
+    test "delete_workshop/1 deletes the workshop" do
+      workshop = workshop_fixture()
+      assert {:ok, %Workshop{}} = Schedule.delete_workshop(workshop)
+      assert_raise Ecto.NoResultsError, fn -> Schedule.get_workshop!(workshop.id) end
+    end
+
+    test "change_workshop/1 returns a workshop changeset" do
+      workshop = workshop_fixture()
+      assert %Ecto.Changeset{} = Schedule.change_workshop(workshop)
+    end
+  end
 end
