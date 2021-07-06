@@ -31,11 +31,4 @@
       <p class="performance-paragraph"><%= performance.paragraph9 %></p>
     <% end %>
   <% end %>
-  <h2>Työpajat</h2>
-  <%= for workshop <- @workshops do %>
-    <p class="workshop-paragraph">
-      <b><%= workshop.name %></b> <%= workshop.text %>
-    </p>
-  <% end %>
-  <i class="foot-note">Näihin avataan ennakkoilmoittautuminen hyvissä ajoin.</i>
 </section>
