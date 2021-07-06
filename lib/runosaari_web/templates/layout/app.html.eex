@@ -31,7 +31,7 @@
         <%= link "Ohjelma", to: "#{Routes.performance_path(@conn, :index)}#calendar-start" %>
         <%= link "Esiintyjät", to: "#{Routes.performer_path(@conn, :index)}#performers-start" %>
         <%= link "Info", to: "#{Routes.info_path(@conn, :index )}#contact-start" %>
-        <%= link "Turvallisuus", to: "#{Routes.page_path(@conn, :safety)}#covid-start" %>
+        <%= link "Turvallisuus", to: "#{Routes.page_path(@conn, :safety)}#safety-start" %>
         <%= link "Ilmoittautuminen", to: "#{Routes.visitor_path(@conn, :new)}#registration-start" %>
       </nav>
     </header>
