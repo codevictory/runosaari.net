@@ -30,10 +30,10 @@ defmodule RunosaariWeb.InfoController do
 
   def create(conn, %{"info" => info_params}) do
     case Pages.create_info(info_params) do
-      {:ok} ->
+      {:ok, info} ->
         conn
         |> put_flash(:info, "Info created successfully.")
-        |> redirect(to: Routes.admin_info_path(conn, :admin))
+        |> redirect(to: Routes.admin_info_path(conn, :show, info))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
