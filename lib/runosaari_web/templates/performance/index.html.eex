@@ -19,16 +19,16 @@
       <p class="performance-paragraph"><%= performance.paragraph5 %></p>
     <% end %>
     <%= if performance.paragraph6 != nil do %>
-      <p class="performance-paragraph"><%= performance.paragraph1 %></p>
+      <p class="performance-paragraph"><%= performance.paragraph6 %></p>
     <% end %>
     <%= if performance.paragraph7 != nil do %>
-      <p class="performance-paragraph"><%= performance.paragraph2 %></p>
+      <p class="performance-paragraph"><%= performance.paragraph7 %></p>
     <% end %>
     <%= if performance.paragraph8 != nil do %>
-      <p class="performance-paragraph"><%= performance.paragraph3 %></p>
+      <p class="performance-paragraph"><%= performance.paragraph8 %></p>
     <% end %>
     <%= if performance.paragraph9 != nil do %>
-      <p class="performance-paragraph"><%= performance.paragraph4 %></p>
+      <p class="performance-paragraph"><%= performance.paragraph9 %></p>
     <% end %>
   <% end %>
   <h2>Työpajat</h2>
