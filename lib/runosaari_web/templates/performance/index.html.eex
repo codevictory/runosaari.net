@@ -1,6 +1,6 @@
 <section class="main">
   <h1 id="calendar-start">Ohjelma</h1>
-  <i>[Tietoja päivitetään]</i>
+  <i>KORONAVIRUSTILANTEEN VUOKSI OHJELMA VOI MUUTTUA</i>
   <%= for performance <- @performances do %>
     <h2><%= performance.name %></h2>
     <%= if performance.paragraph1 != nil do %>
