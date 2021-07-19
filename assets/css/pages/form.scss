@@ -21,6 +21,7 @@ form {
   .text-input {
     display: flex;
     align-items: center;
+    padding: 8px 0 8px 0;
 
     label {
       width: 29%;
@@ -38,10 +39,6 @@ form {
     }
   }
 
-  input {
-    margin-bottom: 10px;
-  }
-
   .confirmed-input {
     display: flex;
     justify-content: center;
@@ -55,10 +52,6 @@ form {
 
   i {
     margin-top: 30px;
-  }
-
-  label {
-    margin-top: 20px;
   }
 }
 
