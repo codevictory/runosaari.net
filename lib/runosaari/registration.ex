@@ -134,6 +134,21 @@ defmodule Runosaari.Registration do
   end
 
   @doc """
+  Returns the alphabetically sorted list of visitors.
+
+  ## Examples
+
+      iex> list_visitors()
+      [%Visitor{}, ...]
+
+  """
+  def list_sorted_visitors do
+    Visitor
+    |> order_by(:lname)
+    |> Repo.all()
+  end
+
+  @doc """
   Gets a single visitor.
 
   Raises `Ecto.NoResultsError` if the Visitor does not exist.

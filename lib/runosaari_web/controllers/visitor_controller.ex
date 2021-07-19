@@ -5,7 +5,7 @@ defmodule RunosaariWeb.VisitorController do
   alias Runosaari.Registration.Visitor
 
   def index(conn, _params) do
-    visitors = Registration.list_visitors()
+    visitors = Registration.list_sorted_visitors()
     render(conn, "index.html", visitors: visitors)
   end
 
