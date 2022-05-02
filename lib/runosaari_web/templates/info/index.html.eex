@@ -1,21 +1,9 @@
 <section class="main">
     <h1 id="contact-start">Info</h1>
     <i>[Tietoja päivitetään]</i>
-    <p>
-        Tapahtuman järjestää Saariston Savotta ry:n Runosaari-työryhmä.
-    </p>
-    <p>
-        <b>Yhteistyössä:</b> Runoviikko ry, Taiteen edistämiskeskus Taike,
-        Kirjan talo – Bokens hus ry, Livonsaaren kyläyhdistys ry ja
-        Saaristohotelli Vaihela.
-    </p>
     <%= for info <- @info_paragraphs do %>
       <p><%= info.content %></p>
     <% end %>
-    <p>
-        <b><i>Ota yhteyttä:</i></b> Inkeri Aula & Katariina Vuorinen,
-        <a class="generic-link" href="mailto:runosaari@gmail.com">runosaari@gmail.com</a>
-    </p>
     <h2>SURVIVAL-ohjeet saariston syrjäseudulle</h2>
     <ul>
     <%= for survival <- @survival_items do %>

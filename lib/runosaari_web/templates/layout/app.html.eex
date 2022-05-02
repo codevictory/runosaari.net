@@ -53,7 +53,6 @@
           <a href="/#nav-bar"><img src="<%= Routes.static_path(@conn, "/images/small-logo.png") %>" /></a>
         </div>
         <div class="right">
-          Inkeri Aula <br />
           Katariina Vuorinen <br />
           <a class="generic-link" href="mailto:runosaari@gmail.com"
             >runosaari@gmail.com</a
