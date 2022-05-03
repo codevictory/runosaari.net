@@ -4,7 +4,7 @@ defmodule Runosaari.MixProject do
   def project do
     [
       app: :runosaari,
-      version: "1.2.4",
+      version: "1.3.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
