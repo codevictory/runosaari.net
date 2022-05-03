@@ -12,6 +12,7 @@ defmodule Runosaari.Registration.Performer do
     field :link, :string
     field :photo_path, :string
     field :confirmed, :boolean, default: false
+    field :archived, :integer
 
     timestamps()
   end
@@ -28,7 +29,8 @@ defmodule Runosaari.Registration.Performer do
       :paragraph5,
       :link,
       :photo_path,
-      :confirmed
+      :confirmed,
+      :archived
     ])
     |> validate_required([
       :name,

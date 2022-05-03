@@ -31,7 +31,7 @@ defmodule Runosaari.Schedule do
 
   """
   def list_sorted_performances do
-    Repo.all(Performance |> order_by(:seqnum))
+    Repo.all(Performance |> where([p], not is_nil(p.seqnum)) |> order_by(:seqnum))
   end
 
   @doc """

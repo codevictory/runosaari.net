@@ -1,0 +1,12 @@
+<section class="main">
+    <h1 id="archive-start">Arkisto</h1>
+
+    <div class="performers2021-container">
+        <%= for performer <- @performers2021 do %>
+        <div class="performer-name">
+            <span class="fa fa-chevron-right" ></span>
+            <%= link "#{performer.name}", to: "#{Routes.performer_path(@conn, :show, performer)}#performer-start" %>
+        </div>
+        <% end %>
+    </div>
+</section>

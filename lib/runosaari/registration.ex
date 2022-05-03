@@ -33,6 +33,24 @@ defmodule Runosaari.Registration do
   def list_sorted_confirmed_performers do
     Performer
     |> where([p], p.confirmed == true)
+    |> where([p], is_nil(p.archived))
+    |> order_by(:name)
+    |> Repo.all()
+  end
+
+  @doc """
+  Returns the :name sorted list of archived performers by year.
+
+  ## Examples
+
+      iex> list_sorted_confirmed_performers()
+      [%Performer{}, ...]
+
+  """
+  def list_sorted_archived_performers(year) do
+    Performer
+    |> where([p], not is_nil(p.archived))
+    |> where([p], p.archived == ^year)
     |> order_by(:name)
     |> Repo.all()
   end

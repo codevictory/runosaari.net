@@ -43,6 +43,10 @@
     <%= error_tag form, :confirmed %>
   </div>
 
+  <%= label form, :seqnum, "Arkistoitu (vuosi). Jätä tyhjäksi jos tulee näkyä Esiintyjät-sivulla." %>
+  <%= number_input form, :seqnum %>
+  <%= error_tag form, :seqnum %>
+
   <div class="submit-button">
     <%= submit "Tallenna" %>
   </div>

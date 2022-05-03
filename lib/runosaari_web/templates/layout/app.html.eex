@@ -21,7 +21,7 @@
         <%= link "Esiintyjät", to: Routes.performer_path(@conn, :index) %>
         <%= link "Info", to: Routes.info_path(@conn, :index) %>
         <%= link "Turvallisuus", to: Routes.page_path(@conn, :safety) %>
-        <%= link "Ilmoittautuminen", to: Routes.visitor_path(@conn, :new) %>
+        <%= link "Arkisto", to: Routes.archive_path(@conn, :index) %>
       </nav>
       <h1 class="mobile-main-title">
         <a href="/#logo-container">Runosaari 2021</a>
@@ -32,7 +32,7 @@
         <%= link "Esiintyjät", to: "#{Routes.performer_path(@conn, :index)}#performers-start" %>
         <%= link "Info", to: "#{Routes.info_path(@conn, :index )}#contact-start" %>
         <%= link "Turvallisuus", to: "#{Routes.page_path(@conn, :safety)}#safety-start" %>
-        <%= link "Ilmoittautuminen", to: "#{Routes.visitor_path(@conn, :new)}#registration-start" %>
+        <%= link "Arkisto", to: "#{Routes.archive_path(@conn, :index)}#archive-start" %>
       </nav>
     </header>
     <main role="main">

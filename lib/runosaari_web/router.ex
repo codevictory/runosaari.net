@@ -16,14 +16,15 @@ defmodule RunosaariWeb.Router do
   scope "/", RunosaariWeb do
     pipe_through :browser
 
-    resources "/", IndexController, only: [:index]
+    get "/", IndexController, :index
     get "/safety", PageController, :safety
     get "/privacy", PageController, :privacy
     resources "/performers", PerformerController, only: [:index, :show]
-    resources "/performances", PerformanceController, only: [:index]
+    get "/performances", PerformanceController, :index
     resources "/visitors", VisitorController, only: [:new, :create]
     get "/confirmation", VisitorController, :confirmation
-    resources "/info", InfoController, only: [:index]
+    get "/info", InfoController, :index
+    get "/archive", ArchiveController, :index
   end
 
   scope "/admin", RunosaariWeb, as: :admin do
