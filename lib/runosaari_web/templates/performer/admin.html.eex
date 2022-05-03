@@ -14,6 +14,7 @@
         <tr>
           <td><%= performer.name %></td>
           <td><%= performer.confirmed %></td>
+          <td><%= performer.archived %></td>
 
           <td class="actions">
             <span><%= link "Esiintyjäsivu", to: Routes.performer_path(@conn, :show, performer) %></span>
