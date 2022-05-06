@@ -24,7 +24,7 @@
         <%= link "Arkisto", to: Routes.archive_path(@conn, :index) %>
       </nav>
       <h1 class="mobile-main-title">
-        <a href="/#logo-container">Runosaari 2021</a>
+        <a href="/#logo-container">Runosaari 2022</a>
       </h1>
       <nav class="mobile-main-nav-bar" id="nav-bar">
         <%= link "Etusivu", to: "#{Routes.index_path(@conn, :index)}#logo-start" %>
