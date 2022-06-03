@@ -19,5 +19,9 @@
     <a href="https://<%= @performer.link %>" class="performer-link"><%= @performer.link %></a>
   <% end %>
   <img src="<%= @performer.photo_path %>" alt="Esiintyjän kuva" class="performer-img" />
+  <%= if @performer.archived != nil do %>
   <span class="link-back"><%= link "Takaisin arkistoon", to: Routes.archive_path(@conn, :index) %></span>
+  <% else %>
+  <span class="link-back"><%= link "Takaisin esiintyjiin", to: Routes.performer_path(@conn, :index) %></span>
+  <% end %>
 </section>
